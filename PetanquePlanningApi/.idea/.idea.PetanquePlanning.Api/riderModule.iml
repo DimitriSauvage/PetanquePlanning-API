@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RIDER_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../../../../CSharp-Tools/Tools" />
+    <content url="file://$MODULE_DIR$/../../../../CSharp-Tools/Tools.Api" />
+    <content url="file://$MODULE_DIR$/../../../../CSharp-Tools/Tools.Api.OData" />
+    <content url="file://$MODULE_DIR$/../../../../CSharp-Tools/Tools.Application" />
+    <content url="file://$MODULE_DIR$/../../../../CSharp-Tools/Tools.Domain" />
+    <content url="file://$MODULE_DIR$/../../../../CSharp-Tools/Tools.Http" />
+    <content url="file://$MODULE_DIR$/../../../../CSharp-Tools/Tools.Infrastructure" />
+    <content url="file://$MODULE_DIR$/../.." />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

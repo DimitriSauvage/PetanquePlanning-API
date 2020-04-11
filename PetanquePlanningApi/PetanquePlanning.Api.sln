@@ -23,6 +23,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools.Http", "..\..\CSharp-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools.Infrastructure", "..\..\CSharp-Tools\Tools.Infrastructure\Tools.Infrastructure.csproj", "{332E8EB4-FA43-46F4-874C-0ABFA5124168}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.Api.OData", "..\..\CSharp-Tools\Tools.Api.OData\Tools.Api.OData.csproj", "{1BFB2FE7-D1EA-4EAD-9173-5403E0E98B31}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{332E8EB4-FA43-46F4-874C-0ABFA5124168}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{332E8EB4-FA43-46F4-874C-0ABFA5124168}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{332E8EB4-FA43-46F4-874C-0ABFA5124168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BFB2FE7-D1EA-4EAD-9173-5403E0E98B31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BFB2FE7-D1EA-4EAD-9173-5403E0E98B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BFB2FE7-D1EA-4EAD-9173-5403E0E98B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BFB2FE7-D1EA-4EAD-9173-5403E0E98B31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -71,6 +77,7 @@ Global
 		{0889E8A3-B424-4083-8B0E-CB38A9CF37CD} = {B82BFC4D-8937-44D2-B6C2-6FA9740933EF}
 		{C7BB6570-524C-442A-BB83-B440CFEBAEBD} = {B82BFC4D-8937-44D2-B6C2-6FA9740933EF}
 		{332E8EB4-FA43-46F4-874C-0ABFA5124168} = {B82BFC4D-8937-44D2-B6C2-6FA9740933EF}
+		{1BFB2FE7-D1EA-4EAD-9173-5403E0E98B31} = {B82BFC4D-8937-44D2-B6C2-6FA9740933EF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7838669D-C8FB-44B7-8CC5-990EA7C7A69B}

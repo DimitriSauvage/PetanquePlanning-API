@@ -1230,13 +1230,24 @@
           "Microsoft.CSharp": "4.5.0",
           "Microsoft.Extensions.Logging": "2.1.1",
           "Newtonsoft.Json": "11.0.2",
-          "System.ComponentModel.Annotations": "4.5.0"
+          "System.ComponentModel.Annotations": "4.5.0",
+          "Tools.Api.OData": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Tools.dll": {}
         },
         "runtime": {
           "bin/placeholder/Tools.dll": {}
+        }
+      },
+      "Tools.Api.OData/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Tools.Api.OData.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tools.Api.OData.dll": {}
         }
       },
       "Tools.Domain/1.0.0": {
@@ -4231,6 +4242,11 @@
       "path": "../../../CSharp-Tools/Tools/Tools.csproj",
       "msbuildProject": "../../../CSharp-Tools/Tools/Tools.csproj"
     },
+    "Tools.Api.OData/1.0.0": {
+      "type": "project",
+      "path": "../../../CSharp-Tools/Tools.Api.OData/Tools.Api.OData.csproj",
+      "msbuildProject": "../../../CSharp-Tools/Tools.Api.OData/Tools.Api.OData.csproj"
+    },
     "Tools.Domain/1.0.0": {
       "type": "project",
       "path": "../../../CSharp-Tools/Tools.Domain/Tools.Domain.csproj",
@@ -4257,7 +4273,7 @@
   },
   "packageFolders": {
     "C:\\Users\\dimit\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Microsoft\\Xamarin\\NuGet": {}
   },
   "project": {
     "version": "1.0.0",
@@ -4269,7 +4285,7 @@
       "outputPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanningApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet"
       ],
       "configFilePaths": [
         "C:\\Users\\dimit\\AppData\\Roaming\\NuGet\\NuGet.Config",
