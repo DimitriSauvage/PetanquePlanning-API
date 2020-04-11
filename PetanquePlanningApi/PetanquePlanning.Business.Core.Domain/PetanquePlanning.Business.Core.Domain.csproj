@@ -5,4 +5,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Domain\Tools.Domain.csproj" />
+    <ProjectReference Include="..\..\..\CSharp-Tools\Tools.GeoLocation.Domain\Tools.GeoLocation.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
