@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanningApi", "PetanquePlanningApi\PetanquePlanningApi.csproj", "{1C9E0CB0-9207-44BD-BB3B-D1AADA6E11A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetanquePlanningApi", "PetanquePlanningApi\PetanquePlanningApi.csproj", "{1C9E0CB0-9207-44BD-BB3B-D1AADA6E11A2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{633A4C6B-346C-4DAF-88DD-37A80399546B}"
 EndProject
@@ -23,7 +23,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools.Http", "..\..\CSharp-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools.Infrastructure", "..\..\CSharp-Tools\Tools.Infrastructure\Tools.Infrastructure.csproj", "{332E8EB4-FA43-46F4-874C-0ABFA5124168}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.Api.OData", "..\..\CSharp-Tools\Tools.Api.OData\Tools.Api.OData.csproj", "{1BFB2FE7-D1EA-4EAD-9173-5403E0E98B31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools.Api.OData", "..\..\CSharp-Tools\Tools.Api.OData\Tools.Api.OData.csproj", "{1BFB2FE7-D1EA-4EAD-9173-5403E0E98B31}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{26B8E828-13E4-4988-8F3B-AAA8F9BC855C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetanquePlanning.Business.Core.Presentation", "PetanquePlanning.Business.Core.Presentation\PetanquePlanning.Business.Core.Presentation.csproj", "{1A191051-013A-4CD3-9421-1FF239BE3C0C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Core.Domain", "PetanquePlanning.Business.Core.Domain\PetanquePlanning.Business.Core.Domain.csproj", "{E8364611-D111-4525-A2D1-3B654186C2AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools.GeoLocation.Domain", "..\..\CSharp-Tools\Tools.GeoLocation.Domain\Tools.GeoLocation.Domain.csproj", "{D3EB1CEE-37CA-44C1-98E8-484F0B291D27}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{8E01E91E-2961-437D-8D22-BFAD8248C73B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Identity.Domain", "PetanquePlanning.Business.Identity.Domain\PetanquePlanning.Business.Identity.Domain.csproj", "{0D876E77-AD5E-4B5D-A94F-265FAED798E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +75,22 @@ Global
 		{1BFB2FE7-D1EA-4EAD-9173-5403E0E98B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BFB2FE7-D1EA-4EAD-9173-5403E0E98B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BFB2FE7-D1EA-4EAD-9173-5403E0E98B31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A191051-013A-4CD3-9421-1FF239BE3C0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A191051-013A-4CD3-9421-1FF239BE3C0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A191051-013A-4CD3-9421-1FF239BE3C0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A191051-013A-4CD3-9421-1FF239BE3C0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8364611-D111-4525-A2D1-3B654186C2AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8364611-D111-4525-A2D1-3B654186C2AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8364611-D111-4525-A2D1-3B654186C2AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8364611-D111-4525-A2D1-3B654186C2AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3EB1CEE-37CA-44C1-98E8-484F0B291D27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3EB1CEE-37CA-44C1-98E8-484F0B291D27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3EB1CEE-37CA-44C1-98E8-484F0B291D27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3EB1CEE-37CA-44C1-98E8-484F0B291D27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D876E77-AD5E-4B5D-A94F-265FAED798E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D876E77-AD5E-4B5D-A94F-265FAED798E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D876E77-AD5E-4B5D-A94F-265FAED798E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D876E77-AD5E-4B5D-A94F-265FAED798E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +106,12 @@ Global
 		{C7BB6570-524C-442A-BB83-B440CFEBAEBD} = {B82BFC4D-8937-44D2-B6C2-6FA9740933EF}
 		{332E8EB4-FA43-46F4-874C-0ABFA5124168} = {B82BFC4D-8937-44D2-B6C2-6FA9740933EF}
 		{1BFB2FE7-D1EA-4EAD-9173-5403E0E98B31} = {B82BFC4D-8937-44D2-B6C2-6FA9740933EF}
+		{26B8E828-13E4-4988-8F3B-AAA8F9BC855C} = {3F41AB91-F15B-4ACE-BF53-916A6B32A446}
+		{1A191051-013A-4CD3-9421-1FF239BE3C0C} = {26B8E828-13E4-4988-8F3B-AAA8F9BC855C}
+		{E8364611-D111-4525-A2D1-3B654186C2AA} = {26B8E828-13E4-4988-8F3B-AAA8F9BC855C}
+		{D3EB1CEE-37CA-44C1-98E8-484F0B291D27} = {B82BFC4D-8937-44D2-B6C2-6FA9740933EF}
+		{8E01E91E-2961-437D-8D22-BFAD8248C73B} = {3F41AB91-F15B-4ACE-BF53-916A6B32A446}
+		{0D876E77-AD5E-4B5D-A94F-265FAED798E4} = {8E01E91E-2961-437D-8D22-BFAD8248C73B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7838669D-C8FB-44B7-8CC5-990EA7C7A69B}

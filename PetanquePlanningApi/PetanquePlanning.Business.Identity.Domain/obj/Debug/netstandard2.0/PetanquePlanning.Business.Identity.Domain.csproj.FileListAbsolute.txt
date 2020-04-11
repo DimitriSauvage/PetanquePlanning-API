@@ -1,0 +1,5 @@
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanning.Business.Identity.Domain\bin\Debug\netstandard2.0\PetanquePlanning.Business.Identity.Domain.deps.json
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanning.Business.Identity.Domain\bin\Debug\netstandard2.0\PetanquePlanning.Business.Identity.Domain.dll
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanning.Business.Identity.Domain\obj\Debug\netstandard2.0\PetanquePlanning.Business.Identity.Domain.csprojAssemblyReference.cache
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanning.Business.Identity.Domain\obj\Debug\netstandard2.0\PetanquePlanning.Business.Identity.Domain.AssemblyInfoInputs.cache
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanning.Business.Identity.Domain\obj\Debug\netstandard2.0\PetanquePlanning.Business.Identity.Domain.AssemblyInfo.cs

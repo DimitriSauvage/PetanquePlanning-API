@@ -8,12 +8,14 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Net.Http.Headers;
+using PetanquePlanning.Business.Identity.Domain.Entities;
 using Tools.Infrastructure.Settings;
 
 namespace PetanquePlanningApi
@@ -132,6 +134,21 @@ namespace PetanquePlanningApi
         #endregion
 
         #region Private methods
+
+        private void AddIdentity(IServiceCollection services)
+        {
+            services.AddIdentity<User, Role>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 4;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequiredUniqueChars = 0;
+            })
+            .AddEntityFrameworkStores<PetanquePlanningDbContext>()
+            .AddDefaultTokenProviders();
+        }
 
         /// <summary>
         /// Configure the application database
