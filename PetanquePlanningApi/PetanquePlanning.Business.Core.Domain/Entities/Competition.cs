@@ -5,8 +5,8 @@ using Tools.Domain.DataAnnotations;
 
 namespace PetanquePlanning.Business.Core.Domain.Entities
 {
-    [UniqueBy(nameof(Organizer), nameof(OrganizerId), nameof(Date), nameof(Hour)]
-    public class Competition : EntityWithId
+    [UniqueBy(nameof(Organizer), nameof(OrganizerId), nameof(Date) )]
+    public class Competition : EntityWithId, IEntityWithId
     {
         /// <summary>
         /// Address of the competition
@@ -43,15 +43,6 @@ namespace PetanquePlanning.Business.Core.Domain.Entities
         /// </summary>
         public string Description { get; set; }
 
-        /// <summary>
-        /// Hour of the competition
-        /// </summary>
-        public DateTimeOffset Hour { get; set; }
-
-        /// <summary>
-        /// Identifier
-        /// </summary>
-        public string Id { get; set; }
 
         /// <summary>
         /// Name of the competition

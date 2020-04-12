@@ -4,7 +4,7 @@ using Tools.Domain.DataAnnotations;
 namespace PetanquePlanning.Business.Core.Domain.Entities
 {
     [UniqueBy(nameof(Name))]
-    public class Club : EntityWithId
+    public class Club : EntityWithId, IEntityWithId
     {
         /// <summary>
         /// Address

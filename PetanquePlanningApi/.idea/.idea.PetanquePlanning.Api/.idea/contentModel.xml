@@ -362,6 +362,30 @@
     <e p="C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="PetanquePlanning.Api.sln" t="IncludeFlat" />
+      <e p="PetanquePlanning.Business.Core.Application" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Class1.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="PetanquePlanning.Business.Core.Application.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="PetanquePlanning.Business.Core.Application.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="PetanquePlanning.Business.Core.Application.Abstractions" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Class1.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="PetanquePlanning.Business.Core.Application.Abstractions.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="PetanquePlanning.Business.Core.Application.Abstractions.csproj" t="IncludeRecursive" />
+      </e>
       <e p="PetanquePlanning.Business.Core.Domain" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Entities" t="Include">
@@ -386,9 +410,11 @@
         <e p="Program.cs" t="Include" />
       </e>
       <e p="PetanquePlanning.Business.Core.Infrastructure.Abstractions" t="IncludeRecursive">
+        <e p="Abstractions" t="Include">
+          <e p="IClubRepository.cs" t="Include" />
+          <e p="ICompetitionRepository.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
-        <e p="IClubRepository.cs" t="Include" />
-        <e p="ICompetitionRepository.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.0" t="Include">
@@ -397,6 +423,25 @@
           </e>
         </e>
         <e p="PetanquePlanning.Business.Core.Infrastructure.Abstractions.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="PetanquePlanning.Business.Core.Infrastructure.EntityFramework" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Maps" t="Include">
+          <e p="AddressMapBuilder.cs" t="Include" />
+          <e p="ClubMap.cs" t="Include" />
+          <e p="CompetitionMap.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="PetanquePlanning.Business.Core.Infrastructure.EntityFramework.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="PetanquePlanning.Business.Core.Infrastructure.EntityFramework.csproj" t="IncludeRecursive" />
+        <e p="Repositories" t="Include">
+          <e p="CompetitionRepository.cs" t="Include" />
+        </e>
       </e>
       <e p="PetanquePlanning.Business.Core.Presentation" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />

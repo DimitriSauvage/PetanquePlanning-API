@@ -1,11 +1,8 @@
-﻿using PetanquePlanning.Business.Core.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using PetanquePlanning.Business.Core.Domain.Entities;
 
-
-namespace PetanquePlanning.Business.Core.Infrastructure.Abstractions
+namespace PetanquePlanning.Business.Core.Infrastructure.Abstractions.Abstractions
 {
     public interface IClubRepository
     {
@@ -14,6 +11,5 @@ namespace PetanquePlanning.Business.Core.Infrastructure.Abstractions
         /// </summary>
         /// <returns>Competitions</returns>
         Task<List<Club>> GetAsync();
-
     }
 }
