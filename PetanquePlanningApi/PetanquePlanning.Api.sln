@@ -53,6 +53,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Location.Presentation", "PetanquePlanning.Business.Location.Presentation\PetanquePlanning.Business.Location.Presentation.csproj", "{5FB3D56E-F61E-4FBC-8234-0F61328A64ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Core.Infrastructure.EntityFramework", "PetanquePlanning.Business.Core.Infrastructure.EntityFramework\PetanquePlanning.Business.Core.Infrastructure.EntityFramework.csproj", "{0FAA1DA5-053D-4491-8B52-B41343502A29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -135,6 +137,10 @@ Global
 		{5FB3D56E-F61E-4FBC-8234-0F61328A64ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FB3D56E-F61E-4FBC-8234-0F61328A64ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FB3D56E-F61E-4FBC-8234-0F61328A64ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FAA1DA5-053D-4491-8B52-B41343502A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FAA1DA5-053D-4491-8B52-B41343502A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FAA1DA5-053D-4491-8B52-B41343502A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FAA1DA5-053D-4491-8B52-B41343502A29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -164,6 +170,7 @@ Global
 		{32B8ACDF-8D92-4EE2-9F9E-002B39BAA75F} = {5DE6563E-6720-4107-A7B7-5004EBD020A1}
 		{956BB644-A4D6-4280-AB57-726629CB12EC} = {5DE6563E-6720-4107-A7B7-5004EBD020A1}
 		{5FB3D56E-F61E-4FBC-8234-0F61328A64ED} = {5DE6563E-6720-4107-A7B7-5004EBD020A1}
+		{0FAA1DA5-053D-4491-8B52-B41343502A29} = {26B8E828-13E4-4988-8F3B-AAA8F9BC855C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7838669D-C8FB-44B7-8CC5-990EA7C7A69B}
