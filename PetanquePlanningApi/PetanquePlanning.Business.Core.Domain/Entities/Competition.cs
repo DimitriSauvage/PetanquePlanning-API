@@ -1,11 +1,11 @@
 ﻿using PetanquePlanning.Business.Core.Domain.Enumerations;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Tools.Domain.Abstractions;
+using Tools.Domain.DataAnnotations;
 
 namespace PetanquePlanning.Business.Core.Domain.Entities
 {
+    [UniqueBy(nameof(Organizer), nameof(OrganizerId), nameof(Date), nameof(Hour)]
     public class Competition : EntityWithId
     {
         /// <summary>

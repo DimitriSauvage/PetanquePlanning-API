@@ -16,6 +16,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Net.Http.Headers;
 using PetanquePlanning.Business.Identity.Domain.Entities;
+using PetanquePlanning.Business.Location.Application.Abstractions.Abstractions;
+using PetanquePlanning.Business.Location.Application.Services;
+using PetanquePlanning.Business.Location.Infrastructure.Abstractions;
+using PetanquePlanning.Business.Location.Infrastructure.EntityFramework;
 using Tools.Infrastructure.Settings;
 
 namespace PetanquePlanningApi
@@ -79,6 +83,10 @@ namespace PetanquePlanningApi
             this.AddBusinessRepositories(services);
             this.AddBusinessServices(services);
 
+            #endregion
+
+            #region Identity
+            this.AddIdentity(services);
             #endregion
 
             //services.AddControllers();
@@ -209,6 +217,10 @@ namespace PetanquePlanningApi
         /// <param name="services"></param>
         private void AddBusinessRepositories(IServiceCollection services)
         {
+            #region Location
+            services.AddScoped<IRegionRepository, RegionRepository>();
+            services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            #endregion
         }
 
         /// <summary>
@@ -217,6 +229,10 @@ namespace PetanquePlanningApi
         /// <param name="services"></param>
         private void AddBusinessServices(IServiceCollection services)
         {
+            #region Location
+            services.AddScoped<IRegionService, RegionService>();
+            services.AddScoped<IDepartmentService, DepartmentService>();
+            #endregion
         }
 
         #endregion

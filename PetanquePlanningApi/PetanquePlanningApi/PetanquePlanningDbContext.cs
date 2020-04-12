@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using PetanquePlanning.Business.Location.Infrastructure.EntityFramework.Maps;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,9 @@ namespace PetanquePlanningApi
             #region Identity
             #endregion
 
-            #region I18n
+            #region Location
+            modelBuilder.ApplyConfiguration(new DepartmentMap());
+            modelBuilder.ApplyConfiguration(new RegionMap());
             #endregion
 
             #region Core

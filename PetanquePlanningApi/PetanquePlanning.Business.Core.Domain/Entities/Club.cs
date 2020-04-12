@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Tools.Domain.Abstractions;
+﻿using Tools.Domain.Abstractions;
+using Tools.Domain.DataAnnotations;
 
 namespace PetanquePlanning.Business.Core.Domain.Entities
 {
+    [UniqueBy(nameof(Name))]
     public class Club : EntityWithId
     {
         /// <summary>

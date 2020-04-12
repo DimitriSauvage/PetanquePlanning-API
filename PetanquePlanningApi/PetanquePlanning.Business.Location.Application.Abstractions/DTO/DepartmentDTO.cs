@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace PetanquePlanning.Business.Core.Domain.Entities.Geo
+namespace PetanquePlanning.Business.Location.Application.Abstractions.DTO
 {
-    class Departement
+    public class DepartmentDTO
     {
         /// <summary>
-        /// Code of adjacent departements
+        /// Adjacent departments
         /// </summary>
-        public List<string> AdjacentDepartements { get; set; }
+        public List<DepartmentDTO> AdjacentDepartments { get; set; } = new List<DepartmentDTO>();
 
         /// <summary>
         /// Code
@@ -24,7 +24,7 @@ namespace PetanquePlanning.Business.Core.Domain.Entities.Geo
         /// <summary>
         /// Region
         /// </summary>
-        public Region Region { get; set; }
+        public RegionDTO Region { get; set; }
 
         /// <summary>
         /// Region code
