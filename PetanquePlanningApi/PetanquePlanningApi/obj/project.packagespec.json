@@ -24,6 +24,18 @@
           },
           "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Identity.Domain\\PetanquePlanning.Business.Identity.Domain.csproj": {
             "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Identity.Domain\\PetanquePlanning.Business.Identity.Domain.csproj"
+          },
+          "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.Abstractions\\PetanquePlanning.Business.Location.Application.Abstractions.csproj": {
+            "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.Abstractions\\PetanquePlanning.Business.Location.Application.Abstractions.csproj"
+          },
+          "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application\\PetanquePlanning.Business.Location.Application.csproj": {
+            "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application\\PetanquePlanning.Business.Location.Application.csproj"
+          },
+          "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Domain\\PetanquePlanning.Business.Location.Domain.csproj": {
+            "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Domain\\PetanquePlanning.Business.Location.Domain.csproj"
+          },
+          "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Infrastructure.EntityFramework\\PetanquePlanning.Business.Location.Infrastructure.EntityFramework.csproj": {
+            "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Infrastructure.EntityFramework\\PetanquePlanning.Business.Location.Infrastructure.EntityFramework.csproj"
           }
         }
       }

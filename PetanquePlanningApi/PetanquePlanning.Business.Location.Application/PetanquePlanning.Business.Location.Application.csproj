@@ -4,4 +4,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PetanquePlanning.Business.Location.Application.Abstractions\PetanquePlanning.Business.Location.Application.Abstractions.csproj" />
+    <ProjectReference Include="..\PetanquePlanning.Business.Location.Infrastructure.Abstractions\PetanquePlanning.Business.Location.Infrastructure.Abstractions.csproj" />
+  </ItemGroup>
+
 </Project>

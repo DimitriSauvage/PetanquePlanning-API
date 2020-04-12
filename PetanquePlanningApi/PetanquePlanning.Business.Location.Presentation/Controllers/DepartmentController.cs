@@ -10,6 +10,7 @@ using Tools.Api.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Presentation.Controllers
 {
+    [Route("[controller]")]
     public class DepartmentController : ApiController
     {
         #region Fields

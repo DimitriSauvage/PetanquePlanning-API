@@ -6,6 +6,7 @@
     <content url="file://$MODULE_DIR$/../../../../CSharp-Tools/Tools.Api.OData" />
     <content url="file://$MODULE_DIR$/../../../../CSharp-Tools/Tools.Application" />
     <content url="file://$MODULE_DIR$/../../../../CSharp-Tools/Tools.Domain" />
+    <content url="file://$MODULE_DIR$/../../../../CSharp-Tools/Tools.GeoLocation.Domain" />
     <content url="file://$MODULE_DIR$/../../../../CSharp-Tools/Tools.Http" />
     <content url="file://$MODULE_DIR$/../../../../CSharp-Tools/Tools.Infrastructure" />
     <content url="file://$MODULE_DIR$/../.." />
