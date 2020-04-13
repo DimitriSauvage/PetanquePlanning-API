@@ -9,7 +9,7 @@ using Tools.Infrastructure.EntityFramework.Abstractions;
 
 namespace PetanquePlanning.Business.Core.Infrastructure.EntityFramework.Repositories
 {
-    public class ClubRepository : PetanquePlanningRepository<Club>, IClubRepository
+    public class ClubRepository : DbRepository<Club>, IClubRepository
     {
         #region Constructor
 

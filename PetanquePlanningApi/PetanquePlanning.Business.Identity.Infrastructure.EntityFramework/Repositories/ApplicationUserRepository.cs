@@ -9,7 +9,7 @@ using Tools.Infrastructure.EntityFramework.Abstractions;
 
 namespace PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.Repositories
 {
-    public class ApplicationUserRepository : PetanquePlanningRepository<ApplicationUser>, IApplicationUserRepository
+    public class ApplicationUserRepository : DbRepository<ApplicationUser>, IApplicationUserRepository
     {
         #region Constructors
 

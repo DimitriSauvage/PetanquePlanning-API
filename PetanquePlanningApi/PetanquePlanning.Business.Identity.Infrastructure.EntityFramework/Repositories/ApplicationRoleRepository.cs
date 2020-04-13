@@ -7,7 +7,7 @@ using Tools.Infrastructure.EntityFramework.Abstractions;
 
 namespace PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.Repositories
 {
-    public class ApplicationRoleRepository : PetanquePlanningRepository<ApplicationRole>, IApplicationRoleRepository
+    public class ApplicationRoleRepository : DbRepository<ApplicationRole>, IApplicationRoleRepository
     {
         #region Constructors
 

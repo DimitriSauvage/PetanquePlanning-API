@@ -9,7 +9,7 @@ using Tools.Infrastructure.EntityFramework.Abstractions;
 
 namespace PetanquePlanning.Business.Core.Infrastructure.EntityFramework.Repositories
 {
-    public class CompetitionRepository : PetanquePlanningRepository<Competition>, ICompetitionRepository
+    public class CompetitionRepository : DbRepository<Competition>, ICompetitionRepository
     {
         #region Constructor
 

@@ -12,7 +12,7 @@ namespace Abalone.Business.Identity.Application.Abstractions.Abstractions
         /// Récupère tous les rôles
         /// </summary>
         /// <returns>Liste des rôles</returns>
-        Task<ICollection<ApplicationRoleDTO>> GetAllAsync();
+        Task<IEnumerable<ApplicationRoleDTO>> GetAllAsync();
 
         /// <inheritDoc/>
         /// <summary>
@@ -20,15 +20,14 @@ namespace Abalone.Business.Identity.Application.Abstractions.Abstractions
         /// </summary>
         /// <param name="dto">Rôle à créer</param>
         /// <returns>Rôle créé</returns>
-        Task<ApplicationRoleDTO> CreateAsync(ApplicationRoleDTO dto);
+        Task<ApplicationRoleDTO> CreateAsync(ApplicationRoleDTO roleDto);
 
         /// <summary>
         /// Met à jour un rôle
         /// </summary>
-        /// <param name="applicationRoleDTO">Rôle à mettre à jour</param>
-        /// <param name="updateRights">Mettre à jour ou non les droits</param>
+        /// <param name="applicationRoleDto">Rôle à mettre à jour</param>
         /// <returns></returns>
-        Task<ApplicationRoleDTO> UpdateAsync(ApplicationRoleDTO applicationRoleDTO);
+        Task<ApplicationRoleDTO> UpdateAsync(ApplicationRoleDTO applicationRoleDto);
         
         /// <summary>
         /// Supprime un rôle

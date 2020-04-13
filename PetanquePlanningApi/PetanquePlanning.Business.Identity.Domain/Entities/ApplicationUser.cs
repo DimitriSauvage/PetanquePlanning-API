@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Abalone.Business.Identity.Domain.Enums;
 using Microsoft.AspNetCore.Identity;
 using PetanquePlanning.Business.Identity.Domain.Enumerations;
@@ -70,14 +71,16 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         public long ApplicationRoleId { get; set; }
 
         /// <summary>
+        /// Affecte ou obtient l'information si l'utilisateur doit obligatoirement changer son mot de passe
+        /// </summary>
+        public bool MustChangePassword { get; set; }
+
+        /// <summary>
         /// Full name
         /// </summary>
         public string FullName
         {
-            get
-            {
-                return $"{this.LastName} {this.FirstName}";
-            }
+            get { return $"{this.LastName} {this.FirstName}"; }
         }
 
         #endregion
@@ -132,6 +135,24 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         public void CopyFrom(IEntity other)
         {
             this.ShallowCopy(other);
+        }
+
+        /// <summary>
+        /// Remplit les valeurs obligatories de l'utilisateur
+        /// </summary>
+        /// <param name="userManager">User manager to use to realize</param>
+        /// <returns></returns>
+        public async Task SetMandatoryValuesAsync(UserManager<ApplicationUser> userManager)
+        {
+            this.NormalizedEmail = this.Email?.ToUpper();
+            this.LockoutEnabled = false;
+            this.PhoneNumberConfirmed = false;
+            this.TwoFactorEnabled = false;
+            this.AccessFailedCount = 0;
+            this.SecurityStamp = Guid.NewGuid().ToString();
+            this.ConcurrencyStamp = await userManager.GenerateConcurrencyStampAsync(this);
+            if (this.MustChangePassword)
+                this.PasswordHash = userManager.PasswordHasher.HashPassword(this, this.PasswordHash);
         }
 
         #endregion

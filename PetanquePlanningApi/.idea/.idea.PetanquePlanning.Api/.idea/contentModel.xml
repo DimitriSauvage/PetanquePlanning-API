@@ -23,8 +23,8 @@
       </e>
       <e p="bin" t="ExcludeRecursive" />
       <e p="Exceptions" t="Include">
+        <e p="AppException.cs" t="Include" />
         <e p="NullReferenceException.cs" t="Include" />
-        <e p="PetanquePlanningException.cs" t="Include" />
       </e>
       <e p="Helpers" t="Include">
         <e p="AddressHelper.cs" t="Include" />
@@ -180,6 +180,20 @@
       </e>
       <e p="Tools.Application.csproj" t="IncludeRecursive" />
     </e>
+    <e p="C:\Users\dimit\Github\CSharp-Tools\Tools.Application.Abstractions" t="IncludeRecursive">
+      <e p="Abstractions" t="Include">
+        <e p="Service.cs" t="Include" />
+      </e>
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netstandard2.0" t="Include">
+            <e p="Tools.Application.Abstractions.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Tools.Application.Abstractions.csproj" t="IncludeRecursive" />
+    </e>
     <e p="C:\Users\dimit\Github\CSharp-Tools\Tools.Domain" t="IncludeRecursive">
       <e p="Abstractions" t="Include">
         <e p="Entity.cs" t="Include" />
@@ -288,12 +302,17 @@
       <e p="bin" t="ExcludeRecursive" />
       <e p="EntityFramework" t="Include">
         <e p="Abstractions" t="Include">
+          <e p="DbRepository.cs" t="Include" />
           <e p="PetanquePlanningDbContext.cs" t="Include" />
           <e p="PetanquePlanningEntityMap.cs" t="Include" />
-          <e p="PetanquePlanningRepository.cs" t="Include" />
         </e>
         <e p="Exceptions" t="Include">
+          <e p="AttributeUndefinedException.cs" t="Include" />
+          <e p="CantExecuteAutoUniqueKeyQueryOnClassPropertyException.cs" t="Include" />
           <e p="EntityFrameworkException.cs" t="Include" />
+          <e p="NoUniqueByAttributeForTypeException.cs" t="Include" />
+          <e p="OutsideTransactionalContext.cs" t="Include" />
+          <e p="UniqueByAttributeIsEmptyException.cs" t="Include" />
         </e>
       </e>
       <e p="Exceptions" t="Include">

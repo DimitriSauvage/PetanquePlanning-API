@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using Abalone.Business.Identity.Domain.Enums;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using PetanquePlanning.Business.Identity.Domain.Enumerations;
 using Tools.Application.DTOs;
+using Tools.Helpers;
 
 namespace Abalone.Business.Identity.Application.DTO.Users
 {
@@ -15,6 +17,35 @@ namespace Abalone.Business.Identity.Application.DTO.Users
         /// Avatar
         /// </summary>
         public string Avatar { get; set; }
+
+        /// <summary>
+        /// URL de l'image de l'avatar
+        /// </summary>
+        public string AvatarUrl
+        {
+            get
+            {
+                string result = string.Empty;
+                if (this.Avatar.IsNotEmpty())
+                {
+                    if (this.Id > 0)
+                    {
+                        result = Path.Combine("data", "users", this.NormalizedEmail, this.Avatar);
+                    }
+                    else
+                    {
+                        result = Path.Combine("data", "users", "temp", this.Avatar);
+                    }
+                }
+
+                return result;
+            }
+        }
+
+        /// <summary>
+        /// Affecte ou obtient l'information si l'utilisateur doit obligatoirement changer son mot de passe
+        /// </summary>
+        public bool MustChangePassword { get; set; }
 
         /// <summary>
         /// Birth date

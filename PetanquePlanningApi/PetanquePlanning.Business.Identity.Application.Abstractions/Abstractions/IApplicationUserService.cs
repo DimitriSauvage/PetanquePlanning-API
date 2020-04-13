@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Abalone.Business.Identity.Application.DTO.Users;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Abalone.Business.Identity.Application.Abstractions.Abstractions
 {
@@ -23,23 +24,34 @@ namespace Abalone.Business.Identity.Application.Abstractions.Abstractions
         /// Met à jour un utilisateur en base de données
         /// </summary>
         /// <param name="user">Utilisateur à ajouter</param>
+        /// <param name="baseStoragePath">Chemin de base des fichiers</param>
         /// <returns>Aucun retour</returns>
-        Task<ApplicationUserDTO> UpdateAsync(ApplicationUserDTO user);
+        Task<ApplicationUserDTO> UpdateAsync(ApplicationUserDTO user, string baseStoragePath);
+
+        /// <summary>
+        /// Met à jour un utilisateur en base de données
+        /// </summary>
+        /// <param name="user">Utilisateur à ajouter</param>
+        /// <param name="baseStoragePath">Chemin de base des fichiers</param>
+        /// <param name="transaction">Transaction dans laquelle effectuer le traitement</param>
+        /// <returns>Aucun retour</returns>
+        Task<ApplicationUserDTO> UpdateUserAsync(ApplicationUserDTO user, string baseStoragePath,
+            IDbContextTransaction transaction);
 
         /// <summary>
         /// Ajoute un utilisateur
         /// </summary>
         /// <param name="user">Utilisateur a ajouter</param>
+        /// <param name="baseStoragePath">Chemin de base des fichiers</param>
         /// <returns>Utilisateur ajouté</returns>
-        Task<ApplicationUserDTO> CreateAsync(ApplicationUserDTO user);
+        Task<ApplicationUserDTO> CreateAsync(ApplicationUserDTO user, string baseStoragePath);
 
         /// <summary>
         /// Réinitialise le mot de passe de l'utilisateur
         /// </summary>
         /// <param name="id">Identifiant de l'utilisateur</param>
-        /// <param name="cultureShortName">Nom de la culture en version courte (FR, EN, ES...)</param>
         /// <returns>Aucun retour</returns>
-        Task ReinitializePasswordAsync(long id, string cultureShortName);
+        Task ReinitializePasswordAsync(long id);
 
         /// <summary>
         /// Supprime un utilisateur

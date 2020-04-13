@@ -10,7 +10,7 @@ using Tools.Infrastructure.EntityFramework.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Infrastructure.EntityFramework
 {
-    public class RegionRepository : PetanquePlanningRepository<Region>, IRegionRepository
+    public class RegionRepository : DbRepository<Region>, IRegionRepository
     {
         #region Constructor
         public RegionRepository(DbContext dbContext) : base(dbContext)
