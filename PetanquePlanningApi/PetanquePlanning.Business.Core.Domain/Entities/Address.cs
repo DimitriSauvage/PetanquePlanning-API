@@ -31,31 +31,5 @@ namespace PetanquePlanning.Business.Core.Domain.Entities
         /// </summary>
         public LatLng Coordinate { get; set; }
 
-        /// <summary>
-        /// Get the full address
-        /// </summary>
-        public string FullAddress
-        {
-            get
-            {
-                StringBuilder fullAddress = new StringBuilder();
-                void AddToAddress(string valueToAdd)
-                {
-                    if (valueToAdd != null)
-                    {
-                        if (fullAddress.Length != 0) fullAddress.Append(" ");
-                        fullAddress.Append(valueToAdd);
-                    }
-                }
-
-                AddToAddress(this.Number);
-                AddToAddress(this.Street);
-                AddToAddress(this.ZipCode);
-                AddToAddress(this.City);
-                return fullAddress.ToString();
-            }
-        }
-
-
     }
 }

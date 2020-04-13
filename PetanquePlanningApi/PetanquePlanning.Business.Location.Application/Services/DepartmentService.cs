@@ -14,11 +14,11 @@ namespace PetanquePlanning.Business.Location.Application.Services
         /// <summary>
         /// Department storage manager
         /// </summary>
-        public IDepartmentRepository DepartmentRepository { get; }
+        private IDepartmentRepository DepartmentRepository { get; }
         /// <summary>
         /// Mapper manager
         /// </summary>
-        public IMapper Mapper { get; }
+        private  IMapper Mapper { get; }
         #endregion
 
         #region Constructor

@@ -21,6 +21,9 @@
         "projectReferences": {
           "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Api\\Tools.Api.csproj": {
             "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Api\\Tools.Api.csproj"
+          },
+          "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Application.Abstractions\\PetanquePlanning.Business.Core.Application.Abstractions.csproj": {
+            "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Application.Abstractions\\PetanquePlanning.Business.Core.Application.Abstractions.csproj"
           }
         }
       }

@@ -1,7 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PetanquePlanning.Business.Core.Application.Abstractions\PetanquePlanning.Business.Core.Application.Abstractions.csproj" />
+    <ProjectReference Include="..\PetanquePlanning.Business.Core.Infrastructure.Abstractions\PetanquePlanning.Business.Core.Infrastructure.Abstractions.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+  </ItemGroup>
 
 </Project>

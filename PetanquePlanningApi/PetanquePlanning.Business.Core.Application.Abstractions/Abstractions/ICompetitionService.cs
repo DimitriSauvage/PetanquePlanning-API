@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using PetanquePlanning.Business.Core.Domain.Entities;
 
-namespace PetanquePlanning.Business.Core.Infrastructure.Abstractions.Abstractions
+namespace PetanquePlanning.Business.Core.Application.Abstractions.Abstractions
 {
-    public interface ICompetitionRepository
+    public interface ICompetitionService
     {
         /// <summary>
         /// Get all competitions in specifies departments
         /// </summary>
         /// <param name="departmentCodes">Codes of the departments</param>
         /// <returns>Competitions in the departments</returns>
-        Task<IEnumerable<Competition>> GetAsync(IEnumerable<string> departmentCodes = null);
+        Task<IEnumerable<CompetitionDTO>> GetAsync(IEnumerable<string> departmentCodes = null);
 
         /// <summary>
         /// Get all competitions in specifies departments
@@ -21,7 +21,7 @@ namespace PetanquePlanning.Business.Core.Infrastructure.Abstractions.Abstraction
         /// <param name="endDate"></param>
         /// <param name="departmentCodes">Codes of the departments</param>
         /// <returns>Competitions in the departments</returns>
-        Task<IEnumerable<Competition>> GetAsync(DateTimeOffset startDate,
+        Task<IEnumerable<CompetitionDTO>> GetAsync(DateTimeOffset startDate,
             DateTimeOffset endDate, IEnumerable<string> departmentCodes = null);
     }
 }

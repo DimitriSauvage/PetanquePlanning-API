@@ -12,6 +12,6 @@ namespace PetanquePlanning.Business.Location.Application.Abstractions.Abstractio
         /// Get all regions
         /// </summary>
         /// <returns>Regions</returns>
-        Task<List<RegionDTO>> GetAsync(bool includeDepartments = false);
+        Task<IEnumerable<RegionDTO>> GetAsync(bool includeDepartments = false);
     }
 }

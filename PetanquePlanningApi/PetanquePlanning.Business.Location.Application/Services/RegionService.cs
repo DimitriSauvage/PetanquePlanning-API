@@ -1,35 +1,40 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using AutoMapper;
 using PetanquePlanning.Business.Location.Application.Abstractions.Abstractions;
 using PetanquePlanning.Business.Location.Application.Abstractions.DTO;
 using PetanquePlanning.Business.Location.Infrastructure.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace PetanquePlanning.Business.Location.Application.Services
 {
     public class RegionService : IRegionService
     {
         #region Fields
+
         /// <summary>
         /// Department storage manager
         /// </summary>
-        public IRegionRepository RegionRepository { get; }
+        private IRegionRepository RegionRepository { get; }
+
         /// <summary>
         /// Mapper manager
         /// </summary>
-        public IMapper Mapper { get; }
+        private IMapper Mapper { get; }
+
         #endregion
 
         #region Constructor
+
         public RegionService(IRegionRepository regionRepository, IMapper mapper)
         {
             this.RegionRepository = regionRepository;
             this.Mapper = mapper;
         }
+
         #endregion
 
         #region Methods
+
         ///<inheritdoc/>
         public async Task<IEnumerable<RegionDTO>> GetAsync(bool includeDepartments = false)
         {
@@ -46,6 +51,7 @@ namespace PetanquePlanning.Business.Location.Application.Services
 
             return regionDTOs;
         }
+
         #endregion
     }
 }

@@ -1,7 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Application\Tools.Application.csproj" />
+    <ProjectReference Include="..\..\..\CSharp-Tools\Tools.GeoLocation.Domain\Tools.GeoLocation.Domain.csproj" />
+    <ProjectReference Include="..\PetanquePlanning.Business.Core.Domain\PetanquePlanning.Business.Core.Domain.csproj" />
+  </ItemGroup>
 
 </Project>

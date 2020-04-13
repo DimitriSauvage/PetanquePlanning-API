@@ -2,14 +2,14 @@
 using System.Threading.Tasks;
 using PetanquePlanning.Business.Core.Domain.Entities;
 
-namespace PetanquePlanning.Business.Core.Infrastructure.Abstractions.Abstractions
+namespace PetanquePlanning.Business.Core.Application.Abstractions.Abstractions
 {
-    public interface IClubRepository
+    public interface IClubService
     {
         /// <summary>
         /// Get all competitions
         /// </summary>
         /// <returns>Competitions</returns>
-        Task<IEnumerable<Club>> GetAsync();
+        Task<IEnumerable<ClubDTO>> GetAsync();
     }
 }
