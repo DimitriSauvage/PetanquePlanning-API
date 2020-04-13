@@ -1,32 +1,31 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Tools.Domain.Abstractions;
 using Tools.Domain.Extensions;
 using Tools.Domain.Helpers;
 
-namespace PetanquePlanning.Business.Identity.Domain.Entities
+namespace Abalone.Business.Identity.Domain.Entities
 {
-    public class Role : IdentityRole<long>, IEntityWithId, IEquatable<Role>, IComparable<Role>
+    public class ApplicationUserLogin : IdentityUserLogin<long>, IEntityWithId
     {
         #region Properties
+
         /// <summary>
-        /// Affecte ou obtient la description du role (profil)
+        /// Affecte ou obtient l'identifiiant
         /// </summary>
-        public string Description { get; set; }
+        public long Id { get; set; }
+
         #endregion
 
         #region Constructors
-        /// <summary>
-        /// Constructeur par défaut.
-        /// </summary>
-        public Role()
+
+        public ApplicationUserLogin()
         {
         }
+
         #endregion
 
         #region Methods
+
         /// <summary>
         /// recopie l'ensemble des propriétés simples (membres par valeur).
         /// ne recopie par les champs qui composent la clé unique ainsi que l'identifiant.
@@ -37,16 +36,18 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         {
             this.ShallowCopy(other);
         }
+
         #endregion
 
         #region Méthodes gérant les égalités et les comparaisons entre les objets
+
         /// <summary>
         /// Sert de fonction de hachage pour l'objet en cours.
         /// </summary>
         /// <returns>Code de hachage pour l'objet en cours.</returns>
         public override int GetHashCode()
         {
-            return HashCodeHelper.GetHashCode(NormalizedName);
+            return HashCodeHelper.GetHashCode(LoginProvider, UserId);
         }
 
         /// <summary>
@@ -64,7 +65,7 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         /// </summary>
         /// <param name="other">Objet à comparer avec cet objet.</param>
         /// <returns>Valeur qui indique l'ordre relatif des objets comparés.</returns>
-        public virtual int CompareTo(Role other)
+        public virtual int CompareTo(ApplicationUserLogin other)
         {
             return GetHashCode().CompareTo(other.GetHashCode());
         }
@@ -74,10 +75,11 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         /// </summary>
         /// <param name="other">Objet à comparer avec cet objet.</param>
         /// <returns>true si l'objet en cours est égal au paramètre other ; sinon, false.</returns>
-        public virtual bool Equals(Role other)
+        public virtual bool Equals(ApplicationUserLogin other)
         {
             return Equals(other as object);
         }
+
         #endregion
     }
 }

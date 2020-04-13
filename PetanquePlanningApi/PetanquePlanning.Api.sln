@@ -59,11 +59,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Core.Application", "PetanquePlanning.Business.Core.Application\PetanquePlanning.Business.Core.Application.csproj", "{F713B99B-AD71-43E6-9DAE-C322A799DB0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Identity.Infrastructure.Abstractionns", "PetanquePlanning.Business.Identity.Infrastructure.Abstractionns\PetanquePlanning.Business.Identity.Infrastructure.Abstractionns.csproj", "{4E5BD78E-8543-4C50-A0CC-F1F8ED178078}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Identity.Infrastructure.Abstractions", "PetanquePlanning.Business.Identity.Infrastructure.Abstractions\PetanquePlanning.Business.Identity.Infrastructure.Abstractions.csproj", "{4E5BD78E-8543-4C50-A0CC-F1F8ED178078}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Identity.Infrastructure.EntityFramework", "PetanquePlanning.Business.Identity.Infrastructure.EntityFramework\PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.csproj", "{96351785-22E5-483E-A772-9C69215EBA56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Identity.Application.Abstractionns", "PetanquePlanning.Business.Identity.Application.Abstractionns\PetanquePlanning.Business.Identity.Application.Abstractionns.csproj", "{A962363F-B9BA-4B7B-B013-2D26932BE6C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Identity.Application.Abstractions", "PetanquePlanning.Business.Identity.Application.Abstractions\PetanquePlanning.Business.Identity.Application.Abstractions.csproj", "{A962363F-B9BA-4B7B-B013-2D26932BE6C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Identity.Application", "PetanquePlanning.Business.Identity.Application\PetanquePlanning.Business.Identity.Application.csproj", "{DD86F0DD-D2DC-442B-BD35-745971F37310}"
 EndProject

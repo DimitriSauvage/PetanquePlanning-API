@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <RootNamespace>PetanquePlanning.Business.Identity.Application.Abstractionns</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Application\Tools.Application.csproj" />
+      <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Http\Tools.Http.csproj" />
+      <ProjectReference Include="..\PetanquePlanning.Business.Identity.Domain\PetanquePlanning.Business.Identity.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

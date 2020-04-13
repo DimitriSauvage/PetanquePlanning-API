@@ -145,10 +145,10 @@ namespace PetanquePlanningApi
 
         private void AddIdentity(IServiceCollection services)
         {
-            services.AddIdentity<User, Role>(options =>
+            services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
             {
                 options.Password.RequireDigit = false;
-                options.Password.RequiredLength = 4;
+                options.Password.RequiredLength = 0;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequireLowercase = false;

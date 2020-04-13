@@ -24,7 +24,7 @@ namespace PetanquePlanning.Business.Core.Infrastructure.EntityFramework.Reposito
         /// <inheritdoc />
         public async Task<IEnumerable<Club>> GetAsync()
         {
-            return await this.Query().ToListAsync();
+            return await this.ListAsync();
         }
 
         #endregion

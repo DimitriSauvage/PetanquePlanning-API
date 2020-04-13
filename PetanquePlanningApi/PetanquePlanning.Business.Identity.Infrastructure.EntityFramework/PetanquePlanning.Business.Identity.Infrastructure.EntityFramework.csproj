@@ -1,7 +1,13 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Infrastructure\Tools.Infrastructure.csproj" />
+      <ProjectReference Include="..\PetanquePlanning.Business.Identity.Domain\PetanquePlanning.Business.Identity.Domain.csproj" />
+      <ProjectReference Include="..\PetanquePlanning.Business.Identity.Infrastructure.Abstractions\PetanquePlanning.Business.Identity.Infrastructure.Abstractions.csproj" />
+    </ItemGroup>
 
 </Project>

@@ -4,10 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Abalone.Business.Identity.Domain.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using PetanquePlanning.Business.Identity.Domain.Entities;
 
 namespace PetanquePlanningApi
 {
-    public class PetanquePlanningDbContext : DbContext
+    public class PetanquePlanningDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, long, ApplicationUserClaim, ApplicationUserRole, ApplicationUserLogin, ApplicationRoleClaim, ApplicationUserToken>
     {
         public PetanquePlanningDbContext() : base() { }
         public PetanquePlanningDbContext(DbContextOptions<PetanquePlanningDbContext> options) : base(options)
@@ -27,6 +30,10 @@ namespace PetanquePlanningApi
             #endregion
 
             #region Core
+
+            modelBuilder.ApplyConfiguration(new ClubMap());
+            modelBuilder.ApplyConfiguration(new CompetitionMap());
+
             #endregion
         }
     }

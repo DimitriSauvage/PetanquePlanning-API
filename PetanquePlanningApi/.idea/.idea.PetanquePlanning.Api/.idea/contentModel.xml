@@ -244,6 +244,9 @@
         <e p="JsonContent.cs" t="Include" />
         <e p="PatchContent.cs" t="Include" />
       </e>
+      <e p="Enums" t="Include">
+        <e p="JWTAuthorizeTokenSource.cs" t="Include" />
+      </e>
       <e p="Exceptions" t="Include">
         <e p="HttpResponseException.cs" t="Include" />
       </e>
@@ -364,7 +367,6 @@
       <e p="PetanquePlanning.Api.sln" t="IncludeFlat" />
       <e p="PetanquePlanning.Business.Core.Application" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Class1.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.0" t="Include">
@@ -373,9 +375,16 @@
           </e>
         </e>
         <e p="PetanquePlanning.Business.Core.Application.csproj" t="IncludeRecursive" />
+        <e p="Services" t="Include">
+          <e p="ClubService.cs" t="Include" />
+          <e p="CompetitionService.cs" t="Include" />
+        </e>
       </e>
       <e p="PetanquePlanning.Business.Core.Application.Abstractions" t="IncludeRecursive">
-        <e p="Abstractions" t="Include" />
+        <e p="Abstractions" t="Include">
+          <e p="IClubService.cs" t="Include" />
+          <e p="ICompetitionService.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="DTO" t="Include">
           <e p="AddressDTO.cs" t="Include" />
@@ -452,6 +461,7 @@
       <e p="PetanquePlanning.Business.Core.Presentation" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
+          <e p="ClubController.cs" t="Include" />
           <e p="CompetitionController.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -463,14 +473,70 @@
         </e>
         <e p="PetanquePlanning.Business.Core.Presentation.csproj" t="IncludeRecursive" />
       </e>
+      <e p="PetanquePlanning.Business.Identity.Application" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="PetanquePlanning.Business.Identity.Application.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="PetanquePlanning.Business.Identity.Application.csproj" t="IncludeRecursive" />
+        <e p="Services" t="Include">
+          <e p="AccountService.cs" t="Include" />
+          <e p="ApplicationRoleService.cs" t="Include" />
+          <e p="ApplicationUserService.cs" t="Include" />
+        </e>
+      </e>
+      <e p="PetanquePlanning.Business.Identity.Application.Abstractions" t="IncludeRecursive">
+        <e p="Abstractions" t="Include">
+          <e p="IAccountService.cs" t="Include" />
+          <e p="IApplicationRoleService.cs" t="Include" />
+          <e p="IApplicationUserService.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="DTO" t="Include">
+          <e p="Account" t="Include">
+            <e p="LoginDTO.cs" t="Include" />
+            <e p="LoginResultDTO.cs" t="Include" />
+            <e p="ResetPasswordDTO.cs" t="Include" />
+            <e p="TokenWithClaimsDTO.cs" t="Include" />
+          </e>
+          <e p="ApplicationRoleDTO.cs" t="Include" />
+          <e p="Tokens" t="Include">
+            <e p="TokenRequestDTO.cs" t="Include" />
+          </e>
+          <e p="Users" t="Include">
+            <e p="ApplicationUserDTO.cs" t="Include" />
+          </e>
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="PetanquePlanning.Business.Identity.Application.Abstractions.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="PetanquePlanning.Business.Identity.Application.Abstractions.csproj" t="IncludeRecursive" />
+      </e>
       <e p="PetanquePlanning.Business.Identity.Domain" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Entities" t="Include">
-          <e p="Role.cs" t="Include" />
-          <e p="User.cs" t="Include" />
+          <e p="ApplicationRole.cs" t="Include" />
+          <e p="ApplicationRoleClaim.cs" t="Include" />
+          <e p="ApplicationUser.cs" t="Include" />
+          <e p="ApplicationUserClaim.cs" t="Include" />
+          <e p="ApplicationUserLogin.cs" t="Include" />
+          <e p="ApplicationUserRole.cs" t="Include" />
+          <e p="ApplicationUserToken.cs" t="Include" />
         </e>
         <e p="Enumerations" t="Include">
+          <e p="GenderEnum.cs" t="Include" />
           <e p="ProfileEnum.cs" t="Include" />
+        </e>
+        <e p="Exceptions" t="Include">
+          <e p="InvalidTokenException.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -480,6 +546,57 @@
           </e>
         </e>
         <e p="PetanquePlanning.Business.Identity.Domain.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="PetanquePlanning.Business.Identity.Infrastructure.Abstractions" t="IncludeRecursive">
+        <e p="Abstractions" t="Include">
+          <e p="IApplicationRoleRepository.cs" t="Include" />
+          <e p="IApplicationUserRepository.cs" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Maps" t="Include">
+          <e p="ApplicationRoleClaimMap.cs" t="Include" />
+          <e p="ApplicationRoleMap.cs" t="Include" />
+          <e p="ApplicationUserClaimMap.cs" t="Include" />
+          <e p="ApplicationUserLoginMap.cs" t="Include" />
+          <e p="ApplicationUserMap.cs" t="Include" />
+          <e p="ApplicationUserRoleMap.cs" t="Include" />
+          <e p="ApplicationUserTokenMap.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="PetanquePlanning.Business.Identity.Infrastructure.Abstractions.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="PetanquePlanning.Business.Identity.Infrastructure.Abstractions.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="PetanquePlanning.Business.Identity.Infrastructure.EntityFramework" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.csproj" t="IncludeRecursive" />
+        <e p="Repositories" t="Include">
+          <e p="ApplicationRoleRepository.cs" t="Include" />
+          <e p="ApplicationUserRepository.cs" t="Include" />
+        </e>
+      </e>
+      <e p="PetanquePlanning.Business.Identity.Presentation" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Class1.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netstandard2.0" t="Include">
+              <e p="PetanquePlanning.Business.Identity.Presentation.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="PetanquePlanning.Business.Identity.Presentation.csproj" t="IncludeRecursive" />
       </e>
       <e p="PetanquePlanning.Business.Location.Application" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />

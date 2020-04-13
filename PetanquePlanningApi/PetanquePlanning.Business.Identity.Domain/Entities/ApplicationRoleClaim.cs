@@ -1,66 +1,73 @@
-﻿using Microsoft.AspNetCore.Identity;
-using PetanquePlanning.Business.Identity.Domain.Enumerations;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
+using Microsoft.AspNetCore.Identity;
 using Tools.Domain.Abstractions;
 using Tools.Domain.Extensions;
 using Tools.Domain.Helpers;
 
-namespace PetanquePlanning.Business.Identity.Domain.Entities
+namespace Abalone.Business.Identity.Domain.Entities
 {
-    public class User : IdentityUser<long>, IEntityWithId, IComparable<User>, IEquatable<User>, IEntity
+    public class ApplicationRoleClaim : IdentityRoleClaim<long>, IEntityWithId<int>, IComparable<ApplicationRoleClaim>,
+        IEquatable<ApplicationRoleClaim>
     {
-        #region Fields
-        /// <summary>
-        /// Avatar
-        /// </summary>
-        public string Avatar { get; set; }
+        #region Properties
 
         /// <summary>
-        /// Birth date
+        /// Affecte ou obtient si le rôle dispose des droit de lecture sur la revendication
         /// </summary>
-        public DateTimeOffset BirthDate { get; set; }
+        public bool CanRead { get; set; }
 
         /// <summary>
-        /// Club identifier
+        /// Affecte ou obtient si le rôle dispose des droit de création sur la revendication
         /// </summary>
-        public long ClubId { get; set; }
+        public bool CanCreate { get; set; }
 
         /// <summary>
-        /// Favorite department codes
+        /// Affecte ou obtient si le rôle dispose des droit de mise à jour sur la revendication
         /// </summary>
-        public List<string> FavoriteDepartmentCodes { get; } = new List<string>();
+        public bool CanUpdate { get; set; }
 
         /// <summary>
-        /// First name
+        /// Affecte ou obtient si le rôle dispose des droit de suppression sur la revendication
         /// </summary>
-        public string FirstName { get; set; }
+        public bool CanDelete { get; set; }
+
+        #endregion
+
+        #region Constructors
 
         /// <summary>
-        /// Name
+        /// Constructeur par défaut.
         /// </summary>
-        public string Name { get; set; }
+        public ApplicationRoleClaim()
+        {
+        }
 
-        /// <summary>
-        /// Profile
-        /// </summary>
-        public ProfileEnum Profile { get; set; }
-
-        /// <summary>
-        /// Subscription date
-        /// </summary>
-        public DateTimeOffset SubscriptionDate { get; set; }
         #endregion
 
         #region Methods
+
+        /// <summary>
+        /// recopie l'ensemble des propriétés simples (membres par valeur).
+        /// ne recopie par les champs qui composent la clé unique ainsi que l'identifiant.
+        /// </summary>
+        /// <param name="other">objet à recopier</param>
+        /// <returns>copie</returns>
+        public virtual void CopyFrom(IEntity other)
+        {
+            this.ShallowCopy(other);
+        }
+
+        #endregion
+
+        #region Méthodes gérant les égalités et les comparaisons entre les objets
+
         /// <summary>
         /// Sert de fonction de hachage pour l'objet en cours.
         /// </summary>
         /// <returns>Code de hachage pour l'objet en cours.</returns>
         public override int GetHashCode()
         {
-            return HashCodeHelper.GetHashCode(this.NormalizedEmail);
+            return HashCodeHelper.GetHashCode(ClaimType, RoleId);
         }
 
         /// <summary>
@@ -78,7 +85,7 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         /// </summary>
         /// <param name="other">Objet à comparer avec cet objet.</param>
         /// <returns>Valeur qui indique l'ordre relatif des objets comparés.</returns>
-        public virtual int CompareTo(User other)
+        public virtual int CompareTo(ApplicationRoleClaim other)
         {
             return GetHashCode().CompareTo(other.GetHashCode());
         }
@@ -88,21 +95,11 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         /// </summary>
         /// <param name="other">Objet à comparer avec cet objet.</param>
         /// <returns>true si l'objet en cours est égal au paramètre other ; sinon, false.</returns>
-        public virtual bool Equals(User other)
+        public virtual bool Equals(ApplicationRoleClaim other)
         {
             return Equals(other as object);
         }
 
-        ///// <summary>
-        ///// Recopie l'ensemble des propriétés simples (membres par valeur).
-        ///// Ne recopie par les champs qui composent la clé unique ainsi que l'identifiant.
-        ///// </summary>
-        ///// <param name="other">objet à recopier</param>
-        ///// <returns>Copie</returns>
-        public void CopyFrom(IEntity other)
-        {
-            this.ShallowCopy(other);
-        }
         #endregion
     }
 }
