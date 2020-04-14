@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Abalone.Business.Identity.Application.DTO.Account
+namespace PetanquePlanning.Business.Identity.Application.Abstractionns.DTO.Account
 {
     public class ResetPasswordDTO
     {

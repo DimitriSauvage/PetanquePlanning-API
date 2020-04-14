@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using Newtonsoft.Json;
 
-namespace Abalone.Business.Identity.Application.DTO.Account
+namespace PetanquePlanning.Business.Identity.Application.Abstractionns.DTO.Account
 {
     /// <summary>
     /// Une instance de cette classe sera retournée après une authentification réussie de la part d'un utilisateur
@@ -19,7 +20,7 @@ namespace Abalone.Business.Identity.Application.DTO.Account
         /// <summary>
         /// User claims
         /// </summary>
-        public Dictionary<string, string> Claims { get; set; }
+        public IEnumerable<Claim> Claims { get; set; }
 
         /// <summary>
         /// Obtient un booléen qui indique que l'authentification s'est bien déroulée
@@ -38,7 +39,7 @@ namespace Abalone.Business.Identity.Application.DTO.Account
         {
         }
 
-        public TokenWithClaimsDTO(string accessToken, Dictionary<string, string> claimsPrincipal)
+        public TokenWithClaimsDTO(string accessToken, IEnumerable<Claim> claimsPrincipal)
         {
             this.AccessToken = accessToken;
             this.Claims = claimsPrincipal;

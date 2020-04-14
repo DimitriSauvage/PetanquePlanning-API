@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.Claims;
+﻿using System.Security.Claims;
 using System.Threading.Tasks;
-using Abalone.Business.Identity.Application.DTO.Account;
 using Abalone.Business.Identity.Application.DTO.Users;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using PetanquePlanning.Business.Identity.Application.Abstractionns.DTO.Account;
 using Tools.Http.Enums;
 
 namespace PetanquePlanning.Business.Identity.Application.Abstractionns.Abstractions
@@ -88,6 +86,7 @@ namespace PetanquePlanning.Business.Identity.Application.Abstractionns.Abstracti
         /// <returns>User id</returns>
         Task<long> GetUserIdFromRequestAsync(HttpContext httpContext,
             JWTAuthorizeTokenSource source = JWTAuthorizeTokenSource.Header);
+
         /// <summary>
         /// Créé le comte utilisateur
         /// </summary>

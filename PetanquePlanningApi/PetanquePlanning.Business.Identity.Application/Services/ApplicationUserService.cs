@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Abalone.Business.Identity.Application.Abstractions.Abstractions;
 using Abalone.Business.Identity.Application.DTO.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore.Storage;
 using PetanquePlanning.Business.Identity.Application.Abstractionns.Abstractions;
+using PetanquePlanning.Business.Identity.Application.Exceptions;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Abstractions;
 using Tools.Application.Abstractions.Abstractions;
@@ -84,8 +86,16 @@ namespace Abalone.Business.Identity.Application.Services
 
         #endregion
 
-
         #region Methods
+
+        /// <inheritdoc />
+        public async Task<ApplicationUserDTO> GetByEmailAsync(string email)
+        {
+            var user = await this.UserManager.FindByEmailAsync(email);
+            if (user == null) throw new EntityNotFoundException<ApplicationUser>();
+
+            return this.Mapper.Map<ApplicationUserDTO>(user);
+        }
 
         /// <inheritdoc />
         public async Task<IEnumerable<ApplicationUserDTO>> GetAllAsync()
@@ -110,7 +120,7 @@ namespace Abalone.Business.Identity.Application.Services
                 try
                 {
                     ApplicationUserDTO applicationUserDTO =
-                        await this.UpdateUserAsync(user, baseStoragePath, transaction);
+                        await this.UpdateAsync(user, baseStoragePath, transaction);
 
                     //Validation de la transaction
                     transaction.Commit();
@@ -126,7 +136,7 @@ namespace Abalone.Business.Identity.Application.Services
         }
 
         /// <inheritdoc />
-        public async Task<ApplicationUserDTO> UpdateUserAsync(ApplicationUserDTO user, string baseStoragePath,
+        public async Task<ApplicationUserDTO> UpdateAsync(ApplicationUserDTO user, string baseStoragePath,
             IDbContextTransaction transaction)
         {
             if (transaction == null) throw new ArgumentNullException(nameof(transaction));
@@ -194,8 +204,17 @@ namespace Abalone.Business.Identity.Application.Services
                     await newUser.SetMandatoryValuesAsync(this.UserManager);
 
                     //Ajout en bdd
-                    await this.Repository.AddAsync(newUser);
+                    IdentityResult result = await this.UserManager.CreateAsync(newUser);
+                    if (!result.Succeeded)
+                    {
+                        StringBuilder errorBuilder = new StringBuilder();
+                        foreach (var error in result.Errors)
+                        {
+                            errorBuilder.Append(error.Description);
+                        }
 
+                        throw new CreateUserException(errorBuilder.ToString());
+                    }
 
                     //On déplace l'image du dossier temp au dossier de l'utilisateur
                     if (user.Avatar != null)

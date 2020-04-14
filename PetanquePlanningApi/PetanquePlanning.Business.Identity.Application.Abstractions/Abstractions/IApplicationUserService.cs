@@ -8,6 +8,12 @@ namespace Abalone.Business.Identity.Application.Abstractions.Abstractions
     public interface IApplicationUserService
     {
         /// <summary>
+        /// Get a user by his email
+        /// </summary>
+        /// <param name="email">Email to search</param>
+        /// <returns>Found user</returns>
+        Task<ApplicationUserDTO> GetByEmailAsync(string email);
+        /// <summary>
         /// Récupère la liste de tous les utilisateurs
         /// </summary>
         /// <returns>liste de tous les utilisateurs</returns>
@@ -35,7 +41,7 @@ namespace Abalone.Business.Identity.Application.Abstractions.Abstractions
         /// <param name="baseStoragePath">Chemin de base des fichiers</param>
         /// <param name="transaction">Transaction dans laquelle effectuer le traitement</param>
         /// <returns>Aucun retour</returns>
-        Task<ApplicationUserDTO> UpdateUserAsync(ApplicationUserDTO user, string baseStoragePath,
+        Task<ApplicationUserDTO> UpdateAsync(ApplicationUserDTO user, string baseStoragePath,
             IDbContextTransaction transaction);
 
         /// <summary>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Security;
 using System.Threading.Tasks;
 
-namespace Abalone.Business.Identity.Application.DTO.Account
+namespace PetanquePlanning.Business.Identity.Application.Abstractionns.DTO.Account
 {
     public class LoginDTO
     {
@@ -17,6 +17,10 @@ namespace Abalone.Business.Identity.Application.DTO.Account
         /// Affecte ou obtient le mot de passe
         /// </summary>
         public string Password { get; set; }
+        /// <summary>
+        /// If we keep the user authentication
+        /// </summary>
+        public bool RememberMe { get; set; }
         #endregion
     }
 }

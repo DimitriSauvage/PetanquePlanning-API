@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
+using System.Security.Authentication;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Abalone.Business.Identity.Application.Abstractions.Abstractions;
-using Abalone.Business.Identity.Application.DTO.Account;
 using Abalone.Business.Identity.Application.DTO.Users;
 using AutoMapper;
-using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using PetanquePlanning.Business.Identity.Application.Abstractionns.Abstractions;
+using PetanquePlanning.Business.Identity.Application.Abstractionns.DTO.Account;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using PetanquePlanning.Business.Identity.Domain.Exceptions;
 using Tools.Http.Enums;
@@ -79,6 +77,8 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         {
             var result = await this.SignInManager.PasswordSignInAsync(model.Email, model.Password,
                 isPersistent: true, lockoutOnFailure: false);
+            if (!result.Succeeded) throw new InvalidCredentialException();
+
             return await this.GetTokenWithClaimsPrincipal(model);
         }
 
@@ -244,7 +244,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
             );
 
             var accessToken = new JwtSecurityTokenHandler().WriteToken(token);
-            return new TokenWithClaimsDTO(accessToken, claims.ToDictionary(k => k.Type, v => v.Value));
+            return new TokenWithClaimsDTO(accessToken, claims);
         }
 
         #endregion
