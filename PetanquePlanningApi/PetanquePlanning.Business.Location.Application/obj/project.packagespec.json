@@ -19,6 +19,9 @@
     "frameworks": {
       "netstandard2.0": {
         "projectReferences": {
+          "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Application.Abstractions\\Tools.Application.Abstractions.csproj": {
+            "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Application.Abstractions\\Tools.Application.Abstractions.csproj"
+          },
           "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.Abstractions\\PetanquePlanning.Business.Location.Application.Abstractions.csproj": {
             "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.Abstractions\\PetanquePlanning.Business.Location.Application.Abstractions.csproj"
           },

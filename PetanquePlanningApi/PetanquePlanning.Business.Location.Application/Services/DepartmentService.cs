@@ -1,50 +1,37 @@
-﻿using AutoMapper;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using PetanquePlanning.Business.Location.Application.Abstractions.Abstractions;
 using PetanquePlanning.Business.Location.Application.Abstractions.DTO;
-using PetanquePlanning.Business.Location.Infrastructure.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using PetanquePlanning.Business.Location.Domain.Entities;
+using PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions;
+using Tools.Application.Abstractions.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Application.Services
 {
-    public class DepartmentService : IDepartmentService
+    public class DepartmentService : BaseService<Department, IDepartmentRepository>, IDepartmentService
     {
         #region Fields
-        /// <summary>
-        /// Department storage manager
-        /// </summary>
-        private IDepartmentRepository DepartmentRepository { get; }
-        /// <summary>
-        /// Mapper manager
-        /// </summary>
-        private  IMapper Mapper { get; }
+
         #endregion
 
         #region Constructor
-        public DepartmentService(IDepartmentRepository departmentRepository, IMapper mapper)
-        {
-            this.DepartmentRepository = departmentRepository;
-            this.Mapper = mapper;
-        }
+
         #endregion
 
         #region Methods
+
         ///<inheritdoc/>
-        public async Task<IEnumerable<DepartmentDTO>> GetAsync(bool withAdjacentDepartments = false, bool withRegion = false)
+        public async Task<IEnumerable<DepartmentDTO>> GetAsync(bool withAdjacentDepartments = false,
+            bool withRegion = false)
         {
-            List<DepartmentDTO> departmentDTOs = new List<DepartmentDTO>();
             //Get departments
-            var departments = await this.DepartmentRepository.GetAsync(withAdjacentDepartments, withRegion);
+            var departments = await this.Repository.GetAsync(withAdjacentDepartments, withRegion);
 
             //Map to the DTO
-            foreach (var department in departments)
-            {
-                departmentDTOs.Add(this.Mapper.Map<DepartmentDTO>(department));
-            }
-
-            return departmentDTOs;
+            return departments.Select(department => this.Mapper.Map<DepartmentDTO>(department)).ToList();
         }
+
         #endregion
     }
 }

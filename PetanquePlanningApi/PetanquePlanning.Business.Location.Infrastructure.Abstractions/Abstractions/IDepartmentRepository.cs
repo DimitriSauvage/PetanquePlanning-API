@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using PetanquePlanning.Business.Location.Domain.Entities;
+using Tools.Infrastructure.Abstraction;
 
-namespace PetanquePlanning.Business.Location.Infrastructure.Abstractions
+namespace PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions
 {
-    public interface IDepartmentRepository
+    public interface IDepartmentRepository : IRepository<Department>
     {
         /// <summary>
         /// Get all departments

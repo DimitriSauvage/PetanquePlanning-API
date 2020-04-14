@@ -19,6 +19,7 @@ using PetanquePlanning.Business.Identity.Domain.Entities;
 using PetanquePlanning.Business.Location.Application.Abstractions.Abstractions;
 using PetanquePlanning.Business.Location.Application.Services;
 using PetanquePlanning.Business.Location.Infrastructure.Abstractions;
+using PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions;
 using PetanquePlanning.Business.Location.Infrastructure.EntityFramework;
 using Tools.Infrastructure.Settings;
 

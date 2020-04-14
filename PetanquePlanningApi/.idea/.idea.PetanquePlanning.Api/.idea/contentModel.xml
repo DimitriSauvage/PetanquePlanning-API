@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
+    <e p="C:\Users\dimit\.Rider2019.3\Config\scratches" t="IncludeRecursive" />
     <e p="C:\Users\dimit\.Rider2019.3\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\dimit\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_PetanquePlanning.Api.-471475540.00" t="ExcludeRecursive" />
     <e p="C:\Users\dimit\Github\CSharp-Tools\Tools" t="IncludeRecursive">
@@ -182,7 +183,7 @@
     </e>
     <e p="C:\Users\dimit\Github\CSharp-Tools\Tools.Application.Abstractions" t="IncludeRecursive">
       <e p="Abstractions" t="Include">
-        <e p="Service.cs" t="Include" />
+        <e p="BaseService.cs" t="Include" />
       </e>
       <e p="bin" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive">
@@ -494,6 +495,9 @@
       </e>
       <e p="PetanquePlanning.Business.Identity.Application" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Exceptions" t="Include">
+          <e p="CreateUserException.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.0" t="Include">
@@ -608,7 +612,7 @@
       <e p="PetanquePlanning.Business.Identity.Presentation" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
-          <e p="AccountsController.cs" t="Include" />
+          <e p="AccountController.cs" t="Include" />
           <e p="ApplicationRoleController.cs" t="Include" />
           <e p="ApplicationUserController.cs" t="Include" />
         </e>

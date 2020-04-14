@@ -1,35 +1,20 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using AutoMapper;
 using PetanquePlanning.Business.Location.Application.Abstractions.Abstractions;
 using PetanquePlanning.Business.Location.Application.Abstractions.DTO;
-using PetanquePlanning.Business.Location.Infrastructure.Abstractions;
+using PetanquePlanning.Business.Location.Domain.Entities;
+using PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions;
+using Tools.Application.Abstractions.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Application.Services
 {
-    public class RegionService : IRegionService
+    public class RegionService : BaseService<Region, IRegionRepository>, IRegionService
     {
         #region Fields
-
-        /// <summary>
-        /// Department storage manager
-        /// </summary>
-        private IRegionRepository RegionRepository { get; }
-
-        /// <summary>
-        /// Mapper manager
-        /// </summary>
-        private IMapper Mapper { get; }
 
         #endregion
 
         #region Constructor
-
-        public RegionService(IRegionRepository regionRepository, IMapper mapper)
-        {
-            this.RegionRepository = regionRepository;
-            this.Mapper = mapper;
-        }
 
         #endregion
 
@@ -38,18 +23,18 @@ namespace PetanquePlanning.Business.Location.Application.Services
         ///<inheritdoc/>
         public async Task<IEnumerable<RegionDTO>> GetAsync(bool includeDepartments = false)
         {
-            List<RegionDTO> regionDTOs = new List<RegionDTO>();
+            List<RegionDTO> regionDto = new List<RegionDTO>();
 
             //Get departments
-            var regions = await this.RegionRepository.GetAsync(includeDepartments);
+            var regions = await this.Repository.GetAsync(includeDepartments);
 
             //Map to the DTO
             foreach (var region in regions)
             {
-                regionDTOs.Add(this.Mapper.Map<RegionDTO>(region));
+                regionDto.Add(this.Mapper.Map<RegionDTO>(region));
             }
 
-            return regionDTOs;
+            return regionDto;
         }
 
         #endregion

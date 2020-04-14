@@ -9,12 +9,16 @@ using PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Abstraction
 using Tools.Application.Abstractions.Abstractions;
 using Tools.Infrastructure.Exceptions;
 
-namespace Abalone.Business.Identity.Application.Services
+namespace PetanquePlanning.Business.Identity.Application.Services
 {
-    public class ApplicationRoleService : Service<ApplicationRole, IApplicationRoleRepository>, IApplicationRoleService
+    public class ApplicationRoleService : BaseService<ApplicationRole, IApplicationRoleRepository>,
+        IApplicationRoleService
     {
         #region Private attributes
 
+        /// <summary>
+        /// User manager
+        /// </summary>
         private IApplicationUserRepository ApplicationUserRepository { get; }
 
         #endregion
@@ -95,7 +99,7 @@ namespace Abalone.Business.Identity.Application.Services
 
                     return this.Mapper.Map<ApplicationRoleDTO>(role);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     transaction.Rollback();
                     throw;
@@ -137,7 +141,7 @@ namespace Abalone.Business.Identity.Application.Services
                     await this.Repository.SaveChangesAsync();
                     transaction.Commit();
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     transaction.Rollback();
                     throw;

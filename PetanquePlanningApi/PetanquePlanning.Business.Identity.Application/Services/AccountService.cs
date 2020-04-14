@@ -134,7 +134,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
             };
 
             var result = new JwtSecurityTokenHandler().ValidateToken(token, tokenValidationParameters,
-                out SecurityToken securityToken);
+                out _);
 
             return result;
         }
@@ -174,16 +174,19 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         public async Task<long> GetUserIdFromRequestAsync(HttpContext httpContext,
             JWTAuthorizeTokenSource source = JWTAuthorizeTokenSource.Header)
         {
-            var token = httpContext.Request.GetJWTAuthorizeToken(source);
-            if (string.IsNullOrEmpty(token))
-                throw new NullReferenceException($"The token is null or empty");
+            return await Task.Run(() =>
+            {
+                var token = httpContext.Request.GetJWTAuthorizeToken(source);
+                if (string.IsNullOrEmpty(token))
+                    throw new NullReferenceException($"The token is null or empty");
 
-            if (!EnsureTokenIsValid(token))
-                throw new InvalidTokenException(token);
+                if (!EnsureTokenIsValid(token))
+                    throw new InvalidTokenException(token);
 
-            var claims = GetPrincipal(token);
-            var userIdClaim = claims.FindFirst(claim => claim.Type == ClaimTypes.Sid);
-            return (long.TryParse(userIdClaim?.Value, out long x) ? x : 0);
+                var claims = GetPrincipal(token);
+                var userIdClaim = claims.FindFirst(claim => claim.Type == ClaimTypes.Sid);
+                return (long.TryParse(userIdClaim?.Value, out long x) ? x : 0);
+            });
         }
 
         /// <inheritdoc />

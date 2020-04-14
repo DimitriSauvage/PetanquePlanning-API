@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Application.Abstractions\Tools.Application.Abstractions.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Location.Application.Abstractions\PetanquePlanning.Business.Location.Application.Abstractions.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Location.Infrastructure.Abstractions\PetanquePlanning.Business.Location.Infrastructure.Abstractions.csproj" />
   </ItemGroup>

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions;
 using Tools.Infrastructure.EntityFramework.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Infrastructure.EntityFramework
