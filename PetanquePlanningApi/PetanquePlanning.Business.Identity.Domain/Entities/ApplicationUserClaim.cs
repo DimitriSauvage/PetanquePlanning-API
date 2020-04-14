@@ -4,7 +4,7 @@ using Tools.Domain.Abstractions;
 using Tools.Domain.Extensions;
 using Tools.Domain.Helpers;
 
-namespace Abalone.Business.Identity.Domain.Entities
+namespace PetanquePlanning.Business.Identity.Domain.Entities
 {
     public class ApplicationUserClaim : IdentityUserClaim<long>, IEntityWithId<int>, IComparable<ApplicationUserClaim>,
         IEquatable<ApplicationUserClaim>
@@ -67,7 +67,7 @@ namespace Abalone.Business.Identity.Domain.Entities
         /// <returns>Code de hachage pour l'objet en cours.</returns>
         public override int GetHashCode()
         {
-            return HashCodeHelper.GetHashCode(ClaimType, UserId);
+            return HashCodeHelper.GetHashCode(this.ClaimType, this.UserId);
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace Abalone.Business.Identity.Domain.Entities
         /// <returns>true si l'objet spécifié est égal à l'objet actif ; sinon, false.</returns>
         public override bool Equals(object obj)
         {
-            return GetHashCode().Equals(obj.GetHashCode());
+            return GetHashCode().Equals(obj?.GetHashCode());
         }
 
         /// <summary>

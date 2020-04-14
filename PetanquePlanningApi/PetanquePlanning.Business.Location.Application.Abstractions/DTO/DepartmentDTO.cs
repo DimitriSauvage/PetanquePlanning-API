@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace PetanquePlanning.Business.Location.Application.Abstractions.DTO
 {
@@ -9,7 +7,7 @@ namespace PetanquePlanning.Business.Location.Application.Abstractions.DTO
         /// <summary>
         /// Adjacent departments
         /// </summary>
-        public List<DepartmentDTO> AdjacentDepartments { get; set; } = new List<DepartmentDTO>();
+        public IEnumerable<DepartmentDTO> AdjacentDepartments { get; set; } = new List<DepartmentDTO>();
 
         /// <summary>
         /// Code

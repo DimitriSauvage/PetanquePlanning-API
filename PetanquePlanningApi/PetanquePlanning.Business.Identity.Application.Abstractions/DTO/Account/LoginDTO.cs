@@ -4,17 +4,17 @@ using System.Linq;
 using System.Security;
 using System.Threading.Tasks;
 
-namespace PetanquePlanning.Business.Identity.Application.Abstractionns.DTO.Account
+namespace PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Account
 {
     public class LoginDTO
     {
         #region Properties
         /// <summary>
-        /// Affecte ou obtient l'email
+        /// Login email
         /// </summary>
         public string Email { get; set; }
         /// <summary>
-        /// Affecte ou obtient le mot de passe
+        /// Login password
         /// </summary>
         public string Password { get; set; }
         /// <summary>

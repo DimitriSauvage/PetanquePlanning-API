@@ -1,10 +1,9 @@
-﻿using PetanquePlanning.Business.Core.Domain.Enumerations;
-using System;
+﻿using System;
+using PetanquePlanning.Business.Core.Domain.Entities;
+using PetanquePlanning.Business.Core.Domain.Enumerations;
 using Tools.Application.DTOs;
-using Tools.Domain.Abstractions;
-using Tools.Domain.DataAnnotations;
 
-namespace PetanquePlanning.Business.Core.Domain.Entities
+namespace PetanquePlanning.Business.Core.Application.Abstractions.DTO
 {
     public class CompetitionDTO
     {
@@ -59,8 +58,3 @@ namespace PetanquePlanning.Business.Core.Domain.Entities
         public string OrganizerId { get; set; }
     }
 }
-
-
-
-
-

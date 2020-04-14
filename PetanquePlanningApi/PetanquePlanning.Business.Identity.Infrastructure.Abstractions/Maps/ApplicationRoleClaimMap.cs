@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Abalone.Business.Identity.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using PetanquePlanning.Business.Identity.Domain.Entities;
 
 namespace PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Maps
 {
@@ -19,7 +19,6 @@ namespace PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Maps
             builder.Property(x => x.CanUpdate).IsRequired().HasDefaultValue(false);
             builder.Property(x => x.CanDelete).IsRequired().HasDefaultValue(false);
             builder.Property(x => x.CanRead).IsRequired().HasDefaultValue(false);
-
         }
     }
 }

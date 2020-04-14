@@ -1,17 +1,11 @@
-﻿﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.ComponentModel.DataAnnotations;
-
-namespace Abalone.Business.Identity.Domain.Enums
+﻿namespace PetanquePlanning.Business.Identity.Domain.Enumerations
 {
     /// <summary>
-    /// Genres dispibles
+    /// Available genders
     /// </summary>
     public enum GenderEnum
     {
-        Unknow = 0,
+        Unknown = 0,
         Mister = 1,
         Madam = 2,
         Miss = 3

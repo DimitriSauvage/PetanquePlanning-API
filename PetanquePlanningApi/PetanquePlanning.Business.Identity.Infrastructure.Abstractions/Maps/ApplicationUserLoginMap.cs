@@ -1,6 +1,6 @@
-﻿using Abalone.Business.Identity.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using PetanquePlanning.Business.Identity.Domain.Entities;
 using Tools.Infrastructure.EntityFramework.Abstractions;
 
 namespace PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Maps

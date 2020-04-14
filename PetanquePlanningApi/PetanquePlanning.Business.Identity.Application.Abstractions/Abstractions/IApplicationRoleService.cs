@@ -1,10 +1,9 @@
-﻿using Abalone.Business.Identity.Application.DTO;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Abalone.Business.Identity.Application.DTO;
+using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Roles;
 
-namespace Abalone.Business.Identity.Application.Abstractions.Abstractions
+namespace PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions
 {
     public interface IApplicationRoleService
     {
@@ -18,7 +17,7 @@ namespace Abalone.Business.Identity.Application.Abstractions.Abstractions
         /// <summary>
         /// Créer un nouveau rôle
         /// </summary>
-        /// <param name="dto">Rôle à créer</param>
+        /// <param name="roleDto">Rôle à créer</param>
         /// <returns>Rôle créé</returns>
         Task<ApplicationRoleDTO> CreateAsync(ApplicationRoleDTO roleDto);
 

@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Abalone.Business.Identity.Application.Abstractions.Abstractions;
 using Abalone.Business.Identity.Application.DTO.Users;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication;
@@ -12,9 +11,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
-using PetanquePlanning.Business.Identity.Application.Abstractionns.Abstractions;
-using PetanquePlanning.Business.Identity.Application.Abstractionns.DTO.Account;
+using PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions;
+using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Account;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using Tools.Api.Abstractions;
 
@@ -23,26 +21,18 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
     /// <summary>
     /// Classe d'API chargée de gérer l'authentification d'un l'utilisateur
     /// </summary>
-    /// <see cref="https://digitalcontrol.me/blog/indentity-asp-net-core-2/"/>
+    /// <see>
+    ///     <cref>https://digitalcontrol.me/blog/indentity-asp-net-core-2/</cref>
+    /// </see>
     [Route("accounts")]
     public class AccountController : ApiController
     {
         #region Private properties
 
         /// <summary>
-        /// User manager
-        /// </summary>
-        private UserManager<ApplicationUser> UserManager { get; }
-
-        /// <summary>
         /// Sign in manager
         /// </summary>
         private SignInManager<ApplicationUser> SignInManager { get; }
-
-        /// <summary>
-        /// Conf manager
-        /// </summary>
-        private IConfiguration Configuration { get; }
 
         /// <summary>
         /// Mapper
@@ -72,17 +62,13 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         /// <summary>
         /// Constructeur par défaut
         /// </summary>
-        public AccountController(UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager,
-            IConfiguration configuration,
+        public AccountController(SignInManager<ApplicationUser> signInManager,
             IAccountService accountService,
             IMapper mapper,
             IApplicationUserService applicationUserService,
             IHostingEnvironment hostingEnvironment)
         {
-            this.UserManager = userManager;
             this.SignInManager = signInManager;
-            this.Configuration = configuration;
             this.AccountService = accountService;
             this.Mapper = mapper;
             this.ApplicationUserService = applicationUserService;
@@ -130,7 +116,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
                     result.User = await this.ApplicationUserService.GetByEmailAsync(loginDto.Email);
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 result.Error = "Login failed due to incorrect credentials";
             }

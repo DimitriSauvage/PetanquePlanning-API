@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace PetanquePlanning.Business.Location.Application.Abstractions.DTO
 {
@@ -14,7 +12,7 @@ namespace PetanquePlanning.Business.Location.Application.Abstractions.DTO
         /// <summary>
         /// Departments of the region
         /// </summary>
-        public List<DepartmentDTO> Departments { get; set; }
+        public IEnumerable<DepartmentDTO> Departments { get; set; }
 
         /// <summary>
         /// Name

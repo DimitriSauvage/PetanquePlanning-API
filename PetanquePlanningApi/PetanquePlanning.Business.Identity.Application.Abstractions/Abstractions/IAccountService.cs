@@ -3,10 +3,10 @@ using System.Threading.Tasks;
 using Abalone.Business.Identity.Application.DTO.Users;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
-using PetanquePlanning.Business.Identity.Application.Abstractionns.DTO.Account;
+using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Account;
 using Tools.Http.Enums;
 
-namespace PetanquePlanning.Business.Identity.Application.Abstractionns.Abstractions
+namespace PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions
 {
     public interface IAccountService
     {

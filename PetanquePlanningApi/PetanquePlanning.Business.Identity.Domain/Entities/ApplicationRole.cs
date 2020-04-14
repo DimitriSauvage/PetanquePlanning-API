@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Abalone.Business.Identity.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Tools.Domain.Abstractions;
 using Tools.Domain.Extensions;
@@ -31,13 +30,6 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         #endregion
 
         #region Constructors
-
-        /// <summary>
-        /// Constructeur par défaut.
-        /// </summary>
-        public ApplicationRole()
-        {
-        }
 
         #endregion
 
@@ -74,7 +66,7 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         /// <returns>true si l'objet spécifié est égal à l'objet actif ; sinon, false.</returns>
         public override bool Equals(object obj)
         {
-            return this.GetHashCode().Equals(obj.GetHashCode());
+            return this.GetHashCode().Equals(obj?.GetHashCode());
         }
 
         /// <summary>

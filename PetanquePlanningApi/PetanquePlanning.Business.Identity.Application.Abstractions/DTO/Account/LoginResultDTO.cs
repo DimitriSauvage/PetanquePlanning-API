@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.Text;
 using Abalone.Business.Identity.Application.DTO.Users;
 
-namespace PetanquePlanning.Business.Identity.Application.Abstractionns.DTO.Account
+namespace PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Account
 {
     public class LoginResultDTO
     {
         #region Properties
 
         /// <summary>
-        /// Message d'erreur
+        /// Error message
         /// </summary>
         public string Error { get; set; }
 
         /// <summary>
-        /// Identifiant de l'utilisateur
+        /// Logged user
         /// </summary>
         public ApplicationUserDTO User { get; set; }
 

@@ -1,27 +1,24 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PetanquePlanning.Business.Location.Domain.Entities;
-using PetanquePlanning.Business.Location.Infrastructure.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using PetanquePlanning.Business.Location.Domain.Entities;
 using PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions;
 using Tools.Infrastructure.EntityFramework.Abstractions;
 
-namespace PetanquePlanning.Business.Location.Infrastructure.EntityFramework
+namespace PetanquePlanning.Business.Location.Infrastructure.EntityFramework.Repositories
 {
     public class RegionRepository : DbRepository<Region>, IRegionRepository
     {
         #region Constructor
+
         public RegionRepository(DbContext dbContext) : base(dbContext)
         {
-
         }
 
         #endregion
 
         #region Methods
+
         ///<inheritdoc/>
         public async Task<IEnumerable<Region>> GetAsync(bool includeDepartments = false)
         {
@@ -30,6 +27,7 @@ namespace PetanquePlanning.Business.Location.Infrastructure.EntityFramework
 
             return await result.ToListAsync();
         }
+
         #endregion
     }
 }

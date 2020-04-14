@@ -1,8 +1,6 @@
-﻿using PetanquePlanning.Business.Location.Application.Abstractions.DTO;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using PetanquePlanning.Business.Location.Application.Abstractions.DTO;
 
 namespace PetanquePlanning.Business.Location.Application.Abstractions.Abstractions
 {

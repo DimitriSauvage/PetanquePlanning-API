@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Abalone.Business.Identity.Application.DTO.Users;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Abalone.Business.Identity.Application.Abstractions.Abstractions
+namespace PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions
 {
     public interface IApplicationUserService
     {

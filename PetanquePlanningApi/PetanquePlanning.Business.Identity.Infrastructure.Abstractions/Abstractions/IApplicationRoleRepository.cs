@@ -8,10 +8,10 @@ namespace PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Abstrac
     public interface IApplicationRoleRepository : IRepository<ApplicationRole>
     {
         /// <summary>
-        /// Récupère un profil par son nom
+        /// Get a role by his name
         /// </summary>
-        /// <param name="role">Nom du profil</param>
-        /// <returns></returns>
+        /// <param name="role">Role name</param>
+        /// <returns>Role</returns>
         Task<ApplicationRole> GetByName(string role);
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Abalone.Business.Identity.Domain.Enums;
 using Microsoft.AspNetCore.Identity;
 using PetanquePlanning.Business.Identity.Domain.Enumerations;
 using Tools.Domain.Abstractions;
@@ -51,11 +50,6 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         public string LastName { get; set; }
 
         /// <summary>
-        /// Profile
-        /// </summary>
-        public ProfileEnum Profile { get; set; }
-
-        /// <summary>
         /// Subscription date
         /// </summary>
         public DateTimeOffset SubscriptionDate { get; set; }
@@ -71,17 +65,14 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         public long ApplicationRoleId { get; set; }
 
         /// <summary>
-        /// Affecte ou obtient l'information si l'utilisateur doit obligatoirement changer son mot de passe
+        /// If the user has to change his password
         /// </summary>
         public bool MustChangePassword { get; set; }
 
         /// <summary>
         /// Full name
         /// </summary>
-        public string FullName
-        {
-            get { return $"{this.LastName} {this.FirstName}"; }
-        }
+        public string FullName => $"{this.LastName} {this.FirstName}";
 
         #endregion
 
@@ -103,7 +94,7 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         /// <returns>true si l'objet spécifié est égal à l'objet actif ; sinon, false.</returns>
         public override bool Equals(object obj)
         {
-            return GetHashCode().Equals(obj.GetHashCode());
+            return GetHashCode().Equals(obj?.GetHashCode());
         }
 
         /// <summary>

@@ -407,7 +407,6 @@
         </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="DTO" t="Include">
-          <e p="AddressDTO.cs" t="Include" />
           <e p="ClubDTO.cs" t="Include" />
           <e p="CompetitionDTO.cs" t="Include" />
         </e>
@@ -441,7 +440,6 @@
           </e>
         </e>
         <e p="PetanquePlanning.Business.Core.Domain.csproj" t="IncludeRecursive" />
-        <e p="Program.cs" t="Include" />
       </e>
       <e p="PetanquePlanning.Business.Core.Infrastructure.Abstractions" t="IncludeRecursive">
         <e p="Abstractions" t="Include">
@@ -526,9 +524,8 @@
             <e p="ResetPasswordDTO.cs" t="Include" />
             <e p="TokenWithClaimsDTO.cs" t="Include" />
           </e>
-          <e p="ApplicationRoleDTO.cs" t="Include" />
-          <e p="Tokens" t="Include">
-            <e p="TokenRequestDTO.cs" t="Include" />
+          <e p="Roles" t="Include">
+            <e p="ApplicationRoleDTO.cs" t="Include" />
           </e>
           <e p="Users" t="Include">
             <e p="ApplicationUserDTO.cs" t="Include" />
@@ -556,7 +553,6 @@
         </e>
         <e p="Enumerations" t="Include">
           <e p="GenderEnum.cs" t="Include" />
-          <e p="ProfileEnum.cs" t="Include" />
         </e>
         <e p="Exceptions" t="Include">
           <e p="InvalidTokenException.cs" t="Include" />

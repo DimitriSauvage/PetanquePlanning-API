@@ -1,26 +1,26 @@
-﻿namespace Abalone.Business.Identity.Application.DTO
+﻿namespace PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Roles
 {
     public class ApplicationRoleDTO
     {
         #region Properties
 
         /// <summary>
-        /// Affecte ou obtient la description du role (profil)
+        /// Description
         /// </summary>
         public string Description { get; set; }
 
         /// <summary>
-        /// Affecte ou obtient l'identifiant
+        /// Identifier
         /// </summary>
         public long Id { get; set; }
 
         /// <summary>
-        /// Affecte ou obtient le nom du role
+        /// Name
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Affecte ou obtient le nom normalisé du role
+        /// Normalized name
         /// </summary>
         public string NormalizedName { get; set; }
 

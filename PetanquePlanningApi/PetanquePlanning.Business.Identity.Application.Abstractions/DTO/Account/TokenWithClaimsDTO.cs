@@ -3,7 +3,7 @@ using System.Linq;
 using System.Security.Claims;
 using Newtonsoft.Json;
 
-namespace PetanquePlanning.Business.Identity.Application.Abstractionns.DTO.Account
+namespace PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Account
 {
     /// <summary>
     /// Une instance de cette classe sera retournée après une authentification réussie de la part d'un utilisateur

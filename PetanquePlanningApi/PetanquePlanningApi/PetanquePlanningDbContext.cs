@@ -4,8 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Abalone.Business.Identity.Domain.Entities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using PetanquePlanning.Business.Core.Infrastructure.EntityFramework.Maps;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 
 namespace PetanquePlanningApi

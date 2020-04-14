@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Abalone.Business.Identity.Domain.Enums;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using PetanquePlanning.Business.Identity.Domain.Enumerations;
 using Tools.Application.DTOs;
@@ -65,7 +64,7 @@ namespace Abalone.Business.Identity.Application.DTO.Users
         /// <summary>
         /// User gender
         /// </summary>
-        public EnumDTO<GenderEnum> Gender { get; set; } = new EnumDTO<GenderEnum>(GenderEnum.Unknow);
+        public EnumDTO<GenderEnum> Gender { get; set; } = new EnumDTO<GenderEnum>(GenderEnum.Unknown);
 
         /// <summary>
         /// First name
@@ -76,11 +75,6 @@ namespace Abalone.Business.Identity.Application.DTO.Users
         /// LastName
         /// </summary>
         public string LastName { get; set; }
-
-        /// <summary>
-        /// Profile
-        /// </summary>
-        public EnumDTO<ProfileEnum> Profile { get; set; } = new EnumDTO<ProfileEnum>(ProfileEnum.Player);
 
         /// <summary>
         /// Subscription date
@@ -96,7 +90,6 @@ namespace Abalone.Business.Identity.Application.DTO.Users
         /// Id of the application role
         /// </summary>
         public long ApplicationRoleId { get; set; }
-
 
         /// <summary>
         /// Affecte ou obtient l'id de l'utilisateur

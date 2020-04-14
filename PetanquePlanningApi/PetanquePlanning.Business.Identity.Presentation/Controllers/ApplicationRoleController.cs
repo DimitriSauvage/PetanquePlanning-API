@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Abalone.Business.Identity.Application.Abstractions.Abstractions;
-using Abalone.Business.Identity.Application.DTO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions;
+using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Roles;
 using Tools.Api.Abstractions;
 
 namespace PetanquePlanning.Business.Identity.Presentation.Controllers
@@ -75,7 +73,6 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         /// <summary>
         /// Update a role
         /// </summary>
-        /// <param name="id">Role to update id</param>
         /// <param name="roleDto">Objet modifié par l'utilisateur</param>
         /// <returns></returns>
         [HttpPut("{roleId}")]

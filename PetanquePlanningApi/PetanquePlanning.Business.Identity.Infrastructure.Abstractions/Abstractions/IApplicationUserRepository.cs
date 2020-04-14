@@ -8,9 +8,9 @@ namespace PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Abstrac
     public interface IApplicationUserRepository : IRepository<ApplicationUser>
     {
         /// <summary>
-        /// Récupération de tous les utilisateurs ayant le rôle demandé
+        /// Get all users with this role
         /// </summary>
-        /// <param name="roleId">Identifiant du rôle</param>
+        /// <param name="roleId">Role identifier</param>
         /// <returns></returns>
         Task<IEnumerable<ApplicationUser>> GetByRoleAsync(long roleId);
     }

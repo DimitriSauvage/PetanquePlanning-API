@@ -1,14 +1,13 @@
-﻿using Tools.Domain.Abstractions;
-using Tools.Domain.DataAnnotations;
+﻿using PetanquePlanning.Business.Core.Domain.Entities;
 
-namespace PetanquePlanning.Business.Core.Domain.Entities
+namespace PetanquePlanning.Business.Core.Application.Abstractions.DTO
 {
     public class ClubDTO
     {
         /// <summary>
         /// Address
         /// </summary>
-        public AddressDTO Address { get; set; }
+        public Address Address { get; set; }
 
         /// <summary>
         /// Name

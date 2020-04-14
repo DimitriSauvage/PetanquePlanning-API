@@ -1,14 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Abalone.Business.Identity.Application.Abstractions.Abstractions;
 using Abalone.Business.Identity.Application.DTO.Users;
-using AutoMapper;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using PetanquePlanning.Business.Identity.Application.Abstractionns.Abstractions;
-using PetanquePlanning.Business.Identity.Domain.Entities;
+using PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions;
 using Tools.Api.Abstractions;
 
 namespace PetanquePlanning.Business.Identity.Presentation.Controllers
@@ -22,32 +18,32 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
     {
         #region Private properties
 
-        private readonly IMapper mapper;
-        private readonly IAccountService accountService = null;
-        private readonly IApplicationUserService applicationUserService = null;
-        private readonly IHostingEnvironment hostingEnvironment = null;
+        /// <summary>
+        /// Account manager
+        /// </summary>
+        private IAccountService AccountService { get; }
+
+        /// <summary>
+        /// User manager
+        /// </summary>
+        private IApplicationUserService ApplicationUserService { get; }
+
+        /// <summary>
+        /// Environment information
+        /// </summary>
+        private IHostingEnvironment HostingEnvironment { get; }
 
         #endregion
 
         #region Constructors
 
-        /// <summary>
-        /// Contrôleur par défaut
-        /// </summary>
-        /// <param name="userManager"></param>
-        /// <param name="signInManager"></param>
-        /// <param name="configuration"></param>
-        public ApplicationUserController(UserManager<ApplicationUser> userManager,
-            SignInManager<ApplicationUser> signInManager,
-            IMapper mapper,
-            IApplicationUserService applicationUserService,
+        public ApplicationUserController(IApplicationUserService applicationUserService,
             IAccountService accountService,
             IHostingEnvironment hostingEnvironment)
         {
-            this.mapper = mapper;
-            this.applicationUserService = applicationUserService;
-            this.accountService = accountService;
-            this.hostingEnvironment = hostingEnvironment;
+            this.ApplicationUserService = applicationUserService;
+            this.AccountService = accountService;
+            this.HostingEnvironment = hostingEnvironment;
         }
 
         #endregion
@@ -60,7 +56,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         [ProducesResponseType(typeof(IEnumerable<ApplicationUserDTO>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAsync()
         {
-            return this.Ok(await this.applicationUserService.GetAllAsync());
+            return this.Ok(await this.ApplicationUserService.GetAllAsync());
         }
 
 
@@ -73,7 +69,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         [ProducesResponseType(typeof(ApplicationUserDTO), StatusCodes.Status200OK)]
         public async Task<IActionResult> Get(long id)
         {
-            return Ok(await this.applicationUserService.GetByIdAsync(id));
+            return Ok(await this.ApplicationUserService.GetByIdAsync(id));
         }
 
         /// <summary>
@@ -84,8 +80,8 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         [ProducesResponseType(typeof(ApplicationUserDTO), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetLogged()
         {
-            var userId = await this.accountService.GetUserIdFromRequestAsync(this.HttpContext);
-            return Ok(await this.applicationUserService.GetByIdAsync(userId));
+            var userId = await this.AccountService.GetUserIdFromRequestAsync(this.HttpContext);
+            return Ok(await this.ApplicationUserService.GetByIdAsync(userId));
         }
 
         /// <summary>
@@ -97,24 +93,22 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         [ProducesResponseType(typeof(ApplicationUserDTO), StatusCodes.Status201Created)]
         public async Task<IActionResult> Add([FromBody] ApplicationUserDTO user)
         {
-            var newUser = await this.applicationUserService.CreateAsync(user, this.hostingEnvironment.WebRootPath);
+            var newUser = await this.ApplicationUserService.CreateAsync(user, this.HostingEnvironment.WebRootPath);
             return Created($"{HttpContext.Request.Path}/{newUser.Id}", newUser);
         }
 
         /// <summary>
-        /// Met à jour un utilisateur en base de données
+        /// Update a user
         /// </summary>
-        /// <param name="id">Identifiant de l'utilisateur</param>
-        /// <param name="user">Utilisateur à mettre à jour</param>
-        /// <param name="updateRights">Mettre à jour ou non les droits</param>
-        /// <returns>AUcun retour</returns>
+        /// <param name="userDto">User to update</param>
+        /// <returns>Added user</returns>
         [HttpPut("{id}")]
         [ProducesResponseType(typeof(ApplicationUserDTO), StatusCodes.Status200OK)]
         public async Task<IActionResult> Update([FromBody] ApplicationUserDTO userDto)
         {
-            ApplicationUserDTO applicationUserDTO =
-                await this.applicationUserService.UpdateAsync(userDto, this.hostingEnvironment.WebRootPath);
-            return Ok(applicationUserDTO);
+            ApplicationUserDTO applicationUserDto =
+                await this.ApplicationUserService.UpdateAsync(userDto, this.HostingEnvironment.WebRootPath);
+            return Ok(applicationUserDto);
         }
 
         /// <summary>
@@ -129,7 +123,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
             // var requestCultureFeature = this.HttpContext.Features.Get<IRequestCultureFeature>();
             // CultureInfo cultureInfo = requestCultureFeature.RequestCulture.Culture;
 
-            await this.applicationUserService.ReinitializePasswordAsync(id);
+            await this.ApplicationUserService.ReinitializePasswordAsync(id);
             return NoContent();
         }
 
@@ -143,7 +137,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         [ProducesResponseType(typeof(void), StatusCodes.Status204NoContent)]
         public async Task<IActionResult> DeleteAsync([FromRoute] long userId)
         {
-            await this.applicationUserService.DeleteAsync(userId);
+            await this.ApplicationUserService.DeleteAsync(userId);
             return this.NoContent();
         }
     }

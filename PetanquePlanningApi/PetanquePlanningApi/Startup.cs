@@ -21,6 +21,7 @@ using PetanquePlanning.Business.Location.Application.Services;
 using PetanquePlanning.Business.Location.Infrastructure.Abstractions;
 using PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions;
 using PetanquePlanning.Business.Location.Infrastructure.EntityFramework;
+using PetanquePlanning.Business.Location.Infrastructure.EntityFramework.Repositories;
 using Tools.Infrastructure.Settings;
 
 namespace PetanquePlanningApi

@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetanquePlanning.Business.Core.Application.Abstractions.Abstractions;
+using PetanquePlanning.Business.Core.Application.Abstractions.DTO;
 using PetanquePlanning.Business.Core.Domain.Entities;
 using Tools.Api.Abstractions;
 

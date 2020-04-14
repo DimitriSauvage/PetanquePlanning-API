@@ -10,7 +10,6 @@ namespace PetanquePlanning.Business.Identity.Application.Exceptions
 
         public CreateUserException(string error) : base(error)
         {
-            
         }
     }
 }
