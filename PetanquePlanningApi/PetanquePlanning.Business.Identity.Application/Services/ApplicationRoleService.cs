@@ -16,19 +16,9 @@ namespace PetanquePlanning.Business.Identity.Application.Services
     {
         #region Private attributes
 
-        /// <summary>
-        /// User manager
-        /// </summary>
-        private IApplicationUserRepository ApplicationUserRepository { get; }
-
         #endregion
 
         #region Constructor
-
-        public ApplicationRoleService(IApplicationUserRepository applicationUserRepository)
-        {
-            this.ApplicationUserRepository = applicationUserRepository;
-        }
 
         #endregion
 
@@ -44,109 +34,73 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         /// <inheritdoc />
         public async Task<ApplicationRoleDTO> CreateAsync(ApplicationRoleDTO roleDto)
         {
-            using (var transaction = this.Repository.BeginTransaction())
-            {
-                try
+            if (roleDto == null) throw new ArgumentNullException(nameof(roleDto));
+            var role = this.Mapper.Map<ApplicationRole>(roleDto);
+
+            // Check if the element is unique
+            var existingProfile = await this.Repository.GetByUniqueKeyAsync(role);
+            if (existingProfile != null)
+                throw new EntityAlreadyExistsException<ApplicationRole>(existingProfile);
+
+            //Create the element
+            return await this.Repository.TransactionalExecutionAsync(
+                action: async (roleToCreate, transaction) =>
                 {
-                    if (roleDto == null) throw new ArgumentNullException(nameof(roleDto));
-
-                    var roleToCreate = this.Mapper.Map<ApplicationRole>(roleDto);
-
-                    // Vérification de l'existence d'un autre enregistrement pour la clé unique
-                    var existingProfile = await this.Repository.GetByUniqueKeyAsync(roleToCreate);
-                    if (existingProfile != null)
-                        throw new EntityAlreadyExistsException<ApplicationRole>(existingProfile);
-
-                    // Sauvegarde
+                    // Save it
                     roleToCreate.NormalizedName = roleToCreate.Name.Normalize();
                     await this.Repository.AddAsync(roleToCreate);
                     await this.Repository.SaveChangesAsync();
-
-                    //Validate transaction
-                    transaction.Commit();
-
-                    return this.Mapper.Map<ApplicationRoleDTO>(roleDto);
-                }
-                catch (Exception)
-                {
-                    transaction.Rollback();
-                    throw;
-                }
-            }
+                },
+                obj: role,
+                onSuccessFunc: createdRole => this.Mapper.Map<ApplicationRoleDTO>(createdRole));
         }
 
         /// <inheritdoc />
         public async Task<ApplicationRoleDTO> UpdateAsync(ApplicationRoleDTO applicationRoleDto)
         {
-            using (var transaction = this.Repository.BeginTransaction())
-            {
-                try
+            if (applicationRoleDto == null) throw new ArgumentNullException(nameof(applicationRoleDto));
+
+            return await this.Repository.TransactionalExecutionAsync(
+                action: async (role, transaction) =>
                 {
-                    if (applicationRoleDto == null) throw new ArgumentNullException(nameof(applicationRoleDto));
+                    //Search the entity
+                    var roleDb = await this.Repository.GetByIdAsync(role.Id);
+                    if (roleDb == null) throw new EntityNotFoundException<ApplicationRole>(role.Id);
 
-                    //Recherche de l'entité
-                    var role = await this.Repository.GetByIdAsync(applicationRoleDto.Id);
-                    if (role == null) throw new EntityNotFoundException<ApplicationRole>(applicationRoleDto.Id);
+                    //Copy the values
+                    roleDb.CopyFrom(this.Mapper.Map<ApplicationRole>(role));
+                    roleDb.NormalizedName = roleDb.Name.Normalize();
 
-                    //On recopie les valeurs
-                    role.CopyFrom(this.Mapper.Map<ApplicationRole>(applicationRoleDto));
-                    role.NormalizedName = role.Name.Normalize();
-
-
-                    //Sauvegarde
+                    //Save
                     await this.Repository.SaveChangesAsync();
-                    transaction.Commit();
-
-                    return this.Mapper.Map<ApplicationRoleDTO>(role);
-                }
-                catch (Exception)
-                {
-                    transaction.Rollback();
-                    throw;
-                }
-            }
+                },
+                obj: this.Mapper.Map<ApplicationRole>(applicationRoleDto),
+                onSuccessFunc: role => this.Mapper.Map<ApplicationRoleDTO>(role));
         }
 
         /// <inheritdoc />
         public async Task DeleteAsync(long roleId, ApplicationRoleDTO newRoleForUsers)
         {
-            using (var transaction = this.Repository.BeginTransaction())
-            {
-                try
+            //On vérifie que le nouveau rôle n'est pas nul et qu'il existe
+            if (newRoleForUsers == null) throw new ArgumentNullException(nameof(newRoleForUsers));
+            var newRole = await this.Repository.GetByIdAsync(newRoleForUsers.Id);
+            if (newRole == null) throw new EntityNotFoundException<ApplicationRole>(newRoleForUsers.Id);
+
+            //Récupération du rôle à supprimer
+            var roleToDelete = await this.Repository.GetByIdAsync(roleId);
+            if (roleToDelete == null) throw new EntityNotFoundException<ApplicationRole>(roleId);
+
+            await this.Repository.TransactionalExecutionAsync(
+                action: async (role, transaction) =>
                 {
-                    //On vérifie que le nouveau rôle n'est pas nul et qu'il existe
-                    if (newRoleForUsers == null) throw new ArgumentNullException(nameof(newRoleForUsers));
-                    var newRole = await this.Repository.GetByIdAsync(newRoleForUsers.Id);
-                    if (newRole == null) throw new EntityNotFoundException<ApplicationRole>(newRoleForUsers.Id);
+                    //Copy the values
+                    role.CopyFrom(this.Mapper.Map<ApplicationRole>(role));
+                    role.NormalizedName = role.Name.Normalize();
 
-                    //Récupération du rôle à supprimer
-                    var roleToDelete = await this.Repository.GetByIdAsync(roleId);
-                    if (roleToDelete == null) throw new EntityNotFoundException<ApplicationRole>(roleId);
-
-                    //On récupère tous les utilisateurs ayant le rôle à supprimer
-                    IEnumerable<ApplicationUser> users = await this.ApplicationUserRepository.GetByRoleAsync(roleId);
-
-                    //Mise à jour des utilisateurs
-                    foreach (var user in users)
-                    {
-                        user.ApplicationRoleId = newRole.Id;
-                    }
-
-                    await this.ApplicationUserRepository.SaveChangesAsync();
-
-                    //On supprime le rôle
-                    await this.Repository.DeleteAsync(roleToDelete);
-
-                    //Sauvegarde 
+                    //Save
                     await this.Repository.SaveChangesAsync();
-                    transaction.Commit();
-                }
-                catch (Exception)
-                {
-                    transaction.Rollback();
-                    throw;
-                }
-            }
+                },
+                obj: this.Mapper.Map<ApplicationRole>(roleToDelete));
         }
 
         /// <inheritdoc />
