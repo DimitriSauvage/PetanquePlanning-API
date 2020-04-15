@@ -1,18 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using PetanquePlanning.Business.Identity.Domain.Entities;
+using Tools.Infrastructure.EntityFramework.Abstractions;
 
-namespace PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Maps
+namespace PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.Maps
 {
-    public class ApplicationRoleClaimMap : IEntityTypeConfiguration<ApplicationRoleClaim>
+    public class ApplicationUserClaimMap : EntityWithIdMap<ApplicationUserClaim, int>
     {
-        public void Configure(EntityTypeBuilder<ApplicationRoleClaim> builder)
+        public override void Configure(EntityTypeBuilder<ApplicationUserClaim> builder)
         {
-            builder.ToTable(nameof(ApplicationRoleClaim));
-            //builder.HasKey(ar => ar.Id);
+            base.Configure(builder);
+
             builder.Property(x => x.ClaimType).IsRequired().HasMaxLength(100);
             builder.Property(x => x.ClaimValue);
             builder.Property(x => x.CanCreate).IsRequired().HasDefaultValue(false);
