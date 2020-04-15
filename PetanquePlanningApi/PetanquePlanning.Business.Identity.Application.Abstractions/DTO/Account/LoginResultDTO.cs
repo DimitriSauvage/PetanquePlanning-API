@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Abalone.Business.Identity.Application.DTO.Users;
+using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Users;
 
 namespace PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Account
 {

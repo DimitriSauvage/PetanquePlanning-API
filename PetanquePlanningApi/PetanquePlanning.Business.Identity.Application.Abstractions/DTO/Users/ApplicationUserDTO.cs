@@ -6,7 +6,7 @@ using PetanquePlanning.Business.Identity.Domain.Enumerations;
 using Tools.Application.DTOs;
 using Tools.Helpers;
 
-namespace Abalone.Business.Identity.Application.DTO.Users
+namespace PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Users
 {
     public class ApplicationUserDTO
     {

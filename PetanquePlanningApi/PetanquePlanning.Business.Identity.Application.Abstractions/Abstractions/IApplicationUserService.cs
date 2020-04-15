@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Abalone.Business.Identity.Application.DTO.Users;
 using Microsoft.EntityFrameworkCore.Storage;
+using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Users;
 
 namespace PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions
 {

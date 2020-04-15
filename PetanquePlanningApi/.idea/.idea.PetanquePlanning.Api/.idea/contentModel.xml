@@ -382,6 +382,19 @@
       </e>
       <e p="Tools.Infrastructure.csproj" t="IncludeRecursive" />
     </e>
+    <e p="C:\Users\dimit\Github\CSharp-Tools\Tools.Mapper" t="IncludeRecursive">
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="DtoToEnumConverter.cs" t="Include" />
+      <e p="EnumToDTOConverter.cs" t="Include" />
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp3.1" t="Include">
+            <e p="Tools.Mapper.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Tools.Mapper.csproj" t="IncludeRecursive" />
+    </e>
     <e p="C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="PetanquePlanning.Api.sln" t="IncludeFlat" />
@@ -725,7 +738,6 @@
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
-        <e p="Controllers" t="Include" />
         <e p="MappingProfile.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">

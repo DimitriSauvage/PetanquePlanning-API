@@ -1,9 +1,9 @@
 ﻿using System.Security.Claims;
 using System.Threading.Tasks;
-using Abalone.Business.Identity.Application.DTO.Users;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Account;
+using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Users;
 using Tools.Http.Enums;
 
 namespace PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions

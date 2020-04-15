@@ -71,6 +71,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.Application.Abstractions", "..\..\CSharp-Tools\Tools.Application.Abstractions\Tools.Application.Abstractions.csproj", "{EBBDEB9D-0AE6-4597-A451-B319D46FC35E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.Mapper", "..\..\CSharp-Tools\Tools.Mapper\Tools.Mapper.csproj", "{B829F9EE-F7F7-430D-8826-CAF785864FC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -189,6 +191,10 @@ Global
 		{EBBDEB9D-0AE6-4597-A451-B319D46FC35E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBBDEB9D-0AE6-4597-A451-B319D46FC35E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBBDEB9D-0AE6-4597-A451-B319D46FC35E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B829F9EE-F7F7-430D-8826-CAF785864FC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B829F9EE-F7F7-430D-8826-CAF785864FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B829F9EE-F7F7-430D-8826-CAF785864FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B829F9EE-F7F7-430D-8826-CAF785864FC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -227,6 +233,7 @@ Global
 		{DD86F0DD-D2DC-442B-BD35-745971F37310} = {8E01E91E-2961-437D-8D22-BFAD8248C73B}
 		{F03EFD30-0ADE-4717-98D9-00BD7CFF0DA2} = {8E01E91E-2961-437D-8D22-BFAD8248C73B}
 		{EBBDEB9D-0AE6-4597-A451-B319D46FC35E} = {B82BFC4D-8937-44D2-B6C2-6FA9740933EF}
+		{B829F9EE-F7F7-430D-8826-CAF785864FC7} = {B82BFC4D-8937-44D2-B6C2-6FA9740933EF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7838669D-C8FB-44B7-8CC5-990EA7C7A69B}

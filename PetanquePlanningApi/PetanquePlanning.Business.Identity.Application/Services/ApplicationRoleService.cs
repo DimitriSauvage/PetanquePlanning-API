@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Abalone.Business.Identity.Application.DTO;
 using PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions;
 using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Roles;
 using PetanquePlanning.Business.Identity.Domain.Entities;

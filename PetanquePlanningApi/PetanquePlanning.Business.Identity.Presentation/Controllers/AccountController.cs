@@ -2,7 +2,6 @@
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Abalone.Business.Identity.Application.DTO.Users;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -13,6 +12,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions;
 using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Account;
+using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Users;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using Tools.Api.Abstractions;
 

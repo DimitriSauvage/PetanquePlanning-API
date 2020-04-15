@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Abalone.Business.Identity.Application.DTO.Users;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions;
+using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Users;
 using Tools.Api.Abstractions;
 
 namespace PetanquePlanning.Business.Identity.Presentation.Controllers

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Abalone.Business.Identity.Application.DTO;
 using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Roles;
 
 namespace PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions
@@ -27,7 +26,7 @@ namespace PetanquePlanning.Business.Identity.Application.Abstractions.Abstractio
         /// <param name="applicationRoleDto">Rôle à mettre à jour</param>
         /// <returns></returns>
         Task<ApplicationRoleDTO> UpdateAsync(ApplicationRoleDTO applicationRoleDto);
-        
+
         /// <summary>
         /// Supprime un rôle
         /// </summary>
@@ -35,7 +34,7 @@ namespace PetanquePlanning.Business.Identity.Application.Abstractions.Abstractio
         /// <param name="newRoleForUsers">Rôle à affecter aux utilisateurs ayant le rôle à supprimer</param>
         /// <returns></returns>
         Task DeleteAsync(long roleId, ApplicationRoleDTO newRoleForUsers);
-        
+
         /// <inheritDoc/>
         /// <summary>
         /// Récupère l'identifiant d'un rôle par son nom
