@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetanquePlanning.Business.Location.Application.Abstractions.Abstractions;
 using PetanquePlanning.Business.Location.Application.Abstractions.DTO;
-using Tools.Api.Abstractions;
+using Tools.Mvc.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Presentation.Controllers
 {

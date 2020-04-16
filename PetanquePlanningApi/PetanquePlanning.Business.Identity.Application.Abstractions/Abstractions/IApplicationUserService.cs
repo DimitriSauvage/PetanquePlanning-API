@@ -13,6 +13,7 @@ namespace PetanquePlanning.Business.Identity.Application.Abstractions.Abstractio
         /// <param name="email">Email to search</param>
         /// <returns>Found user</returns>
         Task<ApplicationUserDTO> GetByEmailAsync(string email);
+
         /// <summary>
         /// Récupère la liste de tous les utilisateurs
         /// </summary>

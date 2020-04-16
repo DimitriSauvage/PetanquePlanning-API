@@ -10,17 +10,20 @@
       "C:\\Microsoft\\Xamarin\\NuGet"
     ],
     "originalTargetFrameworks": [
-      "netcoreapp3.1"
+      "netstandard2.1"
     ],
     "sources": {
       "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
       "https://api.nuget.org/v3/index.json": {}
     },
     "frameworks": {
-      "netcoreapp3.1": {
+      "netstandard2.1": {
         "projectReferences": {
           "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Api\\Tools.Api.csproj": {
             "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Api\\Tools.Api.csproj"
+          },
+          "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Mvc\\Tools.Mvc.csproj": {
+            "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Mvc\\Tools.Mvc.csproj"
           },
           "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Application.Abstractions\\PetanquePlanning.Business.Core.Application.Abstractions.csproj": {
             "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Application.Abstractions\\PetanquePlanning.Business.Core.Application.Abstractions.csproj"
@@ -35,7 +38,7 @@
     }
   },
   "frameworks": {
-    "netcoreapp3.1": {
+    "netstandard2.1": {
       "imports": [
         "net461",
         "net462",
@@ -47,7 +50,7 @@
       "assetTargetFallback": true,
       "warn": true,
       "frameworkReferences": {
-        "Microsoft.NETCore.App": {
+        "NETStandard.Library": {
           "privateAssets": "all"
         }
       },

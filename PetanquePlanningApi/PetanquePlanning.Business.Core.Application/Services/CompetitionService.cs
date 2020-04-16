@@ -6,7 +6,7 @@ using PetanquePlanning.Business.Core.Application.Abstractions.Abstractions;
 using PetanquePlanning.Business.Core.Application.Abstractions.DTO;
 using PetanquePlanning.Business.Core.Domain.Entities;
 using PetanquePlanning.Business.Core.Infrastructure.Abstractions.Abstractions;
-using Tools.Application.Abstractions.Abstractions;
+using Tools.Application.Abstractions;
 
 namespace PetanquePlanning.Business.Core.Application.Services
 {

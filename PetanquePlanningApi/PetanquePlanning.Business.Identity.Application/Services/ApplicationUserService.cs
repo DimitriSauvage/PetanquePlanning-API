@@ -11,7 +11,7 @@ using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Users;
 using PetanquePlanning.Business.Identity.Application.Exceptions;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Abstractions;
-using Tools.Application.Abstractions.Abstractions;
+using Tools.Application.Abstractions;
 using Tools.Helpers;
 using Tools.Infrastructure.Exceptions;
 

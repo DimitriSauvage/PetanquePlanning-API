@@ -4,7 +4,7 @@ using PetanquePlanning.Business.Location.Application.Abstractions.Abstractions;
 using PetanquePlanning.Business.Location.Application.Abstractions.DTO;
 using PetanquePlanning.Business.Location.Domain.Entities;
 using PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions;
-using Tools.Application.Abstractions.Abstractions;
+using Tools.Application.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Application.Services
 {

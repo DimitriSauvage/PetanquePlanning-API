@@ -84,27 +84,12 @@
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.0" t="Include">
+          <e p="netstandard2.1" t="Include">
             <e p="Tools.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
       </e>
       <e p="Tools.csproj" t="IncludeRecursive" />
-    </e>
-    <e p="C:\Users\dimit\Github\CSharp-Tools\Tools.Api" t="IncludeRecursive">
-      <e p="Abstractions" t="Include">
-        <e p="ApiController.cs" t="Include" />
-        <e p="BaseController.cs" t="Include" />
-      </e>
-      <e p="bin" t="ExcludeRecursive" />
-      <e p="obj" t="ExcludeRecursive">
-        <e p="Debug" t="Include">
-          <e p="netstandard2.0" t="Include">
-            <e p="Tools.Api.AssemblyInfo.cs" t="Include" />
-          </e>
-        </e>
-      </e>
-      <e p="Tools.Api.csproj" t="IncludeRecursive" />
     </e>
     <e p="C:\Users\dimit\Github\CSharp-Tools\Tools.Api.OData" t="IncludeRecursive">
       <e p="bin" t="ExcludeRecursive" />
@@ -153,7 +138,7 @@
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.0" t="Include">
+          <e p="netstandard2.1" t="Include">
             <e p="Tools.Api.OData.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
@@ -161,6 +146,9 @@
       <e p="Tools.Api.OData.csproj" t="IncludeRecursive" />
     </e>
     <e p="C:\Users\dimit\Github\CSharp-Tools\Tools.Application" t="IncludeRecursive">
+      <e p="Abstractions" t="Include">
+        <e p="BaseService.cs" t="Include" />
+      </e>
       <e p="bin" t="ExcludeRecursive" />
       <e p="Commands" t="Include">
         <e p="IdentifiedCommand.cs" t="Include" />
@@ -174,7 +162,7 @@
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.0" t="Include">
+          <e p="netstandard2.1" t="Include">
             <e p="Tools.Application.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
@@ -182,13 +170,10 @@
       <e p="Tools.Application.csproj" t="IncludeRecursive" />
     </e>
     <e p="C:\Users\dimit\Github\CSharp-Tools\Tools.Application.Abstractions" t="IncludeRecursive">
-      <e p="Abstractions" t="Include">
-        <e p="BaseService.cs" t="Include" />
-      </e>
       <e p="bin" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.0" t="Include">
+          <e p="netstandard2.1" t="Include">
             <e p="Tools.Application.Abstractions.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
@@ -198,8 +183,14 @@
     <e p="C:\Users\dimit\Github\CSharp-Tools\Tools.Domain" t="IncludeRecursive">
       <e p="Abstractions" t="Include">
         <e p="Entity.cs" t="Include" />
+        <e p="EntityWithCompositeId.cs" t="Include" />
+        <e p="EntityWithId.cs" t="Include" />
+        <e p="EntityWithTracking.cs" t="Include" />
         <e p="Enumeration.cs" t="Include" />
         <e p="IEntity.cs" t="Include" />
+        <e p="IEntityWithCompositeId.cs" t="Include" />
+        <e p="IEntityWithId.cs" t="Include" />
+        <e p="IEntityWithTracking.cs" t="Include" />
         <e p="ValueObject.cs" t="Include" />
       </e>
       <e p="bin" t="ExcludeRecursive" />
@@ -224,7 +215,7 @@
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.0" t="Include">
+          <e p="netstandard2.1" t="Include">
             <e p="Tools.Domain.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
@@ -238,7 +229,7 @@
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.0" t="Include">
+          <e p="netstandard2.1" t="Include">
             <e p="Tools.GeoLocation.Domain.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
@@ -281,7 +272,7 @@
       <e p="HttpRequestFactory.cs" t="Include" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.0" t="Include">
+          <e p="netstandard2.1" t="Include">
             <e p="Tools.Http.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
@@ -301,21 +292,6 @@
         <e p="IWritableOptions.cs" t="Include" />
       </e>
       <e p="bin" t="ExcludeRecursive" />
-      <e p="EntityFramework" t="Include">
-        <e p="Abstractions" t="Include">
-          <e p="DbRepository.cs" t="Include" />
-          <e p="PetanquePlanningDbContext.cs" t="Include" />
-          <e p="PetanquePlanningEntityMap.cs" t="Include" />
-        </e>
-        <e p="Exceptions" t="Include">
-          <e p="AttributeUndefinedException.cs" t="Include" />
-          <e p="CantExecuteAutoUniqueKeyQueryOnClassPropertyException.cs" t="Include" />
-          <e p="EntityFrameworkException.cs" t="Include" />
-          <e p="NoUniqueByAttributeForTypeException.cs" t="Include" />
-          <e p="OutsideTransactionalContext.cs" t="Include" />
-          <e p="UniqueByAttributeIsEmptyException.cs" t="Include" />
-        </e>
-      </e>
       <e p="Exceptions" t="Include">
         <e p="EntityAlreadyExistsException.cs" t="Include" />
         <e p="EntityNotFoundException.cs" t="Include" />
@@ -353,7 +329,7 @@
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.0" t="Include">
+          <e p="netstandard2.1" t="Include">
             <e p="Tools.Infrastructure.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
@@ -382,18 +358,83 @@
       </e>
       <e p="Tools.Infrastructure.csproj" t="IncludeRecursive" />
     </e>
+    <e p="C:\Users\dimit\Github\CSharp-Tools\Tools.Infrastructure.EntityFramework" t="IncludeRecursive">
+      <e p="Abstractions" t="Include">
+        <e p="AppDbContext.cs" t="Include" />
+        <e p="AppEntityMap.cs" t="Include" />
+        <e p="AppIdentityDbContext.cs" t="Include" />
+        <e p="DbRepository.cs" t="Include" />
+      </e>
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Exceptions" t="Include">
+        <e p="AttributeUndefinedException.cs" t="Include" />
+        <e p="CantExecuteAutoUniqueKeyQueryOnClassPropertyException.cs" t="Include" />
+        <e p="EntityFrameworkException.cs" t="Include" />
+        <e p="NoUniqueByAttributeForTypeException.cs" t="Include" />
+        <e p="OutsideTransactionalContext.cs" t="Include" />
+        <e p="UniqueByAttributeIsEmptyException.cs" t="Include" />
+      </e>
+      <e p="Helpers" t="Include">
+        <e p="MapHelper.cs" t="Include" />
+      </e>
+      <e p="Interfaces" t="Include">
+        <e p="ISoPerfDbContext.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netstandard2.1" t="Include">
+            <e p="Tools.Infrastructure.EntityFramework.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="SoPerfDbContextFactory.cs" t="Include" />
+      <e p="Tools.Infrastructure.EntityFramework.csproj" t="IncludeRecursive" />
+    </e>
     <e p="C:\Users\dimit\Github\CSharp-Tools\Tools.Mapper" t="IncludeRecursive">
       <e p="bin" t="ExcludeRecursive" />
       <e p="DtoToEnumConverter.cs" t="Include" />
       <e p="EnumToDTOConverter.cs" t="Include" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netcoreapp3.1" t="Include">
+          <e p="netstandard2.1" t="Include">
             <e p="Tools.Mapper.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
       </e>
       <e p="Tools.Mapper.csproj" t="IncludeRecursive" />
+    </e>
+    <e p="C:\Users\dimit\Github\CSharp-Tools\Tools.Mvc" t="IncludeRecursive">
+      <e p="Abstractions" t="Include">
+        <e p="ApiController.cs" t="Include" />
+        <e p="BaseController.cs" t="Include" />
+        <e p="BaseViewComponent.cs" t="Include" />
+      </e>
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="ExtensionsInfrastructure" t="Include">
+        <e p="Abstractions" t="Include">
+          <e p="IExtensionMetadata.cs" t="Include" />
+        </e>
+        <e p="MenuItem.cs" t="Include" />
+        <e p="Script.cs" t="Include" />
+        <e p="StyleSheet.cs" t="Include" />
+      </e>
+      <e p="ModelBindings" t="Include">
+        <e p="Binders" t="Include">
+          <e p="InvariantDecimalModelBinder.cs" t="Include" />
+        </e>
+        <e p="InvariantDecimalModelBinderProvider.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netstandard2.1" t="Include">
+            <e p="Tools.Mvc.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Razor" t="Include">
+        <e p="PluginViewLocationExpander.cs" t="Include" />
+      </e>
+      <e p="Tools.Mvc.csproj" t="IncludeRecursive" />
     </e>
     <e p="C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
@@ -402,7 +443,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Core.Application.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -425,7 +466,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Core.Application.Abstractions.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -447,7 +488,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Core.Domain.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -462,7 +503,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Core.Infrastructure.Abstractions.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -478,7 +519,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Core.Infrastructure.EntityFramework.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -497,7 +538,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netcoreapp3.1" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Core.Presentation.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -511,7 +552,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Identity.Application.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -546,7 +587,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Identity.Application.Abstractions.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -572,7 +613,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Identity.Domain.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -587,7 +628,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Identity.Infrastructure.Abstractions.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -607,7 +648,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -627,7 +668,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Identity.Presentation.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -638,7 +679,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Location.Application.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -661,7 +702,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Location.Application.Abstractions.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -676,7 +717,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Location.Domain.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -691,7 +732,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Location.Infrastructure.Abstractions.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -706,7 +747,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Location.Infrastructure.EntityFramework.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -725,7 +766,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.0" t="Include">
+            <e p="netstandard2.1" t="Include">
               <e p="PetanquePlanning.Business.Location.Presentation.AssemblyInfo.cs" t="Include" />
             </e>
           </e>

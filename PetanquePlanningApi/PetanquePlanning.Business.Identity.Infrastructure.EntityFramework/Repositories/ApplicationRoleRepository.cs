@@ -26,7 +26,6 @@ namespace PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.Repo
                 .FirstOrDefaultAsync(x => x.Name.Equals(role, StringComparison.InvariantCultureIgnoreCase));
         }
 
-
         #endregion
     }
 }

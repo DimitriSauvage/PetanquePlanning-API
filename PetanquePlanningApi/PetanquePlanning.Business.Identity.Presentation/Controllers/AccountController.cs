@@ -14,7 +14,7 @@ using PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions;
 using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Account;
 using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Users;
 using PetanquePlanning.Business.Identity.Domain.Entities;
-using Tools.Api.Abstractions;
+using Tools.Mvc.Abstractions;
 
 namespace PetanquePlanning.Business.Identity.Presentation.Controllers
 {

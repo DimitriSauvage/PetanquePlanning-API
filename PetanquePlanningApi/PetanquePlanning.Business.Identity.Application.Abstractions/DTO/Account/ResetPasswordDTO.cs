@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Account
+﻿namespace PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Account
 {
     public class ResetPasswordDTO
     {

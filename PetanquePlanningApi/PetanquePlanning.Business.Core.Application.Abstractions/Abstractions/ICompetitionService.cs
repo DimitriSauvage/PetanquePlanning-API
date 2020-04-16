@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using PetanquePlanning.Business.Core.Application.Abstractions.DTO;
-using PetanquePlanning.Business.Core.Domain.Entities;
 
 namespace PetanquePlanning.Business.Core.Application.Abstractions.Abstractions
 {
