@@ -43,7 +43,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Location.Infrastructure.EntityFramework", "PetanquePlanning.Business.Location.Infrastructure.EntityFramework\PetanquePlanning.Business.Location.Infrastructure.EntityFramework.csproj", "{85843977-A4C2-4D59-A080-BA665C90EC6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Location.Application.Abstractions", "PetanquePlanning.Business.Location.Application.Abstractions\PetanquePlanning.Business.Location.Application.Abstractions.csproj", "{32B8ACDF-8D92-4EE2-9F9E-002B39BAA75F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Location.Application.DTO", "PetanquePlanning.Business.Location.Application.DTO\PetanquePlanning.Business.Location.Application.DTO.csproj", "{32B8ACDF-8D92-4EE2-9F9E-002B39BAA75F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Location.Application", "PetanquePlanning.Business.Location.Application\PetanquePlanning.Business.Location.Application.csproj", "{956BB644-A4D6-4280-AB57-726629CB12EC}"
 EndProject
@@ -51,7 +51,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.L
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Core.Infrastructure.EntityFramework", "PetanquePlanning.Business.Core.Infrastructure.EntityFramework\PetanquePlanning.Business.Core.Infrastructure.EntityFramework.csproj", "{0FAA1DA5-053D-4491-8B52-B41343502A29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Core.Application.Abstractions", "PetanquePlanning.Business.Core.Application.Abstractions\PetanquePlanning.Business.Core.Application.Abstractions.csproj", "{36D01E46-D024-4099-B4FF-4FF121AEC8DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Core.Application.DTO", "PetanquePlanning.Business.Core.Application.DTO\PetanquePlanning.Business.Core.Application.DTO.csproj", "{36D01E46-D024-4099-B4FF-4FF121AEC8DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Core.Application", "PetanquePlanning.Business.Core.Application\PetanquePlanning.Business.Core.Application.csproj", "{F713B99B-AD71-43E6-9DAE-C322A799DB0D}"
 EndProject
@@ -59,7 +59,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Identity.Infrastructure.EntityFramework", "PetanquePlanning.Business.Identity.Infrastructure.EntityFramework\PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.csproj", "{96351785-22E5-483E-A772-9C69215EBA56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Identity.Application.Abstractions", "PetanquePlanning.Business.Identity.Application.Abstractions\PetanquePlanning.Business.Identity.Application.Abstractions.csproj", "{A962363F-B9BA-4B7B-B013-2D26932BE6C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Identity.Application.DTO", "PetanquePlanning.Business.Identity.Application.DTO\PetanquePlanning.Business.Identity.Application.DTO.csproj", "{A962363F-B9BA-4B7B-B013-2D26932BE6C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetanquePlanning.Business.Identity.Application", "PetanquePlanning.Business.Identity.Application\PetanquePlanning.Business.Identity.Application.csproj", "{DD86F0DD-D2DC-442B-BD35-745971F37310}"
 EndProject

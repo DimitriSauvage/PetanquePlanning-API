@@ -559,14 +559,14 @@
         }
       }
     },
-    "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.Abstractions\\PetanquePlanning.Business.Location.Application.Abstractions.csproj": {
+    "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.DTO\\PetanquePlanning.Business.Location.Application.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.Abstractions\\PetanquePlanning.Business.Location.Application.Abstractions.csproj",
-        "projectName": "PetanquePlanning.Business.Location.Application.Abstractions",
-        "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.Abstractions\\PetanquePlanning.Business.Location.Application.Abstractions.csproj",
+        "projectUniqueName": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.DTO\\PetanquePlanning.Business.Location.Application.DTO.csproj",
+        "projectName": "PetanquePlanning.Business.Location.Application.DTO",
+        "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.DTO\\PetanquePlanning.Business.Location.Application.DTO.csproj",
         "packagesPath": "C:\\Users\\dimit\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.Abstractions\\obj\\",
+        "outputPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet"
@@ -648,8 +648,8 @@
               "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Application\\Tools.Application.csproj": {
                 "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Application\\Tools.Application.csproj"
               },
-              "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.Abstractions\\PetanquePlanning.Business.Location.Application.Abstractions.csproj": {
-                "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.Abstractions\\PetanquePlanning.Business.Location.Application.Abstractions.csproj"
+              "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.DTO\\PetanquePlanning.Business.Location.Application.DTO.csproj": {
+                "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.DTO\\PetanquePlanning.Business.Location.Application.DTO.csproj"
               },
               "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Infrastructure.Abstractions\\PetanquePlanning.Business.Location.Infrastructure.Abstractions.csproj": {
                 "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Infrastructure.Abstractions\\PetanquePlanning.Business.Location.Infrastructure.Abstractions.csproj"

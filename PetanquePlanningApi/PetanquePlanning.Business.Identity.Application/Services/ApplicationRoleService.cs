@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions;
-using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Roles;
+using PetanquePlanning.Business.Identity.Application.DTO.DTO.Roles;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Abstractions;
 using Tools.Application.Abstractions;
@@ -11,8 +10,7 @@ using Tools.Infrastructure.Exceptions;
 
 namespace PetanquePlanning.Business.Identity.Application.Services
 {
-    public class ApplicationRoleService : BaseService<ApplicationRole, IApplicationRoleRepository>,
-        IApplicationRoleService
+    public class ApplicationRoleService : BaseService<ApplicationRole, IApplicationRoleRepository>
     {
         #region Private attributes
 

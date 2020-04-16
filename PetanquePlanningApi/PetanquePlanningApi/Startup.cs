@@ -15,20 +15,15 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Net.Http.Headers;
-using PetanquePlanning.Business.Core.Application.Abstractions.Abstractions;
 using PetanquePlanning.Business.Core.Application.Services;
 using PetanquePlanning.Business.Core.Infrastructure.Abstractions.Abstractions;
 using PetanquePlanning.Business.Core.Infrastructure.EntityFramework.Repositories;
-using PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions;
 using PetanquePlanning.Business.Identity.Application.Services;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Abstractions;
 using PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.Repositories;
-using PetanquePlanning.Business.Location.Application.Abstractions.Abstractions;
 using PetanquePlanning.Business.Location.Application.Services;
-using PetanquePlanning.Business.Location.Infrastructure.Abstractions;
 using PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions;
-using PetanquePlanning.Business.Location.Infrastructure.EntityFramework;
 using PetanquePlanning.Business.Location.Infrastructure.EntityFramework.Repositories;
 using Tools.Infrastructure.Settings;
 
@@ -260,23 +255,24 @@ namespace PetanquePlanningApi
         {
             #region Location
 
-            services.AddScoped<IRegionService, RegionService>();
-            services.AddScoped<IDepartmentService, DepartmentService>();
+            services.AddScoped<RegionService, RegionService>();
+            services.AddScoped<DepartmentService, DepartmentService>();
 
             #endregion
 
             #region Identity
 
-            services.AddScoped<IApplicationUserService, ApplicationUserService>();
-            services.AddScoped<IApplicationRoleService, ApplicationRoleService>();
-            services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<ApplicationUserService, ApplicationUserService>();
+            services.AddScoped<ApplicationRoleService, ApplicationRoleService>();
+            services.AddScoped<AccountService, AccountService>();
 
             #endregion
 
             #region Core
 
-            services.AddScoped<ICompetitionService, CompetitionService>();
-            services.AddScoped<IClubService, ClubService>();
+            //To enable DI
+            services.AddScoped<CompetitionService, CompetitionService>();
+            services.AddScoped<ClubService, ClubService>();
 
             #endregion
         }

@@ -1865,14 +1865,14 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "PetanquePlanning.Business.Location.Application.Abstractions/1.0.0": {
+      "PetanquePlanning.Business.Location.Application.DTO/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "compile": {
-          "bin/placeholder/PetanquePlanning.Business.Location.Application.Abstractions.dll": {}
+          "bin/placeholder/PetanquePlanning.Business.Location.Application.DTO.dll": {}
         },
         "runtime": {
-          "bin/placeholder/PetanquePlanning.Business.Location.Application.Abstractions.dll": {}
+          "bin/placeholder/PetanquePlanning.Business.Location.Application.DTO.dll": {}
         }
       },
       "PetanquePlanning.Business.Location.Domain/1.0.0": {
@@ -6469,10 +6469,10 @@
         "system.xml.xdocument.nuspec"
       ]
     },
-    "PetanquePlanning.Business.Location.Application.Abstractions/1.0.0": {
+    "PetanquePlanning.Business.Location.Application.DTO/1.0.0": {
       "type": "project",
-      "path": "../PetanquePlanning.Business.Location.Application.Abstractions/PetanquePlanning.Business.Location.Application.Abstractions.csproj",
-      "msbuildProject": "../PetanquePlanning.Business.Location.Application.Abstractions/PetanquePlanning.Business.Location.Application.Abstractions.csproj"
+      "path": "../PetanquePlanning.Business.Location.Application.DTO/PetanquePlanning.Business.Location.Application.DTO.csproj",
+      "msbuildProject": "../PetanquePlanning.Business.Location.Application.DTO/PetanquePlanning.Business.Location.Application.DTO.csproj"
     },
     "PetanquePlanning.Business.Location.Domain/1.0.0": {
       "type": "project",
@@ -6523,7 +6523,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.1": [
       "AutoMapper >= 9.0.0",
-      "PetanquePlanning.Business.Location.Application.Abstractions >= 1.0.0",
+      "PetanquePlanning.Business.Location.Application.DTO >= 1.0.0",
       "PetanquePlanning.Business.Location.Infrastructure.Abstractions >= 1.0.0",
       "Tools.Application >= 1.0.0",
       "Tools.Application.Abstractions >= 1.0.0"
@@ -6566,8 +6566,8 @@
             "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Application\\Tools.Application.csproj": {
               "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Application\\Tools.Application.csproj"
             },
-            "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.Abstractions\\PetanquePlanning.Business.Location.Application.Abstractions.csproj": {
-              "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.Abstractions\\PetanquePlanning.Business.Location.Application.Abstractions.csproj"
+            "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.DTO\\PetanquePlanning.Business.Location.Application.DTO.csproj": {
+              "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.DTO\\PetanquePlanning.Business.Location.Application.DTO.csproj"
             },
             "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Infrastructure.Abstractions\\PetanquePlanning.Business.Location.Infrastructure.Abstractions.csproj": {
               "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Infrastructure.Abstractions\\PetanquePlanning.Business.Location.Infrastructure.Abstractions.csproj"

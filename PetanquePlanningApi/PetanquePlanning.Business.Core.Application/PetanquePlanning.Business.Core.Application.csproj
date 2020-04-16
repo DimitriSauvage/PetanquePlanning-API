@@ -6,12 +6,9 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference
-            Include="..\..\..\CSharp-Tools\Tools.Application.Abstractions\Tools.Application.Abstractions.csproj" />
-        <ProjectReference
-            Include="..\PetanquePlanning.Business.Core.Application.Abstractions\PetanquePlanning.Business.Core.Application.Abstractions.csproj" />
-        <ProjectReference
-            Include="..\PetanquePlanning.Business.Core.Infrastructure.Abstractions\PetanquePlanning.Business.Core.Infrastructure.Abstractions.csproj" />
+        <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Application.Abstractions\Tools.Application.Abstractions.csproj" />
+        <ProjectReference Include="..\PetanquePlanning.Business.Core.Application.DTO\PetanquePlanning.Business.Core.Application.DTO.csproj" />
+        <ProjectReference Include="..\PetanquePlanning.Business.Core.Infrastructure.Abstractions\PetanquePlanning.Business.Core.Infrastructure.Abstractions.csproj" />
     </ItemGroup>
 
     <ItemGroup>

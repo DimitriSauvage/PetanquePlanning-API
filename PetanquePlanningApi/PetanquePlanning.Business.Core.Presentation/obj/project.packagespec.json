@@ -25,8 +25,11 @@
           "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Mvc\\Tools.Mvc.csproj": {
             "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Mvc\\Tools.Mvc.csproj"
           },
-          "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Application.Abstractions\\PetanquePlanning.Business.Core.Application.Abstractions.csproj": {
-            "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Application.Abstractions\\PetanquePlanning.Business.Core.Application.Abstractions.csproj"
+          "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Application.DTO\\PetanquePlanning.Business.Core.Application.DTO.csproj": {
+            "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Application.DTO\\PetanquePlanning.Business.Core.Application.DTO.csproj"
+          },
+          "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Application\\PetanquePlanning.Business.Core.Application.csproj": {
+            "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Application\\PetanquePlanning.Business.Core.Application.csproj"
           }
         }
       }

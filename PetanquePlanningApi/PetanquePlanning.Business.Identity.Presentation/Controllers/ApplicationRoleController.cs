@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions;
-using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Roles;
+using PetanquePlanning.Business.Identity.Application.DTO.DTO.Roles;
+using PetanquePlanning.Business.Identity.Application.Services;
 using Tools.Mvc.Abstractions;
 
 namespace PetanquePlanning.Business.Identity.Presentation.Controllers
@@ -16,13 +16,13 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         /// <summary>
         /// Role manager
         /// </summary>
-        private IApplicationRoleService ApplicationRoleService { get; set; }
+        private ApplicationRoleService ApplicationRoleService { get; set; }
 
         #endregion
 
         #region Constructors
 
-        public ApplicationRoleController(IApplicationRoleService applicationRoleService)
+        public ApplicationRoleController(ApplicationRoleService applicationRoleService)
         {
             this.ApplicationRoleService = applicationRoleService;
         }

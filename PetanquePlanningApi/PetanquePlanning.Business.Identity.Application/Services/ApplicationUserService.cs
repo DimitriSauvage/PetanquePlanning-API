@@ -5,9 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore.Storage;
-using PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions;
-using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Users;
+using PetanquePlanning.Business.Identity.Application.DTO.DTO.Users;
 using PetanquePlanning.Business.Identity.Application.Exceptions;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Abstractions;
@@ -17,8 +15,7 @@ using Tools.Infrastructure.Exceptions;
 
 namespace PetanquePlanning.Business.Identity.Application.Services
 {
-    public class ApplicationUserService : BaseService<ApplicationUser, IApplicationUserRepository>,
-        IApplicationUserService
+    public class ApplicationUserService : BaseService<ApplicationUser, IApplicationUserRepository>
     {
         #region Properties
 
@@ -70,7 +67,11 @@ namespace PetanquePlanning.Business.Identity.Application.Services
 
         #region Methods
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Get a user by his email
+        /// </summary>
+        /// <param name="email">Email to search</param>
+        /// <returns>Found user</returns>
         public async Task<ApplicationUserDTO> GetByEmailAsync(string email)
         {
             var user = await this.UserManager.FindByEmailAsync(email);
@@ -79,7 +80,10 @@ namespace PetanquePlanning.Business.Identity.Application.Services
             return this.Mapper.Map<ApplicationUserDTO>(user);
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Récupère la liste de tous les utilisateurs
+        /// </summary>
+        /// <returns>liste de tous les utilisateurs</returns>
         public async Task<IEnumerable<ApplicationUserDTO>> GetAllAsync()
         {
             //Get the users
@@ -87,76 +91,80 @@ namespace PetanquePlanning.Business.Identity.Application.Services
             return users.Select(x => this.Mapper.Map<ApplicationUserDTO>(x)).ToList();
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Obtient un utilisateur depuis son identifiant
+        /// </summary>
+        /// <param name="userId">Identifiant de l'utilisateur à récupérer</param>
+        /// <returns>Utilisateur trouvé</returns>
         public async Task<ApplicationUserDTO> GetByIdAsync(long userId)
         {
             var user = await this.Repository.GetByIdAsync(userId);
             return this.Mapper.Map<ApplicationUserDTO>(user);
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Met à jour un utilisateur en base de données
+        /// </summary>
+        /// <param name="user">Utilisateur à ajouter</param>
+        /// <param name="baseStoragePath">Chemin de base des fichiers</param>
+        /// <returns>Aucun retour</returns>
         public async Task<ApplicationUserDTO> UpdateAsync(ApplicationUserDTO user, string baseStoragePath)
         {
             return await this.Repository.TransactionalExecutionAsync(
                 action: async (applicationUser, transaction) =>
                 {
-                    await this.UpdateAsync(user, baseStoragePath, transaction);
+                    //Récupération de l'utilisateur en base de données
+                    var userDb = await this.UserManager.FindByIdAsync(applicationUser.Id.ToString());
+                    if (userDb == null) throw new EntityNotFoundException<ApplicationUser>(applicationUser.Id);
+
+                    //Mise à jour de l'image
+                    if (userDb.Avatar != applicationUser.Avatar)
+                    {
+                        //Je convertis l'utilisateur en DTO
+                        var userDbDto = this.Mapper.Map<ApplicationUserDTO>(userDb);
+
+                        //Si l'utilisateur avait un avatar, on doit le supprimer
+                        if (userDbDto.Avatar != null)
+                        {
+                            var oldAvatar = new FileInfo(Path.Combine(baseStoragePath, userDbDto.AvatarUrl));
+                            if (oldAvatar.Exists) oldAvatar.Delete();
+                        }
+
+                        //On déplace la nouvelle image du dossier temp au dossier de l'utilisateur
+                        var tempFile =
+                            new FileInfo(Path.Combine(
+                                this.GetTempImageDirectoryPath(baseStoragePath, userDbDto).FullName,
+                                applicationUser.Avatar));
+
+                        //Destination
+                        var destinationFile = new FileInfo(Path.Combine(
+                            this.GetUserImageDirectoryPath(baseStoragePath, userDbDto).FullName,
+                            this.GetImageNameFromTempImageName(tempFile.Name)));
+
+                        //On déplace l'image temporaire
+                        tempFile.MoveTo(destinationFile.FullName);
+
+                        //On met le nouvel avatar à l'utilisateur
+                        applicationUser.Avatar = destinationFile.Name;
+                    }
+
+                    //Mise à jour de son contenu
+                    userDb.CopyFrom(this.Mapper.Map<ApplicationUser>(applicationUser));
+                    await userDb.SetMandatoryValuesAsync(this.UserManager);
+
+                    //Mise à jour en base de données
+                    await this.UserManager.UpdateAsync(userDb);
                 },
                 obj: this.Mapper.Map<ApplicationUser>(user),
                 onSuccessFunc: updatedUser => this.Mapper.Map<ApplicationUserDTO>(updatedUser));
         }
 
-        /// <inheritdoc />
-        public async Task<ApplicationUserDTO> UpdateAsync(ApplicationUserDTO user, string baseStoragePath,
-            IDbContextTransaction transaction)
-        {
-            if (transaction == null) throw new ArgumentNullException(nameof(transaction));
-
-            //Récupération de l'utilisateur en base de données
-            var userDb = await this.UserManager.FindByIdAsync(user.Id.ToString());
-            if (userDb == null) throw new EntityNotFoundException<ApplicationUser>(user.Id);
-
-            //Mise à jour de l'image
-            if (userDb.Avatar != user.Avatar)
-            {
-                //Je convertis l'utilisateur en DTO
-                var userDbDto = this.Mapper.Map<ApplicationUserDTO>(userDb);
-
-                //Si l'utilisateur avait un avatar, on doit le supprimer
-                if (userDbDto.Avatar != null)
-                {
-                    var oldAvatar = new FileInfo(Path.Combine(baseStoragePath, userDbDto.AvatarUrl));
-                    if (oldAvatar.Exists) oldAvatar.Delete();
-                }
-
-                //On déplace la nouvelle image du dossier temp au dossier de l'utilisateur
-                var tempFile =
-                    new FileInfo(Path.Combine(this.GetTempImageDirectoryPath(baseStoragePath, userDbDto).FullName,
-                        user.Avatar));
-
-                //Destination
-                var destinationFile = new FileInfo(Path.Combine(
-                    this.GetUserImageDirectoryPath(baseStoragePath, userDbDto).FullName,
-                    this.GetImageNameFromTempImageName(tempFile.Name)));
-
-                //On déplace l'image temporaire
-                tempFile.MoveTo(destinationFile.FullName);
-
-                //On met le nouvel avatar à l'utilisateur
-                user.Avatar = destinationFile.Name;
-            }
-
-            //Mise à jour de son contenu
-            userDb.CopyFrom(this.Mapper.Map<ApplicationUser>(user));
-            await userDb.SetMandatoryValuesAsync(this.UserManager);
-
-            //Mise à jour en base de données
-            await this.UserManager.UpdateAsync(userDb);
-
-            return this.Mapper.Map<ApplicationUserDTO>(userDb);
-        }
-
-        /// <inheritdoc />
+        /// <summary>
+        /// Ajoute un utilisateur
+        /// </summary>
+        /// <param name="user">Utilisateur a ajouter</param>
+        /// <param name="baseStoragePath">Chemin de base des fichiers</param>
+        /// <returns>Utilisateur ajouté</returns>
         public async Task<ApplicationUserDTO> CreateAsync(ApplicationUserDTO userDto, string baseStoragePath)
         {
             //Vérifications de cohérence
@@ -213,7 +221,11 @@ namespace PetanquePlanning.Business.Identity.Application.Services
                 onSuccessFunc: updatedUser => this.Mapper.Map<ApplicationUserDTO>(updatedUser));
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Réinitialise le mot de passe de l'utilisateur
+        /// </summary>
+        /// <param name="id">Identifiant de l'utilisateur</param>
+        /// <returns>Aucun retour</returns>
         public async Task ReinitializePasswordAsync(long id)
         {
             //Get the user
@@ -235,7 +247,11 @@ namespace PetanquePlanning.Business.Identity.Application.Services
             );
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Supprime un utilisateur
+        /// </summary>
+        /// <param name="userId">Identifiant de l'utilisateur à supprimer</param>
+        /// <returns></returns>
         public async Task DeleteAsync(long userId)
         {
             var user = await this.UserManager.FindByIdAsync(userId.ToString());
@@ -245,7 +261,11 @@ namespace PetanquePlanning.Business.Identity.Application.Services
                 async (id, transaction) => { await this.UserManager.DeleteAsync(user); }, userId);
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Récupération de tous les utilisateurs ayant le rôle demandé
+        /// </summary>
+        /// <param name="roleId">Identifiant du rôle</param>
+        /// <returns></returns>
         public async Task<IEnumerable<ApplicationUserDTO>> GetByRoleAsync(long roleId)
         {
             var users = await this.Repository.GetByRoleAsync(roleId);

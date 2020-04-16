@@ -17,10 +17,9 @@
     <ItemGroup>
         <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Api\Tools.Api.csproj" />
         <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Mvc\Tools.Mvc.csproj" />
-        <ProjectReference
-            Include="..\PetanquePlanning.Business.Identity.Application.Abstractions\PetanquePlanning.Business.Identity.Application.Abstractions.csproj" />
-        <ProjectReference
-            Include="..\PetanquePlanning.Business.Identity.Domain\PetanquePlanning.Business.Identity.Domain.csproj" />
+        <ProjectReference Include="..\PetanquePlanning.Business.Identity.Application.DTO\PetanquePlanning.Business.Identity.Application.DTO.csproj" />
+        <ProjectReference Include="..\PetanquePlanning.Business.Identity.Application\PetanquePlanning.Business.Identity.Application.csproj" />
+        <ProjectReference Include="..\PetanquePlanning.Business.Identity.Domain\PetanquePlanning.Business.Identity.Domain.csproj" />
     </ItemGroup>
 
 </Project>

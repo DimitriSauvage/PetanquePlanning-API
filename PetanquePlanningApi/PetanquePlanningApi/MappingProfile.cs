@@ -1,18 +1,14 @@
-﻿using AutoMapper;
-using PetanquePlanning.Business.Location.Application.Abstractions.DTO;
-using PetanquePlanning.Business.Location.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Threading.Tasks;
-using PetanquePlanning.Business.Core.Application.Abstractions.DTO;
+﻿using System;
+using AutoMapper;
+using PetanquePlanning.Business.Core.Application.DTO.DTO;
 using PetanquePlanning.Business.Core.Domain.Entities;
 using PetanquePlanning.Business.Core.Domain.Enumerations;
-using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Roles;
-using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Users;
+using PetanquePlanning.Business.Identity.Application.DTO.DTO.Roles;
+using PetanquePlanning.Business.Identity.Application.DTO.DTO.Users;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using PetanquePlanning.Business.Identity.Domain.Enumerations;
+using PetanquePlanning.Business.Location.Application.DTO.DTO;
+using PetanquePlanning.Business.Location.Domain.Entities;
 using Tools.Application.DTOs;
 using Tools.Mapper;
 

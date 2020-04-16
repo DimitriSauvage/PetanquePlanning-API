@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using PetanquePlanning.Business.Location.Application.Abstractions.Abstractions;
-using PetanquePlanning.Business.Location.Application.Abstractions.DTO;
+using PetanquePlanning.Business.Location.Application.DTO.DTO;
 using PetanquePlanning.Business.Location.Domain.Entities;
 using PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions;
 using Tools.Application.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Application.Services
 {
-    public class RegionService : BaseService<Region, IRegionRepository>, IRegionService
+    public class RegionService : BaseService<Region, IRegionRepository>
     {
         #region Fields
 
@@ -20,7 +19,10 @@ namespace PetanquePlanning.Business.Location.Application.Services
 
         #region Methods
 
-        ///<inheritdoc/>
+        /// <summary>
+        /// Get all regions
+        /// </summary>
+        /// <returns>Regions</returns>
         public async Task<IEnumerable<RegionDTO>> GetAsync(bool includeDepartments = false)
         {
             List<RegionDTO> regionDto = new List<RegionDTO>();

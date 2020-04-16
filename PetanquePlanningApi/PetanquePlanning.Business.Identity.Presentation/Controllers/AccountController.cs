@@ -10,9 +10,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions;
-using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Account;
-using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Users;
+using PetanquePlanning.Business.Identity.Application.DTO.DTO.Account;
+using PetanquePlanning.Business.Identity.Application.DTO.DTO.Users;
+using PetanquePlanning.Business.Identity.Application.Services;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using Tools.Mvc.Abstractions;
 
@@ -42,12 +42,12 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         /// <summary>
         /// Account manager
         /// </summary>
-        private IAccountService AccountService { get; }
+        private AccountService AccountService { get; }
 
         /// <summary>
         /// App user manager
         /// </summary>
-        private IApplicationUserService ApplicationUserService { get; }
+        private ApplicationUserService ApplicationUserService { get; }
 
 
         /// <summary>
@@ -63,9 +63,9 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         /// Constructeur par défaut
         /// </summary>
         public AccountController(SignInManager<ApplicationUser> signInManager,
-            IAccountService accountService,
+            AccountService accountService,
             IMapper mapper,
-            IApplicationUserService applicationUserService,
+            ApplicationUserService applicationUserService,
             IHostingEnvironment hostingEnvironment)
         {
             this.SignInManager = signInManager;

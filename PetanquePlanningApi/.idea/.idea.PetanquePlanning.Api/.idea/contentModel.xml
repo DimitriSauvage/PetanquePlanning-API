@@ -454,11 +454,7 @@
           <e p="CompetitionService.cs" t="Include" />
         </e>
       </e>
-      <e p="PetanquePlanning.Business.Core.Application.Abstractions" t="IncludeRecursive">
-        <e p="Abstractions" t="Include">
-          <e p="IClubService.cs" t="Include" />
-          <e p="ICompetitionService.cs" t="Include" />
-        </e>
+      <e p="PetanquePlanning.Business.Core.Application.DTO" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="DTO" t="Include">
           <e p="ClubDTO.cs" t="Include" />
@@ -467,11 +463,11 @@
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.1" t="Include">
-              <e p="PetanquePlanning.Business.Core.Application.Abstractions.AssemblyInfo.cs" t="Include" />
+              <e p="PetanquePlanning.Business.Core.Application.DTO.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
-        <e p="PetanquePlanning.Business.Core.Application.Abstractions.csproj" t="IncludeRecursive" />
+        <e p="PetanquePlanning.Business.Core.Application.DTO.csproj" t="IncludeRecursive" />
       </e>
       <e p="PetanquePlanning.Business.Core.Domain" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -564,12 +560,7 @@
           <e p="ApplicationUserService.cs" t="Include" />
         </e>
       </e>
-      <e p="PetanquePlanning.Business.Identity.Application.Abstractions" t="IncludeRecursive">
-        <e p="Abstractions" t="Include">
-          <e p="IAccountService.cs" t="Include" />
-          <e p="IApplicationRoleService.cs" t="Include" />
-          <e p="IApplicationUserService.cs" t="Include" />
-        </e>
+      <e p="PetanquePlanning.Business.Identity.Application.DTO" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="DTO" t="Include">
           <e p="Account" t="Include">
@@ -588,11 +579,11 @@
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.1" t="Include">
-              <e p="PetanquePlanning.Business.Identity.Application.Abstractions.AssemblyInfo.cs" t="Include" />
+              <e p="PetanquePlanning.Business.Identity.Application.DTO.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
-        <e p="PetanquePlanning.Business.Identity.Application.Abstractions.csproj" t="IncludeRecursive" />
+        <e p="PetanquePlanning.Business.Identity.Application.DTO.csproj" t="IncludeRecursive" />
       </e>
       <e p="PetanquePlanning.Business.Identity.Domain" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -690,11 +681,7 @@
           <e p="RegionService.cs" t="Include" />
         </e>
       </e>
-      <e p="PetanquePlanning.Business.Location.Application.Abstractions" t="IncludeRecursive">
-        <e p="Abstractions" t="Include">
-          <e p="IDepartmentService.cs" t="Include" />
-          <e p="IRegionService.cs" t="Include" />
-        </e>
+      <e p="PetanquePlanning.Business.Location.Application.DTO" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="DTO" t="Include">
           <e p="DepartmentDTO.cs" t="Include" />
@@ -703,11 +690,11 @@
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netstandard2.1" t="Include">
-              <e p="PetanquePlanning.Business.Location.Application.Abstractions.AssemblyInfo.cs" t="Include" />
+              <e p="PetanquePlanning.Business.Location.Application.DTO.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
         </e>
-        <e p="PetanquePlanning.Business.Location.Application.Abstractions.csproj" t="IncludeRecursive" />
+        <e p="PetanquePlanning.Business.Location.Application.DTO.csproj" t="IncludeRecursive" />
       </e>
       <e p="PetanquePlanning.Business.Location.Domain" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />

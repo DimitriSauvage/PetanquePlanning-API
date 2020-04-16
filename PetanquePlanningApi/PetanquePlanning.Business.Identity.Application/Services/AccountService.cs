@@ -9,9 +9,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions;
-using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Account;
-using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Users;
+using PetanquePlanning.Business.Identity.Application.DTO.DTO.Account;
+using PetanquePlanning.Business.Identity.Application.DTO.DTO.Users;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using PetanquePlanning.Business.Identity.Domain.Exceptions;
 using Tools.Http.Enums;
@@ -21,7 +20,7 @@ using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegiste
 
 namespace PetanquePlanning.Business.Identity.Application.Services
 {
-    public class AccountService : IAccountService
+    public class AccountService
     {
         #region Private attributes
 
@@ -48,7 +47,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         /// <summary>
         /// Role manager
         /// </summary>
-        private IApplicationRoleService ApplicationRoleService { get; }
+        private ApplicationRoleService ApplicationRoleService { get; }
 
         #endregion
 
@@ -58,7 +57,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
             SignInManager<ApplicationUser> signInManager,
             IMapper mapper,
             IConfiguration configuration,
-            IApplicationRoleService applicationRoleService)
+            ApplicationRoleService applicationRoleService)
         {
             this.UserManager = userManager;
             this.SignInManager = signInManager;
@@ -71,7 +70,11 @@ namespace PetanquePlanning.Business.Identity.Application.Services
 
         #region Methods
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Connecte l'utilisateur si les informations saisies sont correctes
+        /// </summary>
+        /// <param name="model">Contient l'adresse email et le mot de passe saisi par l'utilisateur</param>
+        /// <returns>Token de connexion</returns>
         public async Task<TokenWithClaimsDTO> LoginAsync(LoginDTO model)
         {
             var result = await this.SignInManager.PasswordSignInAsync(model.Email, model.Password,
@@ -81,14 +84,23 @@ namespace PetanquePlanning.Business.Identity.Application.Services
             return await this.GetTokenWithClaimsPrincipal(model);
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Obtient un utilisateur avec son email
+        /// </summary>
+        /// <param name="email">Email recherché</param>
+        /// <returns>Utilisateur corresponsant à l'email</returns>
         public async Task<ApplicationUserDTO> FindByEmailAsync(string email)
         {
             var user = await this.UserManager.FindByEmailAsync(email);
             return this.Mapper.Map<ApplicationUserDTO>(user);
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Reset the password for the user
+        /// </summary>
+        /// <param name="userId">User identifier</param>
+        /// <param name="code">Checking code</param>
+        /// <param name="password">New password</param>
         public async Task ResetPasswordAsync(long userId, string code, string password)
         {
             //Get the user
@@ -99,7 +111,11 @@ namespace PetanquePlanning.Business.Identity.Application.Services
             await this.UserManager.ResetPasswordAsync(user, code, password);
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Check if the email is confirmed
+        /// </summary>
+        /// <param name="userId">User identifier</param>
+        /// <returns>Is the email is confirmed</returns>
         public async Task<bool> IsEmailConfirmedAsync(long userId)
         {
             var user = await this.UserManager.FindByIdAsync(userId.ToString());
@@ -107,7 +123,11 @@ namespace PetanquePlanning.Business.Identity.Application.Services
             return await this.UserManager.IsEmailConfirmedAsync(user);
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Generate a new password for the user
+        /// </summary>
+        /// <param name="userId">User identifier</param>
+        /// <returns></returns>
         public async Task<string> GeneratePasswordResetTokenAsync(long userId)
         {
             var user = await this.UserManager.FindByIdAsync(userId.ToString());
@@ -115,13 +135,21 @@ namespace PetanquePlanning.Business.Identity.Application.Services
             return await this.UserManager.GeneratePasswordResetTokenAsync(user);
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Ensure the token is valid
+        /// </summary>
+        /// <param name="token">Token to check</param>
+        /// <returns>If the token is valid</returns>
         public bool EnsureTokenIsValid(string token)
         {
             return this.GetPrincipal(token) != null;
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Get claims from token
+        /// </summary>
+        /// <param name="token">Token</param>
+        /// <returns>Claims</returns>
         public ClaimsPrincipal GetPrincipal(string token)
         {
             var tokenValidationParameters = new TokenValidationParameters()
@@ -138,7 +166,12 @@ namespace PetanquePlanning.Business.Identity.Application.Services
             return result;
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Get the logged user name from the request
+        /// </summary>
+        /// <param name="httpContext">HTTP context</param>
+        /// <param name="source">JWT source</param>
+        /// <returns>User name</returns>
         public string GetLoggedUserNameFromRequest(HttpContext httpContext,
             JWTAuthorizeTokenSource source = JWTAuthorizeTokenSource.Header)
         {
@@ -153,7 +186,12 @@ namespace PetanquePlanning.Business.Identity.Application.Services
             return claims?.FindFirstValue(ClaimTypes.Name);
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Get the user role id from the request
+        /// </summary>
+        /// <param name="httpContext">HTTP context</param>
+        /// <param name="source">JWT source</param>
+        /// <returns>Role id</returns>
         public async Task<long> GetRoleIdFromRequestAsync(HttpContext httpContext,
             JWTAuthorizeTokenSource source = JWTAuthorizeTokenSource.Header)
         {
@@ -169,7 +207,12 @@ namespace PetanquePlanning.Business.Identity.Application.Services
             return await this.ApplicationRoleService.GetRoleIdAsync(roleClaim?.Value);
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Get the user id from the request
+        /// </summary>
+        /// <param name="httpContext">HTTP context</param>
+        /// <param name="source">JWT source</param>
+        /// <returns>User id</returns>
         public async Task<long> GetUserIdFromRequestAsync(HttpContext httpContext,
             JWTAuthorizeTokenSource source = JWTAuthorizeTokenSource.Header)
         {
@@ -188,7 +231,12 @@ namespace PetanquePlanning.Business.Identity.Application.Services
             });
         }
 
-        /// <inheritdoc />
+        /// <summary>
+        /// Créé le comte utilisateur
+        /// </summary>
+        /// <param name="userDto">User to create</param>
+        /// <param name="password">User password</param>
+        /// <returns>Errors</returns>
         public async Task<IdentityResult> CreateAccount(ApplicationUserDTO userDto, string password)
         {
             var user = this.Mapper.Map<ApplicationUser>(userDto);

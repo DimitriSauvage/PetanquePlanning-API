@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PetanquePlanning.Business.Identity.Application.Abstractions.Abstractions;
-using PetanquePlanning.Business.Identity.Application.Abstractions.DTO.Users;
+using PetanquePlanning.Business.Identity.Application.DTO.DTO.Users;
+using PetanquePlanning.Business.Identity.Application.Services;
 using Tools.Mvc.Abstractions;
 
 namespace PetanquePlanning.Business.Identity.Presentation.Controllers
@@ -21,12 +21,12 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         /// <summary>
         /// Account manager
         /// </summary>
-        private IAccountService AccountService { get; }
+        private AccountService AccountService { get; }
 
         /// <summary>
         /// User manager
         /// </summary>
-        private IApplicationUserService ApplicationUserService { get; }
+        private ApplicationUserService ApplicationUserService { get; }
 
         /// <summary>
         /// Environment information
@@ -37,8 +37,8 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
 
         #region Constructors
 
-        public ApplicationUserController(IApplicationUserService applicationUserService,
-            IAccountService accountService,
+        public ApplicationUserController(ApplicationUserService applicationUserService,
+            AccountService accountService,
             IHostingEnvironment hostingEnvironment)
         {
             this.ApplicationUserService = applicationUserService;
