@@ -97,23 +97,13 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         /// <inheritdoc />
         public async Task<ApplicationUserDTO> UpdateAsync(ApplicationUserDTO user, string baseStoragePath)
         {
-            using (var transaction = this.Repository.BeginTransaction())
-            {
-                try
+            return await this.Repository.TransactionalExecutionAsync(
+                action: async (applicationUser, transaction) =>
                 {
                     await this.UpdateAsync(user, baseStoragePath, transaction);
-
-                    //Validation de la transaction
-                    transaction.Commit();
-
-                    return user;
-                }
-                catch (Exception)
-                {
-                    transaction.Rollback();
-                    throw;
-                }
-            }
+                },
+                obj: this.Mapper.Map<ApplicationUser>(user),
+                onSuccessFunc: updatedUser => this.Mapper.Map<ApplicationUserDTO>(updatedUser));
         }
 
         /// <inheritdoc />
@@ -123,29 +113,29 @@ namespace PetanquePlanning.Business.Identity.Application.Services
             if (transaction == null) throw new ArgumentNullException(nameof(transaction));
 
             //Récupération de l'utilisateur en base de données
-            ApplicationUser userDb = await this.UserManager.FindByIdAsync(user.Id.ToString());
+            var userDb = await this.UserManager.FindByIdAsync(user.Id.ToString());
             if (userDb == null) throw new EntityNotFoundException<ApplicationUser>(user.Id);
 
             //Mise à jour de l'image
             if (userDb.Avatar != user.Avatar)
             {
                 //Je convertis l'utilisateur en DTO
-                ApplicationUserDTO userDbDto = this.Mapper.Map<ApplicationUserDTO>(userDb);
+                var userDbDto = this.Mapper.Map<ApplicationUserDTO>(userDb);
 
                 //Si l'utilisateur avait un avatar, on doit le supprimer
                 if (userDbDto.Avatar != null)
                 {
-                    FileInfo oldAvatar = new FileInfo(Path.Combine(baseStoragePath, userDbDto.AvatarUrl));
+                    var oldAvatar = new FileInfo(Path.Combine(baseStoragePath, userDbDto.AvatarUrl));
                     if (oldAvatar.Exists) oldAvatar.Delete();
                 }
 
                 //On déplace la nouvelle image du dossier temp au dossier de l'utilisateur
-                FileInfo tempFile =
+                var tempFile =
                     new FileInfo(Path.Combine(this.GetTempImageDirectoryPath(baseStoragePath, userDbDto).FullName,
                         user.Avatar));
 
                 //Destination
-                FileInfo destinationFile = new FileInfo(Path.Combine(
+                var destinationFile = new FileInfo(Path.Combine(
                     this.GetUserImageDirectoryPath(baseStoragePath, userDbDto).FullName,
                     this.GetImageNameFromTempImageName(tempFile.Name)));
 
@@ -167,28 +157,23 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         }
 
         /// <inheritdoc />
-        public async Task<ApplicationUserDTO> CreateAsync(ApplicationUserDTO user, string baseStoragePath)
+        public async Task<ApplicationUserDTO> CreateAsync(ApplicationUserDTO userDto, string baseStoragePath)
         {
-            using (var transaction = this.Repository.BeginTransaction())
-            {
-                try
+            //Vérifications de cohérence
+            if (userDto == null) throw new ArgumentNullException(nameof(userDto));
+            if (userDto.Id > 0) throw new EntityAlreadyExistsException<ApplicationUser>();
+
+            return await this.Repository.TransactionalExecutionAsync(
+                action: async (newUser, transaction) =>
                 {
-                    //Vérifications de cohérence
-                    if (user == null) throw new ArgumentNullException(nameof(user));
-                    if (user.Id > 0) throw new EntityAlreadyExistsException<ApplicationUser>();
-
-
-                    //Création du nouvel utiliasteur
-                    var newUser = this.Mapper.Map<ApplicationUser>(user);
-
                     //On met les valeurs obligatoires
                     await newUser.SetMandatoryValuesAsync(this.UserManager);
 
                     //Ajout en bdd
-                    IdentityResult result = await this.UserManager.CreateAsync(newUser);
+                    var result = await this.UserManager.CreateAsync(newUser);
                     if (!result.Succeeded)
                     {
-                        StringBuilder errorBuilder = new StringBuilder();
+                        var errorBuilder = new StringBuilder();
                         foreach (var error in result.Errors)
                         {
                             errorBuilder.Append(error.Description);
@@ -198,15 +183,18 @@ namespace PetanquePlanning.Business.Identity.Application.Services
                     }
 
                     //On déplace l'image du dossier temp au dossier de l'utilisateur
-                    if (user.Avatar != null)
+                    if (newUser.Avatar != null)
                     {
-                        FileInfo avatar =
-                            new FileInfo(Path.Combine(this.GetTempImageDirectoryPath(baseStoragePath, user).FullName,
-                                user.Avatar));
+                        var avatar =
+                            new FileInfo(
+                                fileName: Path.Combine(
+                                    this.GetTempImageDirectoryPath(baseStoragePath,
+                                        this.Mapper.Map<ApplicationUserDTO>(newUser)).FullName,
+                                    newUser.Avatar));
                         if (avatar.Exists)
                         {
-                            string avatarName = this.GetImageNameFromTempImageName(newUser.Avatar);
-                            FileInfo newFile = new FileInfo(Path.Combine(
+                            var avatarName = this.GetImageNameFromTempImageName(newUser.Avatar);
+                            var newFile = new FileInfo(Path.Combine(
                                 this.GetUserImageDirectoryPath(baseStoragePath,
                                     this.Mapper.Map<ApplicationUserDTO>(newUser)).FullName, avatarName));
                             if (newFile.Directory != null && !newFile.Directory.Exists) newFile.Directory.Create();
@@ -220,18 +208,9 @@ namespace PetanquePlanning.Business.Identity.Application.Services
 
                     //Tranformation en DTO
                     var applicationUserDto = this.Mapper.Map<ApplicationUserDTO>(newUser);
-
-                    //Ajout en base de données et renvoi
-                    transaction.Commit();
-
-                    return applicationUserDto;
-                }
-                catch (Exception)
-                {
-                    transaction.Rollback();
-                    throw;
-                }
-            }
+                },
+                obj: this.Mapper.Map<ApplicationUser>(userDto),
+                onSuccessFunc: updatedUser => this.Mapper.Map<ApplicationUserDTO>(updatedUser));
         }
 
         /// <inheritdoc />
@@ -259,23 +238,11 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         /// <inheritdoc />
         public async Task DeleteAsync(long userId)
         {
-            using (var transaction = this.Repository.BeginTransaction())
-            {
-                try
-                {
-                    var user = await this.UserManager.FindByIdAsync(userId.ToString());
-                    if (user == null) throw new EntityNotFoundException<ApplicationUser>(userId);
+            var user = await this.UserManager.FindByIdAsync(userId.ToString());
+            if (user == null) throw new EntityNotFoundException<ApplicationUser>(userId);
 
-                    //Suppression
-                    await this.UserManager.DeleteAsync(user);
-                    transaction.Commit();
-                }
-                catch (Exception)
-                {
-                    transaction.Rollback();
-                    throw;
-                }
-            }
+            await this.Repository.TransactionalExecutionAsync(
+                async (id, transaction) => { await this.UserManager.DeleteAsync(user); }, userId);
         }
 
         /// <inheritdoc />
