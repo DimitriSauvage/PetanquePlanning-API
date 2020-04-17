@@ -10,7 +10,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Application.Abstractions\Tools.Application.Abstractions.csproj" />
         <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Application\Tools.Application.csproj" />
         <ProjectReference Include="..\PetanquePlanning.Business.Location.Application.DTO\PetanquePlanning.Business.Location.Application.DTO.csproj" />
         <ProjectReference Include="..\PetanquePlanning.Business.Location.Infrastructure.Abstractions\PetanquePlanning.Business.Location.Infrastructure.Abstractions.csproj" />

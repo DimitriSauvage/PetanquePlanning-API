@@ -170,17 +170,6 @@
       </e>
       <e p="Tools.Application.csproj" t="IncludeRecursive" />
     </e>
-    <e p="C:\Users\dimit\Github\CSharp-Tools\Tools.Application.Abstractions" t="IncludeRecursive">
-      <e p="bin" t="ExcludeRecursive" />
-      <e p="obj" t="ExcludeRecursive">
-        <e p="Debug" t="Include">
-          <e p="netstandard2.1" t="Include">
-            <e p="Tools.Application.Abstractions.AssemblyInfo.cs" t="Include" />
-          </e>
-        </e>
-      </e>
-      <e p="Tools.Application.Abstractions.csproj" t="IncludeRecursive" />
-    </e>
     <e p="C:\Users\dimit\Github\CSharp-Tools\Tools.Domain" t="IncludeRecursive">
       <e p="Abstractions" t="Include">
         <e p="Entity.cs" t="Include" />

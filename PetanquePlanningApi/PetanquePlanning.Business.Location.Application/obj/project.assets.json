@@ -1907,6 +1907,7 @@
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "Microsoft.CSharp": "4.5.0",
+          "Microsoft.Extensions.DependencyInjection": "2.1.1",
           "Microsoft.Extensions.Logging": "2.1.1",
           "Newtonsoft.Json": "11.0.2",
           "System.ComponentModel.Annotations": "4.5.0",
@@ -1944,20 +1945,6 @@
         },
         "runtime": {
           "bin/placeholder/Tools.Application.dll": {}
-        }
-      },
-      "Tools.Application.Abstractions/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.1",
-        "dependencies": {
-          "AutoMapper": "9.0.0",
-          "Tools.Infrastructure": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Tools.Application.Abstractions.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Tools.Application.Abstractions.dll": {}
         }
       },
       "Tools.Domain/1.0.0": {
@@ -6499,11 +6486,6 @@
       "path": "../../../CSharp-Tools/Tools.Application/Tools.Application.csproj",
       "msbuildProject": "../../../CSharp-Tools/Tools.Application/Tools.Application.csproj"
     },
-    "Tools.Application.Abstractions/1.0.0": {
-      "type": "project",
-      "path": "../../../CSharp-Tools/Tools.Application.Abstractions/Tools.Application.Abstractions.csproj",
-      "msbuildProject": "../../../CSharp-Tools/Tools.Application.Abstractions/Tools.Application.Abstractions.csproj"
-    },
     "Tools.Domain/1.0.0": {
       "type": "project",
       "path": "../../../CSharp-Tools/Tools.Domain/Tools.Domain.csproj",
@@ -6525,13 +6507,12 @@
       "AutoMapper >= 9.0.0",
       "PetanquePlanning.Business.Location.Application.DTO >= 1.0.0",
       "PetanquePlanning.Business.Location.Infrastructure.Abstractions >= 1.0.0",
-      "Tools.Application >= 1.0.0",
-      "Tools.Application.Abstractions >= 1.0.0"
+      "Tools.Application >= 1.0.0"
     ]
   },
   "packageFolders": {
     "C:\\Users\\dimit\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet": {}
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
@@ -6543,7 +6524,7 @@
       "outputPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
         "C:\\Users\\dimit\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6560,9 +6541,6 @@
       "frameworks": {
         "netstandard2.1": {
           "projectReferences": {
-            "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Application.Abstractions\\Tools.Application.Abstractions.csproj": {
-              "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Application.Abstractions\\Tools.Application.Abstractions.csproj"
-            },
             "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Application\\Tools.Application.csproj": {
               "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Application\\Tools.Application.csproj"
             },

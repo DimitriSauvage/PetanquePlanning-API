@@ -19,9 +19,6 @@
     "frameworks": {
       "netstandard2.1": {
         "projectReferences": {
-          "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Api\\Tools.Api.csproj": {
-            "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Api\\Tools.Api.csproj"
-          },
           "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Mvc\\Tools.Mvc.csproj": {
             "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Mvc\\Tools.Mvc.csproj"
           },

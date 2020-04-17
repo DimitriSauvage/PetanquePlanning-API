@@ -19,9 +19,6 @@
     "frameworks": {
       "netstandard2.1": {
         "projectReferences": {
-          "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Application.Abstractions\\Tools.Application.Abstractions.csproj": {
-            "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Application.Abstractions\\Tools.Application.Abstractions.csproj"
-          },
           "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Application\\Tools.Application.csproj": {
             "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Application\\Tools.Application.csproj"
           },

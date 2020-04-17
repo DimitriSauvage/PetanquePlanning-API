@@ -7,13 +7,11 @@
 
     <ItemGroup>
         <PackageReference Include="AutoMapper" Version="9.0.0" />
-        <PackageReference Include="Microsoft.AspNet.Identity.Owin" Version="2.2.3" />
         <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
-        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.5.0" />
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.5.0" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Application.Abstractions\Tools.Application.Abstractions.csproj" />
         <ProjectReference Include="..\PetanquePlanning.Business.Identity.Application.DTO\PetanquePlanning.Business.Identity.Application.DTO.csproj" />
         <ProjectReference Include="..\PetanquePlanning.Business.Identity.Infrastructure.Abstractions\PetanquePlanning.Business.Identity.Infrastructure.Abstractions.csproj" />
     </ItemGroup>

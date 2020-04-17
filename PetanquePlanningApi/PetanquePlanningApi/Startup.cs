@@ -171,6 +171,8 @@ namespace PetanquePlanningApi
         /// <param name="services">Service collection</param>
         private void ConfigureDatabase(IServiceCollection services)
         {
+            services.AddScoped<DbContext, PetanquePlanningDbContext>();
+
             var appSettingsSection = this.Configuration.GetSection("DatabaseSettings");
             services.Configure<DatabaseSettings>(appSettingsSection);
             // Allow update the appsettings file
