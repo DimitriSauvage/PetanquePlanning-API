@@ -265,3 +265,20 @@ __pycache__/
 *.pyc
 
 **/**/appsettings.connectionstrings.json
+
+*.swp
+*.*~
+*.pyc
+
+# Visual Studio Code
+.vscode
+
+# Build results
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+msbuild.log
+msbuild.err
+msbuild.wrn
