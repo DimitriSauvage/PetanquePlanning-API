@@ -282,3 +282,5 @@ build/
 msbuild.log
 msbuild.err
 msbuild.wrn
+
+*.dll
