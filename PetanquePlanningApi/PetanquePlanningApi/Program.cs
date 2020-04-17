@@ -11,14 +11,13 @@ namespace PetanquePlanningApi
             CreateHostBuilder(args).Build().Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
+        private static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
-                {
                     webBuilder
                         .UseStartup<Startup>()
-                        .ConfigureAppConfiguration(SetupConfiguration);
-                });
+                        .ConfigureAppConfiguration(SetupConfiguration)
+                );
 
         /// <summary>
         /// Set the configuration of the application
@@ -33,8 +32,7 @@ namespace PetanquePlanningApi
                 .AddEnvironmentVariables()
                 .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                 .AddJsonFile("appsettings.connectionstrings.json", optional: false, reloadOnChange: true);
-
-            var configuration = configBuilder.Build();
+            configBuilder.Build();
         }
     }
 }

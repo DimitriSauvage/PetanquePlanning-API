@@ -13,6 +13,7 @@ using PetanquePlanning.Business.Identity.Application.DTO.DTO.Account;
 using PetanquePlanning.Business.Identity.Application.DTO.DTO.Users;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using PetanquePlanning.Business.Identity.Domain.Exceptions;
+using Tools.Application.Abstractions;
 using Tools.Http.Enums;
 using Tools.Http.Extensions;
 using Tools.Infrastructure.Exceptions;
@@ -20,7 +21,7 @@ using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegiste
 
 namespace PetanquePlanning.Business.Identity.Application.Services
 {
-    public class AccountService
+    public class AccountService : BaseService
     {
         #region Private attributes
 

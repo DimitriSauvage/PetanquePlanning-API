@@ -25,6 +25,8 @@ using PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.Reposito
 using PetanquePlanning.Business.Location.Application.Services;
 using PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions;
 using PetanquePlanning.Business.Location.Infrastructure.EntityFramework.Repositories;
+using Tools.Application.Abstractions;
+using Tools.Infrastructure.EntityFramework.Abstractions;
 using Tools.Infrastructure.Settings;
 
 namespace PetanquePlanningApi
@@ -54,26 +56,16 @@ namespace PetanquePlanningApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            #region Database config
-
+            //Database config
             this.ConfigureDatabase(services);
 
-            #endregion
-
-            #region Configure authentication
-
+            //Auth config
             this.ConfigureAuthentication(services);
 
-            #endregion
-
-            #region AutoMapper
-
+            //Add the automapper
             services.AddAutoMapper(typeof(Startup));
 
-            #endregion
-
-            #region Configure session
-
+            //Session config
             services.AddSession(options =>
             {
                 options.Cookie.Expiration = TimeSpan.FromDays(30);
@@ -81,22 +73,16 @@ namespace PetanquePlanningApi
                 options.IdleTimeout = TimeSpan.FromHours(2);
             });
 
-            #endregion
+            //Add repo and services to the DI
+            AddBusinessRepositories(services);
+            AddBusinessServices(services);
 
-            #region Configure DI fot the business elements
+            //Identity config
+            AddIdentity(services);
 
-            this.AddBusinessRepositories(services);
-            this.AddBusinessServices(services);
-
-            #endregion
-
-            #region Identity
-
-            this.AddIdentity(services);
-
-            #endregion
-
-            //services.AddControllers();
+            //Global config
+            services.AddControllers();
+            services.AddDistributedMemoryCache();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -150,7 +136,7 @@ namespace PetanquePlanningApi
 
         #region Private methods
 
-        private void AddIdentity(IServiceCollection services)
+        private static void AddIdentity(IServiceCollection services)
         {
             services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
                 {
@@ -192,7 +178,7 @@ namespace PetanquePlanningApi
         /// <param name="services">Service collection</param>
         private void ConfigureAuthentication(IServiceCollection services)
         {
-            var authUrl = "/api/accounts/login";
+            const string authUrl = "/api/accounts/login";
             services.AddAuthentication(options =>
                 {
                     options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -225,7 +211,7 @@ namespace PetanquePlanningApi
         /// Add the repositoties to the DI
         /// </summary>
         /// <param name="services"></param>
-        private void AddBusinessRepositories(IServiceCollection services)
+        private static void AddBusinessRepositories(IServiceCollection services)
         {
             #region Location
 
@@ -253,28 +239,26 @@ namespace PetanquePlanningApi
         /// Add the repositoties to the DI
         /// </summary>
         /// <param name="services"></param>
-        private void AddBusinessServices(IServiceCollection services)
+        private static void AddBusinessServices(IServiceCollection services)
         {
             #region Location
 
-            services.AddScoped<RegionService, RegionService>();
-            services.AddScoped<DepartmentService, DepartmentService>();
+            services.AddScoped<RegionService>();
+            services.AddScoped<DepartmentService>();
 
             #endregion
 
-            #region Identity
+            #region dentity
 
-            services.AddScoped<ApplicationUserService, ApplicationUserService>();
-            services.AddScoped<ApplicationRoleService, ApplicationRoleService>();
-            services.AddScoped<AccountService, AccountService>();
+            services.AddScoped<ApplicationUserService>();
+            services.AddScoped<ApplicationRoleService>();
 
             #endregion
 
             #region Core
 
-            //To enable DI
-            services.AddScoped<CompetitionService, CompetitionService>();
-            services.AddScoped<ClubService, ClubService>();
+            services.AddScoped<CompetitionService>();
+            services.AddScoped<ClubService>();
 
             #endregion
         }
