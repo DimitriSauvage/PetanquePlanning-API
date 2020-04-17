@@ -21,6 +21,7 @@ namespace PetanquePlanning.Business.Location.Infrastructure.EntityFramework.Maps
                 .HasConstraintName("FK_Department_Region")
                 .OnDelete(DeleteBehavior.Cascade);
 
+
             //Index
             builder.HasIndex(x => x.Code).IsUnique().HasName("UX_Department_Code");
 

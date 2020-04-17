@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using PetanquePlanning.Business.Location.Domain.Entities;
 
 namespace PetanquePlanning.Business.Location.Application.DTO.DTO
 {
@@ -7,7 +8,7 @@ namespace PetanquePlanning.Business.Location.Application.DTO.DTO
         /// <summary>
         /// Adjacent departments
         /// </summary>
-        public IEnumerable<DepartmentDTO> AdjacentDepartments { get; set; } = new List<DepartmentDTO>();
+        public IEnumerable<AdjacentDepartmentsDTO> AdjacentDepartments { get; set; }
 
         /// <summary>
         /// Code

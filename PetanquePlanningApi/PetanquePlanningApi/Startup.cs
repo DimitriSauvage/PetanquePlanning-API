@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -26,6 +27,7 @@ using PetanquePlanning.Business.Location.Application.Services;
 using PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions;
 using PetanquePlanning.Business.Location.Infrastructure.EntityFramework.Repositories;
 using Tools.Application.Abstractions;
+using Tools.Helpers;
 using Tools.Infrastructure.EntityFramework.Abstractions;
 using Tools.Infrastructure.Settings;
 
@@ -56,6 +58,10 @@ namespace PetanquePlanningApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Global config
+            services.AddControllers();
+            services.AddDistributedMemoryCache();
+
             //Database config
             this.ConfigureDatabase(services);
 
@@ -79,10 +85,6 @@ namespace PetanquePlanningApi
 
             //Identity config
             AddIdentity(services);
-
-            //Global config
-            services.AddControllers();
-            services.AddDistributedMemoryCache();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -264,5 +266,19 @@ namespace PetanquePlanningApi
         }
 
         #endregion
+
+        private static List<Assembly> GetAssemblies()
+        {
+            List<Assembly> listOfAssemblies = new List<Assembly>();
+            var mainAsm = Assembly.GetEntryAssembly();
+            listOfAssemblies.Add(mainAsm);
+
+            foreach (var refAsmName in mainAsm.GetReferencedAssemblies())
+            {
+                listOfAssemblies.Add(Assembly.Load(refAsmName));
+            }
+
+            return listOfAssemblies;
+        }
     }
 }

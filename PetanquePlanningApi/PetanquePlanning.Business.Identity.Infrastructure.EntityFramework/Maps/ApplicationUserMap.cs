@@ -24,14 +24,18 @@ namespace PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.Maps
             builder.Property(x => x.Avatar);
             builder.Property(x => x.Gender);
 
-            builder.HasMany<ApplicationUserRole>().WithOne().HasForeignKey(ur => ur.UserId).IsRequired()
+            builder
+                .HasMany(x => x.Roles)
+                .WithOne()
+                .HasForeignKey(ur => ur.UserId)
+                .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade);
             builder.HasMany<ApplicationUserClaim>().WithOne().HasForeignKey(uc => uc.UserId).IsRequired();
             builder.HasMany<ApplicationUserLogin>().WithOne().HasForeignKey(ul => ul.UserId).IsRequired();
             builder.HasMany<ApplicationUserToken>().WithOne().HasForeignKey(ut => ut.UserId).IsRequired();
 
-            builder.HasIndex(x => x.NormalizedUserName).HasName("uk_ApplicationUser_NormalizedUserName").IsUnique();
-            builder.HasIndex(x => x.NormalizedEmail).HasName("ix_ApplicationUser_NormalizedEmail");
+            builder.HasIndex(x => x.NormalizedUserName).HasName("UK_ApplicationUser_NormalizedUserName").IsUnique();
+            builder.HasIndex(x => x.NormalizedEmail).HasName("IX_ApplicationUser_NormalizedEmail");
         }
     }
 }

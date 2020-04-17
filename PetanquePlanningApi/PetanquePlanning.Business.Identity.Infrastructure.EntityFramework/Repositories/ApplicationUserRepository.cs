@@ -28,7 +28,7 @@ namespace PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.Repo
         public async Task<IEnumerable<ApplicationUser>> GetByRoleAsync(long roleId)
         {
             return await Query()
-                .Where(x => x.ApplicationRoleId == roleId)
+                .Where(x => x.Roles.Any(ur => ur.RoleId.Equals(roleId)))
                 .ToListAsync();
         }
 

@@ -16,10 +16,14 @@ namespace PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.Maps
             builder.Property(x => x.NormalizedName).HasMaxLength(100);
             builder.Property(x => x.ConcurrencyStamp).IsConcurrencyToken();
 
-            builder.HasMany(x => x.Users).WithOne().HasForeignKey(x => x.RoleId).IsRequired()
+            builder
+                .HasMany(x => x.Users)
+                .WithOne()
+                .HasForeignKey(x => x.RoleId)
+                .IsRequired()
                 .OnDelete(DeleteBehavior.Restrict);
             builder.HasMany(x => x.Claims).WithOne().HasForeignKey(x => x.RoleId).IsRequired();
-            builder.HasIndex(x => x.NormalizedName).HasName("ix_ApplicationRole_NormalizedName").IsUnique();
+            builder.HasIndex(x => x.NormalizedName).HasName("IX_ApplicationRole_NormalizedName").IsUnique();
 
             builder.HasData(
                 new ApplicationRole()

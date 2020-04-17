@@ -1,13 +1,14 @@
-﻿using Tools.Domain.Abstractions;
+﻿using PetanquePlanning.Business.Location.Application.DTO.DTO;
 
 namespace PetanquePlanning.Business.Location.Domain.Entities
 {
-    public class AdjacentDepartments : EntityWithId
+    public class AdjacentDepartmentsDTO
     {
         /// <summary>
         /// First adjacent department
         /// </summary>
-        public Department FirstDepartment { get; set; }
+        public DepartmentDTO FirstDepartment { get; set; }
+
 
         /// <summary>
         /// First department id
@@ -17,7 +18,7 @@ namespace PetanquePlanning.Business.Location.Domain.Entities
         /// <summary>
         /// Second adjacent department
         /// </summary>
-        public Department SecondDepartment { get; set; }
+        public DepartmentDTO SecondDepartment { get; set; }
 
         /// <summary>
         /// Second department id

@@ -84,12 +84,7 @@ namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Users
         /// <summary>
         /// User role
         /// </summary>
-        public ApplicationRole ApplicationRole { get; set; }
-
-        /// <summary>
-        /// Id of the application role
-        /// </summary>
-        public long ApplicationRoleId { get; set; }
+        public IEnumerable<ApplicationUserRoleDTO> Roles { get; set; }
 
         /// <summary>
         /// Affecte ou obtient l'id de l'utilisateur

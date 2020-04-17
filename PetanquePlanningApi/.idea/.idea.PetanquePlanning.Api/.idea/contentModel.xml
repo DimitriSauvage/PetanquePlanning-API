@@ -351,9 +351,12 @@
     <e p="C:\Users\dimit\Github\CSharp-Tools\Tools.Infrastructure.EntityFramework" t="IncludeRecursive">
       <e p="Abstractions" t="Include">
         <e p="AppDbContext.cs" t="Include" />
-        <e p="AppEntityMap.cs" t="Include" />
         <e p="AppIdentityDbContext.cs" t="Include" />
         <e p="DbRepository.cs" t="Include" />
+        <e p="EntityMap.cs" t="Include" />
+        <e p="EntityWithCompositeIdMap.cs" t="Include" />
+        <e p="EntityWithIdMap.cs" t="Include" />
+        <e p="EntityWithTrackingMap.cs" t="Include" />
       </e>
       <e p="bin" t="ExcludeRecursive" />
       <e p="Exceptions" t="Include">
@@ -564,6 +567,7 @@
           </e>
           <e p="Users" t="Include">
             <e p="ApplicationUserDTO.cs" t="Include" />
+            <e p="ApplicationUserRoleDTO.cs" t="Include" />
           </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
@@ -674,6 +678,7 @@
       <e p="PetanquePlanning.Business.Location.Application.DTO" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="DTO" t="Include">
+          <e p="AdjacentDepartmentsDTO.cs" t="Include" />
           <e p="DepartmentDTO.cs" t="Include" />
           <e p="RegionDTO.cs" t="Include" />
         </e>

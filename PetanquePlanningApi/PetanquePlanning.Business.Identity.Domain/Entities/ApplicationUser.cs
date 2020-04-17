@@ -32,7 +32,7 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         /// <summary>
         /// Favorite department codes
         /// </summary>
-        public List<string> FavoriteDepartmentCodes { get; } = new List<string>();
+        public List<long> FavoriteDepartmentsId { get; set; }
 
         /// <summary>
         /// User gender
@@ -57,12 +57,8 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         /// <summary>
         /// User role
         /// </summary>
-        public ApplicationRole ApplicationRole { get; set; }
+        public IEnumerable<ApplicationUserRole> Roles { get; set; }
 
-        /// <summary>
-        /// Id of the application role
-        /// </summary>
-        public long ApplicationRoleId { get; set; }
 
         /// <summary>
         /// If the user has to change his password
