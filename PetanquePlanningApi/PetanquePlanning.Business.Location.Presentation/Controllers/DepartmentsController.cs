@@ -4,25 +4,20 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetanquePlanning.Business.Location.Application.DTO.DTO;
 using PetanquePlanning.Business.Location.Application.Services;
+using PetanquePlanning.Business.Location.Domain.Entities;
+using PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions;
 using Tools.Mvc.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Presentation.Controllers
 {
     [Route("[controller]")]
-    public class DepartmentController : ApiController
+    public class DepartmentsController : ApiController<Department, IDepartmentRepository, DepartmentService>
     {
         #region Fields
-
-        private DepartmentService DepartmentService { get; }
 
         #endregion
 
         #region Constructor
-
-        public DepartmentController(DepartmentService departmentService)
-        {
-            this.DepartmentService = departmentService;
-        }
 
         #endregion
 
@@ -40,7 +35,7 @@ namespace PetanquePlanning.Business.Location.Presentation.Controllers
             [FromQuery] bool withAdjacentDepartments = false,
             [FromQuery] bool withRegion = false)
         {
-            return this.Ok(await this.DepartmentService.GetAsync(withAdjacentDepartments, withRegion));
+            return this.Ok(await this.Service.GetAsync(withAdjacentDepartments, withRegion));
         }
 
         #endregion

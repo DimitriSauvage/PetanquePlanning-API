@@ -3092,7 +3092,10 @@
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Localization": "2.1.1",
-          "Tools.Http": "1.0.0"
+          "Tools.Application": "1.0.0",
+          "Tools.Domain": "1.0.0",
+          "Tools.Http": "1.0.0",
+          "Tools.Infrastructure": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Tools.Mvc.dll": {}

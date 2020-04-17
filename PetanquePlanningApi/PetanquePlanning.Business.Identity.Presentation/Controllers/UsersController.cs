@@ -5,16 +5,15 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetanquePlanning.Business.Identity.Application.DTO.DTO.Users;
 using PetanquePlanning.Business.Identity.Application.Services;
+using PetanquePlanning.Business.Identity.Domain.Entities;
+using PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Abstractions;
 using Tools.Mvc.Abstractions;
 
 namespace PetanquePlanning.Business.Identity.Presentation.Controllers
 {
-    /// <summary>
-    /// Controleur d'api chargé de la gestion des utilisateurs
-    /// </summary>
-    /// 
-    [Route("users")]
-    public class ApplicationUserController : ApiController
+    [Route("[controller]")]
+    public class
+        UsersController : ApiController<ApplicationUser, IApplicationUserRepository, ApplicationUserService>
     {
         #region Private properties
 
@@ -22,11 +21,6 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         /// Account manager
         /// </summary>
         private AccountService AccountService { get; }
-
-        /// <summary>
-        /// User manager
-        /// </summary>
-        private ApplicationUserService ApplicationUserService { get; }
 
         /// <summary>
         /// Environment information
@@ -37,11 +31,9 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
 
         #region Constructors
 
-        public ApplicationUserController(ApplicationUserService applicationUserService,
-            AccountService accountService,
+        public UsersController(AccountService accountService,
             IHostingEnvironment hostingEnvironment)
         {
-            this.ApplicationUserService = applicationUserService;
             this.AccountService = accountService;
             this.HostingEnvironment = hostingEnvironment;
         }
@@ -56,7 +48,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         [ProducesResponseType(typeof(IEnumerable<ApplicationUserDTO>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAsync()
         {
-            return this.Ok(await this.ApplicationUserService.GetAllAsync());
+            return this.Ok(await this.Service.GetAllAsync());
         }
 
 
@@ -69,7 +61,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         [ProducesResponseType(typeof(ApplicationUserDTO), StatusCodes.Status200OK)]
         public async Task<IActionResult> Get(long id)
         {
-            return Ok(await this.ApplicationUserService.GetByIdAsync(id));
+            return Ok(await this.Service.GetByIdAsync(id));
         }
 
         /// <summary>
@@ -81,7 +73,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         public async Task<IActionResult> GetLogged()
         {
             var userId = await this.AccountService.GetUserIdFromRequestAsync(this.HttpContext);
-            return Ok(await this.ApplicationUserService.GetByIdAsync(userId));
+            return Ok(await this.Service.GetByIdAsync(userId));
         }
 
         /// <summary>
@@ -93,7 +85,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         [ProducesResponseType(typeof(ApplicationUserDTO), StatusCodes.Status201Created)]
         public async Task<IActionResult> Add([FromBody] ApplicationUserDTO user)
         {
-            var newUser = await this.ApplicationUserService.CreateAsync(user, this.HostingEnvironment.WebRootPath);
+            var newUser = await this.Service.CreateAsync(user, this.HostingEnvironment.WebRootPath);
             return Created($"{HttpContext.Request.Path}/{newUser.Id}", newUser);
         }
 
@@ -107,7 +99,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         public async Task<IActionResult> Update([FromBody] ApplicationUserDTO userDto)
         {
             ApplicationUserDTO applicationUserDto =
-                await this.ApplicationUserService.UpdateAsync(userDto, this.HostingEnvironment.WebRootPath);
+                await this.Service.UpdateAsync(userDto, this.HostingEnvironment.WebRootPath);
             return Ok(applicationUserDto);
         }
 
@@ -123,7 +115,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
             // var requestCultureFeature = this.HttpContext.Features.Get<IRequestCultureFeature>();
             // CultureInfo cultureInfo = requestCultureFeature.RequestCulture.Culture;
 
-            await this.ApplicationUserService.ReinitializePasswordAsync(id);
+            await this.Service.ReinitializePasswordAsync(id);
             return NoContent();
         }
 
@@ -137,7 +129,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         [ProducesResponseType(typeof(void), StatusCodes.Status204NoContent)]
         public async Task<IActionResult> DeleteAsync([FromRoute] long userId)
         {
-            await this.ApplicationUserService.DeleteAsync(userId);
+            await this.Service.DeleteAsync(userId);
             return this.NoContent();
         }
     }

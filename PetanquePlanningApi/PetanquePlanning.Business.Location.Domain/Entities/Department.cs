@@ -8,7 +8,7 @@ namespace PetanquePlanning.Business.Location.Domain.Entities
         /// <summary>
         /// Adjacent departments
         /// </summary>
-        public IEnumerable<Department> AdjacentDepartments { get; set; }
+        public IEnumerable<AdjacentDepartments> AdjacentDepartments { get; set; }
 
         /// <summary>
         /// Code

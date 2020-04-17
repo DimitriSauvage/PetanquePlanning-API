@@ -5,28 +5,21 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetanquePlanning.Business.Core.Application.DTO.DTO;
 using PetanquePlanning.Business.Core.Application.Services;
+using PetanquePlanning.Business.Core.Domain.Entities;
+using PetanquePlanning.Business.Core.Infrastructure.Abstractions.Abstractions;
+using Tools.Infrastructure.Exceptions;
 using Tools.Mvc.Abstractions;
 
 namespace PetanquePlanning.Business.Core.Presentation.Controllers
 {
     [Route("[controller]")]
-    public class CompetitionController : ApiController
+    public class CompetitionsController : ApiController<Competition, ICompetitionRepository, CompetitionService>
     {
         #region Fields
-
-        /// <summary>
-        /// Competition manager
-        /// </summary>
-        private CompetitionService CompetitionService { get; }
 
         #endregion
 
         #region Constructor
-
-        public CompetitionController(CompetitionService competitionService)
-        {
-            this.CompetitionService = competitionService;
-        }
 
         #endregion
 
@@ -49,11 +42,11 @@ namespace PetanquePlanning.Business.Core.Presentation.Controllers
             IEnumerable<CompetitionDTO> result = null;
             if (startDate != default(DateTimeOffset) && endDate != default(DateTimeOffset))
             {
-                result = await this.CompetitionService.GetAsync(startDate, endDate, departmentCodes);
+                result = await this.Service.GetAsync(startDate, endDate, departmentCodes);
             }
             else
             {
-                result = await this.CompetitionService.GetAsync(departmentCodes);
+                result = await this.Service.GetAsync(departmentCodes);
             }
 
             return this.Ok(result);
@@ -70,7 +63,7 @@ namespace PetanquePlanning.Business.Core.Presentation.Controllers
         [ProducesResponseType(typeof(CompetitionDTO), StatusCodes.Status200OK)]
         public async Task<ActionResult<CompetitionDTO>> GetByIdAsync([FromRoute] long id)
         {
-            var competition = await this.CompetitionService.GetByIdAsync(id);
+            var competition = await this.Service.GetByIdAsync(id);
             return this.Ok(competition);
         }
 
@@ -85,7 +78,7 @@ namespace PetanquePlanning.Business.Core.Presentation.Controllers
         [ProducesResponseType(typeof(CompetitionDTO), StatusCodes.Status201Created)]
         public async Task<ActionResult<CompetitionDTO>> CreateAsync(CompetitionDTO competitionDto)
         {
-            var addedCompetition = await this.CompetitionService.CreateAsync(competitionDto);
+            var addedCompetition = await this.Service.CreateAsync(competitionDto);
             return this.Created($"{HttpContext.Request.Path}/{addedCompetition.Id}", addedCompetition);
         }
 
@@ -99,7 +92,7 @@ namespace PetanquePlanning.Business.Core.Presentation.Controllers
         [ProducesResponseType(typeof(void), StatusCodes.Status204NoContent)]
         public async Task<ActionResult> UpdateAsync(CompetitionDTO competitionDto)
         {
-            await this.CompetitionService.UpdateAsync(competitionDto);
+            await this.Service.UpdateAsync(competitionDto);
             return this.NoContent();
         }
 

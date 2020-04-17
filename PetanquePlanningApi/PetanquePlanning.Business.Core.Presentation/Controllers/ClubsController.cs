@@ -4,30 +4,20 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetanquePlanning.Business.Core.Application.DTO.DTO;
 using PetanquePlanning.Business.Core.Application.Services;
+using PetanquePlanning.Business.Core.Domain.Entities;
+using PetanquePlanning.Business.Core.Infrastructure.Abstractions.Abstractions;
 using Tools.Infrastructure.Exceptions;
 using Tools.Mvc.Abstractions;
 
 namespace PetanquePlanning.Business.Core.Presentation.Controllers
 {
     [Route("[controller]")]
-    public class ClubController : ApiController
+    public class ClubsController : ApiController<Club, IClubRepository, ClubService>
     {
         #region Fields
-
-        /// <summary>
-        /// Club manager
-        /// </summary>
-        private ClubService ClubService { get; }
-
         #endregion
 
         #region Constructor
-
-        public ClubController(ClubService clubService)
-        {
-            this.ClubService = clubService;
-        }
-
         #endregion
 
         #region Methods
@@ -40,7 +30,7 @@ namespace PetanquePlanning.Business.Core.Presentation.Controllers
         [ProducesResponseType(typeof(IEnumerable<ClubDTO>), StatusCodes.Status200OK)]
         public async Task<ActionResult<IEnumerable<ClubDTO>>> GetAllAsync()
         {
-            var clubs = await this.ClubService.GetAllAsync();
+            var clubs = await this.Service.GetAllAsync();
             return this.Ok(clubs);
         }
 
@@ -53,7 +43,7 @@ namespace PetanquePlanning.Business.Core.Presentation.Controllers
         [ProducesResponseType(typeof(ClubDTO), StatusCodes.Status201Created)]
         public async Task<ActionResult<ClubDTO>> CreateAsync([FromBody] ClubDTO clubDto)
         {
-            var addedClub = await this.ClubService.CreateAsync(clubDto);
+            var addedClub = await this.Service.CreateAsync(clubDto);
             return this.Created($"{HttpContext.Request.Path}/{addedClub.Id}", addedClub);
         }
 
@@ -67,7 +57,7 @@ namespace PetanquePlanning.Business.Core.Presentation.Controllers
         [ProducesResponseType(typeof(void), StatusCodes.Status204NoContent)]
         public async Task<ActionResult> UpdateAsync([FromBody] ClubDTO clubDto)
         {
-            await this.ClubService.UpdateAsync(clubDto);
+            await this.Service.UpdateAsync(clubDto);
             return this.NoContent();
         }
 
@@ -80,7 +70,7 @@ namespace PetanquePlanning.Business.Core.Presentation.Controllers
         [ProducesResponseType(typeof(ClubDTO), StatusCodes.Status200OK)]
         public async Task<ActionResult<ClubDTO>> GetByIdAsync([FromRoute] long id)
         {
-            var club = await this.ClubService.GetByIdAsync(id);
+            var club = await this.Service.GetByIdAsync(id);
             return this.Ok(club);
         }
 

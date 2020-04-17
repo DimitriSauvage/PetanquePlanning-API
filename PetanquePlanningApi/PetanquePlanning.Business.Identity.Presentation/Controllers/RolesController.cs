@@ -4,28 +4,21 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetanquePlanning.Business.Identity.Application.DTO.DTO.Roles;
 using PetanquePlanning.Business.Identity.Application.Services;
+using PetanquePlanning.Business.Identity.Domain.Entities;
+using PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Abstractions;
 using Tools.Mvc.Abstractions;
 
 namespace PetanquePlanning.Business.Identity.Presentation.Controllers
 {
-    [Route("roles")]
-    public class ApplicationRoleController : ApiController
+    [Route("[controller]")]
+    public class
+        RolesController : ApiController<ApplicationRole, IApplicationRoleRepository, ApplicationRoleService>
     {
         #region Private properties
-
-        /// <summary>
-        /// Role manager
-        /// </summary>
-        private ApplicationRoleService ApplicationRoleService { get; set; }
 
         #endregion
 
         #region Constructors
-
-        public ApplicationRoleController(ApplicationRoleService applicationRoleService)
-        {
-            this.ApplicationRoleService = applicationRoleService;
-        }
 
         #endregion
 
@@ -39,7 +32,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         [ProducesResponseType(typeof(List<ApplicationRoleDTO>), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetAsync()
         {
-            return Ok(await this.ApplicationRoleService.GetAllAsync());
+            return Ok(await this.Service.GetAllAsync());
         }
 
         /// <summary>
@@ -51,7 +44,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         [ProducesResponseType(typeof(ApplicationRoleDTO), StatusCodes.Status201Created)]
         public async Task<IActionResult> CreateAsync([FromBody] ApplicationRoleDTO roleDto)
         {
-            ApplicationRoleDTO result = await this.ApplicationRoleService.CreateAsync(roleDto);
+            ApplicationRoleDTO result = await this.Service.CreateAsync(roleDto);
             return Created($"{HttpContext.Request.Path}/{result.Id}", result);
         }
 
@@ -66,7 +59,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         public async Task<IActionResult> DeleteAsync([FromRoute] long roleId,
             [FromBody] ApplicationRoleDTO newRoleForUsers)
         {
-            await this.ApplicationRoleService.DeleteAsync(roleId, newRoleForUsers);
+            await this.Service.DeleteAsync(roleId, newRoleForUsers);
             return this.NoContent();
         }
 
@@ -79,7 +72,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         [ProducesResponseType(typeof(ApplicationRoleDTO), StatusCodes.Status200OK)]
         public async Task<IActionResult> UpdateAsync([FromBody] ApplicationRoleDTO roleDto)
         {
-            await ApplicationRoleService.UpdateAsync(roleDto);
+            await Service.UpdateAsync(roleDto);
             return this.NoContent();
         }
 

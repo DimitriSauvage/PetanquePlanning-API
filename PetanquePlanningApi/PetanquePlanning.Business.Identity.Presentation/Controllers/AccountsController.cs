@@ -25,7 +25,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
     ///     <cref>https://digitalcontrol.me/blog/indentity-asp-net-core-2/</cref>
     /// </see>
     [Route("accounts")]
-    public class AccountController : ApiController
+    public class AccountsController : ApiController
     {
         #region Private properties
 
@@ -62,7 +62,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         /// <summary>
         /// Constructeur par défaut
         /// </summary>
-        public AccountController(SignInManager<ApplicationUser> signInManager,
+        public AccountsController(SignInManager<ApplicationUser> signInManager,
             AccountService accountService,
             IMapper mapper,
             ApplicationUserService applicationUserService,

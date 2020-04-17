@@ -59,6 +59,7 @@
         <e p="RandomHelper.cs" t="Include" />
         <e p="ReflectionHelper.cs" t="Include" />
         <e p="RegexHelper.cs" t="Include" />
+        <e p="ServiceCollectionHelper.cs" t="Include" />
         <e p="SHA1Helper.cs" t="Include" />
         <e p="SHA256Helper.cs" t="Include" />
         <e p="SoundexHelper.cs" t="Include" />
@@ -529,8 +530,8 @@
       <e p="PetanquePlanning.Business.Core.Presentation" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
-          <e p="ClubController.cs" t="Include" />
-          <e p="CompetitionController.cs" t="Include" />
+          <e p="ClubsController.cs" t="Include" />
+          <e p="CompetitionsController.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -653,9 +654,9 @@
       <e p="PetanquePlanning.Business.Identity.Presentation" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
-          <e p="AccountController.cs" t="Include" />
-          <e p="ApplicationRoleController.cs" t="Include" />
-          <e p="ApplicationUserController.cs" t="Include" />
+          <e p="AccountsController.cs" t="Include" />
+          <e p="RolesController.cs" t="Include" />
+          <e p="UsersController.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -699,6 +700,7 @@
       <e p="PetanquePlanning.Business.Location.Domain" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Entities" t="Include">
+          <e p="AdjacentDepartments.cs" t="Include" />
           <e p="Department.cs" t="Include" />
           <e p="Region.cs" t="Include" />
         </e>
@@ -729,6 +731,7 @@
       <e p="PetanquePlanning.Business.Location.Infrastructure.EntityFramework" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Maps" t="Include">
+          <e p="AdjacentDepartmentMap.cs" t="Include" />
           <e p="DepartmentMap.cs" t="Include" />
           <e p="RegionMap.cs" t="Include" />
         </e>
@@ -748,8 +751,8 @@
       <e p="PetanquePlanning.Business.Location.Presentation" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Controllers" t="Include">
-          <e p="DepartmentController.cs" t="Include" />
-          <e p="RegionController.cs" t="Include" />
+          <e p="DepartmentsController.cs" t="Include" />
+          <e p="RegionsController.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
