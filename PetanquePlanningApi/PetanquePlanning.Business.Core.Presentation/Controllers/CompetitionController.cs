@@ -58,7 +58,51 @@ namespace PetanquePlanning.Business.Core.Presentation.Controllers
 
             return this.Ok(result);
         }
-    }
 
-    #endregion
+
+        /// <summary>
+        /// Get a competition by his id
+        /// </summary>
+        /// <param name="id">Id to found</param>
+        /// <returns></returns>
+        /// <exception cref="EntityNotFoundException{TEntity}<Competition>"></exception>
+        [HttpGet("{id}")]
+        [ProducesResponseType(typeof(CompetitionDTO), StatusCodes.Status200OK)]
+        public async Task<ActionResult<CompetitionDTO>> GetByIdAsync([FromRoute] long id)
+        {
+            var competition = await this.CompetitionService.GetByIdAsync(id);
+            return this.Ok(competition);
+        }
+
+        /// <summary>
+        /// Create a new competition
+        /// </summary>
+        /// <param name="competitionDto">Competition to crate</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="EntityAlreadyExistsException{TEntity}"<Competition>"></exception>
+        [HttpPost]
+        [ProducesResponseType(typeof(CompetitionDTO), StatusCodes.Status201Created)]
+        public async Task<ActionResult<CompetitionDTO>> CreateAsync(CompetitionDTO competitionDto)
+        {
+            var addedCompetition = await this.CompetitionService.CreateAsync(competitionDto);
+            return this.Created($"{HttpContext.Request.Path}/{addedCompetition.Id}", addedCompetition);
+        }
+
+        /// <summary>
+        /// Update a competition
+        /// </summary>
+        /// <param name="competitionDto">Competition to update</param>
+        /// <returns></returns>
+        /// <exception cref="EntityNotFoundException<Competition>"></exception>
+        [HttpPut]
+        [ProducesResponseType(typeof(void), StatusCodes.Status204NoContent)]
+        public async Task<ActionResult> UpdateAsync(CompetitionDTO competitionDto)
+        {
+            await this.CompetitionService.UpdateAsync(competitionDto);
+            return this.NoContent();
+        }
+
+        #endregion
+    }
 }

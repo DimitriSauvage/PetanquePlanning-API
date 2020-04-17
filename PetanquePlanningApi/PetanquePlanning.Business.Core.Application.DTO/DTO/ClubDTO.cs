@@ -5,6 +5,11 @@ namespace PetanquePlanning.Business.Core.Application.DTO.DTO
     public class ClubDTO
     {
         /// <summary>
+        /// Identifier
+        /// </summary>
+        public long Id { get; set; }
+
+        /// <summary>
         /// Address
         /// </summary>
         public Address Address { get; set; }

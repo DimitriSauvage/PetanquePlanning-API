@@ -8,6 +8,11 @@ namespace PetanquePlanning.Business.Core.Application.DTO.DTO
     public class CompetitionDTO
     {
         /// <summary>
+        /// Identifier
+        /// </summary>
+        public long Id { get; set; }
+
+        /// <summary>
         /// Address of the competition
         /// </summary>
         public Address Address { get; set; }
