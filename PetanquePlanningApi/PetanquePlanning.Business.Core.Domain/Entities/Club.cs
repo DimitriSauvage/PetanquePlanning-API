@@ -6,6 +6,11 @@ namespace PetanquePlanning.Business.Core.Domain.Entities
     [UniqueBy(nameof(Name))]
     public class Club : EntityWithId, IEntityWithId
     {
+        public Club(string shortName)
+        {
+            ShortName = shortName;
+        }
+
         /// <summary>
         /// Address
         /// </summary>

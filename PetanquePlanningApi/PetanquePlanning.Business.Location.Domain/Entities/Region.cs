@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Tools.Domain.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Domain.Entities
@@ -15,7 +13,7 @@ namespace PetanquePlanning.Business.Location.Domain.Entities
         /// <summary>
         /// Departments of the region
         /// </summary>
-        public List<Department> Departments { get; set; }
+        public IEnumerable<Department> Departments { get; set; }
 
         /// <summary>
         /// Name

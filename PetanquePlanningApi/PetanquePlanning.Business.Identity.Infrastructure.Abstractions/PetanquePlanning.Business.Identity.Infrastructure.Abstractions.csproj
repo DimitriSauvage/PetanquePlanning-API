@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <RootNamespace>PetanquePlanning.Business.Identity.Infrastructure.Abstractions</RootNamespace>
+        <LangVersion>8</LangVersion>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Infrastructure\Tools.Infrastructure.csproj" />
+        <ProjectReference
+            Include="..\PetanquePlanning.Business.Identity.Domain\PetanquePlanning.Business.Identity.Domain.csproj" />
+    </ItemGroup>
+
+</Project>

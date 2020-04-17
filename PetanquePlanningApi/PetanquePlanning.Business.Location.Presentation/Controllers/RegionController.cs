@@ -1,12 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using PetanquePlanning.Business.Location.Application.Abstractions.Abstractions;
-using PetanquePlanning.Business.Location.Application.Abstractions.DTO;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Tools.Api.Abstractions;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using PetanquePlanning.Business.Location.Application.DTO.DTO;
+using PetanquePlanning.Business.Location.Application.Services;
+using Tools.Mvc.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Presentation.Controllers
 {
@@ -14,17 +12,22 @@ namespace PetanquePlanning.Business.Location.Presentation.Controllers
     public class RegionController : ApiController
     {
         #region Fields
-        public IRegionService RegionService { get; }
+
+        private RegionService RegionService { get; }
+
         #endregion
 
         #region Constructor
-        public RegionController(IRegionService regionService)
+
+        public RegionController(RegionService regionService)
         {
             this.RegionService = regionService;
         }
+
         #endregion
 
         #region Methods
+
         /// <summary>
         /// Get the regions
         /// </summary>
@@ -36,6 +39,7 @@ namespace PetanquePlanning.Business.Location.Presentation.Controllers
         {
             return this.Ok(await this.RegionService.GetAsync(includeDepartments));
         }
+
         #endregion
     }
 }

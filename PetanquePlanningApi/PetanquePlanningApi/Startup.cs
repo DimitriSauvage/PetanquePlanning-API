@@ -15,11 +15,16 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Net.Http.Headers;
+using PetanquePlanning.Business.Core.Application.Services;
+using PetanquePlanning.Business.Core.Infrastructure.Abstractions.Abstractions;
+using PetanquePlanning.Business.Core.Infrastructure.EntityFramework.Repositories;
+using PetanquePlanning.Business.Identity.Application.Services;
 using PetanquePlanning.Business.Identity.Domain.Entities;
-using PetanquePlanning.Business.Location.Application.Abstractions.Abstractions;
+using PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Abstractions;
+using PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.Repositories;
 using PetanquePlanning.Business.Location.Application.Services;
-using PetanquePlanning.Business.Location.Infrastructure.Abstractions;
-using PetanquePlanning.Business.Location.Infrastructure.EntityFramework;
+using PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions;
+using PetanquePlanning.Business.Location.Infrastructure.EntityFramework.Repositories;
 using Tools.Infrastructure.Settings;
 
 namespace PetanquePlanningApi
@@ -86,7 +91,9 @@ namespace PetanquePlanningApi
             #endregion
 
             #region Identity
+
             this.AddIdentity(services);
+
             #endregion
 
             //services.AddControllers();
@@ -145,17 +152,17 @@ namespace PetanquePlanningApi
 
         private void AddIdentity(IServiceCollection services)
         {
-            services.AddIdentity<User, Role>(options =>
-            {
-                options.Password.RequireDigit = false;
-                options.Password.RequiredLength = 4;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireUppercase = false;
-                options.Password.RequireLowercase = false;
-                options.Password.RequiredUniqueChars = 0;
-            })
-            .AddEntityFrameworkStores<PetanquePlanningDbContext>()
-            .AddDefaultTokenProviders();
+            services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
+                {
+                    options.Password.RequireDigit = false;
+                    options.Password.RequiredLength = 0;
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireUppercase = false;
+                    options.Password.RequireLowercase = false;
+                    options.Password.RequiredUniqueChars = 0;
+                })
+                .AddEntityFrameworkStores<PetanquePlanningDbContext>()
+                .AddDefaultTokenProviders();
         }
 
         /// <summary>
@@ -183,12 +190,13 @@ namespace PetanquePlanningApi
         /// <param name="services">Service collection</param>
         private void ConfigureAuthentication(IServiceCollection services)
         {
+            var authUrl = "/api/accounts/login";
             services.AddAuthentication(options =>
                 {
                     options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                     options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 })
-                .AddCookie(options => options.LoginPath = new PathString("/login"))
+                .AddCookie(options => options.LoginPath = new PathString(authUrl))
                 .AddJwtBearer(options =>
                 {
                     options.RequireHttpsMetadata = false;
@@ -208,7 +216,7 @@ namespace PetanquePlanningApi
                     };
                 });
 
-            services.ConfigureApplicationCookie(options => options.LoginPath = new PathString("/login"));
+            services.ConfigureApplicationCookie(options => options.LoginPath = new PathString(authUrl));
         }
 
         /// <summary>
@@ -218,8 +226,24 @@ namespace PetanquePlanningApi
         private void AddBusinessRepositories(IServiceCollection services)
         {
             #region Location
+
             services.AddScoped<IRegionRepository, RegionRepository>();
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+
+            #endregion
+
+            #region Identity
+
+            services.AddScoped<IApplicationUserRepository, ApplicationUserRepository>();
+            services.AddScoped<IApplicationRoleRepository, ApplicationRoleRepository>();
+
+            #endregion
+
+            #region Core
+
+            services.AddScoped<ICompetitionRepository, CompetitionRepository>();
+            services.AddScoped<IClubRepository, ClubRepository>();
+
             #endregion
         }
 
@@ -230,8 +254,26 @@ namespace PetanquePlanningApi
         private void AddBusinessServices(IServiceCollection services)
         {
             #region Location
-            services.AddScoped<IRegionService, RegionService>();
-            services.AddScoped<IDepartmentService, DepartmentService>();
+
+            services.AddScoped<RegionService, RegionService>();
+            services.AddScoped<DepartmentService, DepartmentService>();
+
+            #endregion
+
+            #region Identity
+
+            services.AddScoped<ApplicationUserService, ApplicationUserService>();
+            services.AddScoped<ApplicationRoleService, ApplicationRoleService>();
+            services.AddScoped<AccountService, AccountService>();
+
+            #endregion
+
+            #region Core
+
+            //To enable DI
+            services.AddScoped<CompetitionService, CompetitionService>();
+            services.AddScoped<ClubService, ClubService>();
+
             #endregion
         }
 

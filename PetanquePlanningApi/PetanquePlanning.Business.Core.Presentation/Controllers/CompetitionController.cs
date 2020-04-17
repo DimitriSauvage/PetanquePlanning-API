@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using PetanquePlanning.Business.Core.Application.Abstractions.Abstractions;
-using PetanquePlanning.Business.Core.Domain.Entities;
-using Tools.Api.Abstractions;
+using PetanquePlanning.Business.Core.Application.DTO.DTO;
+using PetanquePlanning.Business.Core.Application.Services;
+using Tools.Mvc.Abstractions;
 
 namespace PetanquePlanning.Business.Core.Presentation.Controllers
 {
@@ -14,13 +14,16 @@ namespace PetanquePlanning.Business.Core.Presentation.Controllers
     {
         #region Fields
 
-        private ICompetitionService CompetitionService { get; }
+        /// <summary>
+        /// Competition manager
+        /// </summary>
+        private CompetitionService CompetitionService { get; }
 
         #endregion
 
         #region Constructor
 
-        public CompetitionController(ICompetitionService competitionService)
+        public CompetitionController(CompetitionService competitionService)
         {
             this.CompetitionService = competitionService;
         }

@@ -1,11 +1,11 @@
-﻿using PetanquePlanning.Business.Core.Domain.Enumerations;
-using System;
+﻿using System;
+using PetanquePlanning.Business.Core.Domain.Enumerations;
 using Tools.Domain.Abstractions;
 using Tools.Domain.DataAnnotations;
 
 namespace PetanquePlanning.Business.Core.Domain.Entities
 {
-    [UniqueBy(nameof(Organizer), nameof(OrganizerId), nameof(Date) )]
+    [UniqueBy(nameof(Organizer), nameof(OrganizerId), nameof(Date))]
     public class Competition : EntityWithId, IEntityWithId
     {
         /// <summary>
@@ -60,8 +60,3 @@ namespace PetanquePlanning.Business.Core.Domain.Entities
         public string OrganizerId { get; set; }
     }
 }
-
-
-
-
-

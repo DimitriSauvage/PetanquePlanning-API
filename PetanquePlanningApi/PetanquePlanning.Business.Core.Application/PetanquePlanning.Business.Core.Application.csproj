@@ -1,16 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <LangVersion>8</LangVersion>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\PetanquePlanning.Business.Core.Application.Abstractions\PetanquePlanning.Business.Core.Application.Abstractions.csproj" />
-    <ProjectReference Include="..\PetanquePlanning.Business.Core.Infrastructure.Abstractions\PetanquePlanning.Business.Core.Infrastructure.Abstractions.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Application.Abstractions\Tools.Application.Abstractions.csproj" />
+        <ProjectReference Include="..\PetanquePlanning.Business.Core.Application.DTO\PetanquePlanning.Business.Core.Application.DTO.csproj" />
+        <ProjectReference Include="..\PetanquePlanning.Business.Core.Infrastructure.Abstractions\PetanquePlanning.Business.Core.Infrastructure.Abstractions.csproj" />
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="9.0.0" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="AutoMapper" Version="9.0.0" />
+    </ItemGroup>
 
 </Project>

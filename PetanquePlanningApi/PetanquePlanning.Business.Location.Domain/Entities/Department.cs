@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Tools.Domain.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Domain.Entities
 {
     public class Department : EntityWithId, IEntityWithId
     {
-        
         /// <summary>
         /// Adjacent departments
         /// </summary>
-        public List<Department> AdjacentDepartments { get; set; } = new List<Department>();
+        public IEnumerable<Department> AdjacentDepartments { get; set; }
 
         /// <summary>
         /// Code

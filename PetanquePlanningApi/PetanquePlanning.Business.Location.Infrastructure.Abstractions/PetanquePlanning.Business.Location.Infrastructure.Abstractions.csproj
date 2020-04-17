@@ -1,11 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <LangVersion>8</LangVersion>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\PetanquePlanning.Business.Location.Domain\PetanquePlanning.Business.Location.Domain.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Infrastructure\Tools.Infrastructure.csproj" />
+        <ProjectReference
+            Include="..\PetanquePlanning.Business.Location.Domain\PetanquePlanning.Business.Location.Domain.csproj" />
+    </ItemGroup>
 
 </Project>

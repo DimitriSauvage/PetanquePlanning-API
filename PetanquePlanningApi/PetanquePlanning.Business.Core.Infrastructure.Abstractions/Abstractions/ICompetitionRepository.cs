@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using PetanquePlanning.Business.Core.Domain.Entities;
+using Tools.Infrastructure.Abstraction;
 
 namespace PetanquePlanning.Business.Core.Infrastructure.Abstractions.Abstractions
 {
-    public interface ICompetitionRepository
+    public interface ICompetitionRepository : IRepository<Competition>
     {
         /// <summary>
         /// Get all competitions in specifies departments
