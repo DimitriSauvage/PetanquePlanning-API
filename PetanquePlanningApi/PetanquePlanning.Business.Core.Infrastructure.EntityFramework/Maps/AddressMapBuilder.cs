@@ -12,7 +12,7 @@ namespace PetanquePlanning.Business.Core.Infrastructure.EntityFramework.Maps
         /// </summary>
         /// <typeparam name="TEntity">Entity type</typeparam>
         /// <returns></returns>
-        public static Action<ReferenceOwnershipBuilder<TEntity, Address>> GetAddressBuilderAction<TEntity>()
+        public static Action<OwnedNavigationBuilder<TEntity, Address>> GetAddressBuilderAction<TEntity>()
             where TEntity : class, IEntity
         {
             return address =>

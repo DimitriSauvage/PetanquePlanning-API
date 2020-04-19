@@ -20,7 +20,7 @@ namespace PetanquePlanning.Business.Location.Infrastructure.EntityFramework.Maps
                 .OnDelete(DeleteBehavior.Cascade);
             builder
                 .HasOne(x => x.SecondDepartment)
-                .WithMany(x => x.AdjacentDepartments)
+                .WithMany()
                 .HasForeignKey(x => x.SecondDepartmentId)
                 .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade);

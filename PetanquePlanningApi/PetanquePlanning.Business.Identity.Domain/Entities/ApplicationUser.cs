@@ -32,7 +32,7 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         /// <summary>
         /// Favorite department codes
         /// </summary>
-        public List<long> FavoriteDepartmentsId { get; set; }
+        public IEnumerable<ApplicationUserFavoriteDepartment> FavoriteDepartments { get; set; }
 
         /// <summary>
         /// User gender

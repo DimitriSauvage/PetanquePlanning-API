@@ -41,6 +41,7 @@ namespace PetanquePlanningApi
             modelBuilder.ApplyConfiguration(new ApplicationUserMap());
             modelBuilder.ApplyConfiguration(new ApplicationUserRoleMap());
             modelBuilder.ApplyConfiguration(new ApplicationUserTokenMap());
+            modelBuilder.ApplyConfiguration(new ApplicationUserFavoriteDepartmentMap());
 
             #endregion
 
@@ -48,6 +49,7 @@ namespace PetanquePlanningApi
 
             modelBuilder.ApplyConfiguration(new DepartmentMap());
             modelBuilder.ApplyConfiguration(new RegionMap());
+            modelBuilder.ApplyConfiguration(new AdjacentDepartmentMap());
 
             #endregion
         }

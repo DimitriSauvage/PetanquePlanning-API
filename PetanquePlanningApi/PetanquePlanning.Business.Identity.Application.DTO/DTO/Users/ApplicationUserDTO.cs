@@ -58,7 +58,7 @@ namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Users
         /// <summary>
         /// Favorite department codes
         /// </summary>
-        public List<string> FavoriteDepartmentCodes { get; } = new List<string>();
+        public IEnumerable<ApplicationUserFavoriteDepartmentDTO> FavoriteDepartments { get; set; }
 
         /// <summary>
         /// User gender

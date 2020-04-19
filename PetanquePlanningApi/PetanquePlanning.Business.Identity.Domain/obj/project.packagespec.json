@@ -10,17 +10,20 @@
       "C:\\Microsoft\\Xamarin\\NuGet"
     ],
     "originalTargetFrameworks": [
-      "netstandard2.1"
+      "netcoreapp3.1"
     ],
     "sources": {
       "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
       "https://api.nuget.org/v3/index.json": {}
     },
     "frameworks": {
-      "netstandard2.1": {
+      "netcoreapp3.1": {
         "projectReferences": {
           "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Domain\\Tools.Domain.csproj": {
             "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Domain\\Tools.Domain.csproj"
+          },
+          "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Domain\\PetanquePlanning.Business.Location.Domain.csproj": {
+            "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Domain\\PetanquePlanning.Business.Location.Domain.csproj"
           }
         }
       }
@@ -32,7 +35,7 @@
     }
   },
   "frameworks": {
-    "netstandard2.1": {
+    "netcoreapp3.1": {
       "dependencies": {
         "Microsoft.Extensions.Identity.Stores": {
           "target": "Package",
@@ -50,7 +53,7 @@
       "assetTargetFallback": true,
       "warn": true,
       "frameworkReferences": {
-        "NETStandard.Library": {
+        "Microsoft.NETCore.App": {
           "privateAssets": "all"
         }
       },

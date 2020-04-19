@@ -28,6 +28,6 @@ namespace PetanquePlanning.Business.Location.Domain.Entities
         /// <summary>
         /// Region code
         /// </summary>
-        public string RegionCode { get; set; }
+        public long RegionId { get; set; }
     }
 }

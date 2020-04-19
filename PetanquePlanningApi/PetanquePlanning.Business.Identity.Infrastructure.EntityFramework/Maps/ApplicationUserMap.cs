@@ -33,6 +33,7 @@ namespace PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.Maps
             builder.HasMany<ApplicationUserClaim>().WithOne().HasForeignKey(uc => uc.UserId).IsRequired();
             builder.HasMany<ApplicationUserLogin>().WithOne().HasForeignKey(ul => ul.UserId).IsRequired();
             builder.HasMany<ApplicationUserToken>().WithOne().HasForeignKey(ut => ut.UserId).IsRequired();
+            
 
             builder.HasIndex(x => x.NormalizedUserName).HasName("UK_ApplicationUser_NormalizedUserName").IsUnique();
             builder.HasIndex(x => x.NormalizedEmail).HasName("IX_ApplicationUser_NormalizedEmail");

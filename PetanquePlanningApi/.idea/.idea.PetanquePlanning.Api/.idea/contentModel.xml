@@ -85,7 +85,7 @@
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.1" t="Include">
+          <e p="netcoreapp3.1" t="Include">
             <e p="Tools.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
@@ -139,7 +139,7 @@
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.1" t="Include">
+          <e p="netcoreapp3.1" t="Include">
             <e p="Tools.Api.OData.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
@@ -163,7 +163,7 @@
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.1" t="Include">
+          <e p="netcoreapp3.1" t="Include">
             <e p="Tools.Application.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
@@ -205,7 +205,7 @@
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.1" t="Include">
+          <e p="netcoreapp3.1" t="Include">
             <e p="Tools.Domain.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
@@ -219,7 +219,7 @@
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.1" t="Include">
+          <e p="netcoreapp3.1" t="Include">
             <e p="Tools.GeoLocation.Domain.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
@@ -262,7 +262,7 @@
       <e p="HttpRequestFactory.cs" t="Include" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.1" t="Include">
+          <e p="netcoreapp3.1" t="Include">
             <e p="Tools.Http.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
@@ -319,7 +319,7 @@
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.1" t="Include">
+          <e p="netcoreapp3.1" t="Include">
             <e p="Tools.Infrastructure.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
@@ -375,7 +375,7 @@
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.1" t="Include">
+          <e p="netcoreapp3.1" t="Include">
             <e p="Tools.Infrastructure.EntityFramework.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
@@ -389,7 +389,7 @@
       <e p="EnumToDTOConverter.cs" t="Include" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.1" t="Include">
+          <e p="netcoreapp3.1" t="Include">
             <e p="Tools.Mapper.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
@@ -419,7 +419,7 @@
       </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
-          <e p="netstandard2.1" t="Include">
+          <e p="netcoreapp3.1" t="Include">
             <e p="Tools.Mvc.AssemblyInfo.cs" t="Include" />
           </e>
         </e>
@@ -436,7 +436,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Core.Application.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -455,7 +455,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Core.Application.DTO.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -477,7 +477,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Core.Domain.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -492,7 +492,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Core.Infrastructure.Abstractions.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -508,7 +508,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Core.Infrastructure.EntityFramework.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -527,7 +527,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Core.Presentation.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -541,7 +541,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Identity.Application.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -567,12 +567,13 @@
           </e>
           <e p="Users" t="Include">
             <e p="ApplicationUserDTO.cs" t="Include" />
+            <e p="ApplicationUserFavoriteDepartmentDTO.cs" t="Include" />
             <e p="ApplicationUserRoleDTO.cs" t="Include" />
           </e>
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Identity.Application.DTO.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -586,6 +587,7 @@
           <e p="ApplicationRoleClaim.cs" t="Include" />
           <e p="ApplicationUser.cs" t="Include" />
           <e p="ApplicationUserClaim.cs" t="Include" />
+          <e p="ApplicationUserFavoriteDepartment.cs" t="Include" />
           <e p="ApplicationUserLogin.cs" t="Include" />
           <e p="ApplicationUserRole.cs" t="Include" />
           <e p="ApplicationUserToken.cs" t="Include" />
@@ -598,7 +600,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Identity.Domain.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -613,7 +615,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Identity.Infrastructure.Abstractions.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -626,6 +628,7 @@
           <e p="ApplicationRoleClaimMap.cs" t="Include" />
           <e p="ApplicationRoleMap.cs" t="Include" />
           <e p="ApplicationUserClaimMap.cs" t="Include" />
+          <e p="ApplicationUserFavoriteDepartmentMap.cs" t="Include" />
           <e p="ApplicationUserLoginMap.cs" t="Include" />
           <e p="ApplicationUserMap.cs" t="Include" />
           <e p="ApplicationUserRoleMap.cs" t="Include" />
@@ -633,7 +636,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -653,7 +656,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Identity.Presentation.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -664,7 +667,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Location.Application.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -684,7 +687,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Location.Application.DTO.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -700,7 +703,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Location.Domain.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -715,7 +718,7 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Location.Infrastructure.Abstractions.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -731,7 +734,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Location.Infrastructure.EntityFramework.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -750,7 +753,7 @@
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
-            <e p="netstandard2.1" t="Include">
+            <e p="netcoreapp3.1" t="Include">
               <e p="PetanquePlanning.Business.Location.Presentation.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
@@ -764,6 +767,11 @@
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="MappingProfile.cs" t="Include" />
+        <e p="Migrations" t="Include">
+          <e p="20200419163443_InitialMigration.cs" t="Include" />
+          <e p="20200419163443_InitialMigration.Designer.cs" t="Include" />
+          <e p="PetanquePlanningDbContextModelSnapshot.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
