@@ -4,14 +4,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetanquePlanning.Business.Location.Application.DTO.DTO;
 using PetanquePlanning.Business.Location.Application.Services;
-using PetanquePlanning.Business.Location.Domain.Entities;
-using PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions;
 using Tools.Mvc.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Presentation.Controllers
 {
     [Route("[controller]")]
-    public class DepartmentsController : ApiController<Department, IDepartmentRepository, DepartmentService>
+    public class DepartmentsController : ApiController<DepartmentService>
     {
         #region Fields
 

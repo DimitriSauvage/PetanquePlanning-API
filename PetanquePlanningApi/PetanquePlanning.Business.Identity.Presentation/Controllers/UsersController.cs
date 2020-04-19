@@ -5,15 +5,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetanquePlanning.Business.Identity.Application.DTO.DTO.Users;
 using PetanquePlanning.Business.Identity.Application.Services;
-using PetanquePlanning.Business.Identity.Domain.Entities;
-using PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Abstractions;
 using Tools.Mvc.Abstractions;
 
 namespace PetanquePlanning.Business.Identity.Presentation.Controllers
 {
     [Route("[controller]")]
     public class
-        UsersController : ApiController<ApplicationUser, IApplicationUserRepository, ApplicationUserService>
+        UsersController : ApiController<ApplicationUserService>
     {
         #region Private properties
 

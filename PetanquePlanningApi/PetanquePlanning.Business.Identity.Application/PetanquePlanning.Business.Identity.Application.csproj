@@ -12,8 +12,10 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\PetanquePlanning.Business.Identity.Application.DTO\PetanquePlanning.Business.Identity.Application.DTO.csproj" />
-        <ProjectReference Include="..\PetanquePlanning.Business.Identity.Infrastructure.Abstractions\PetanquePlanning.Business.Identity.Infrastructure.Abstractions.csproj" />
+        <ProjectReference
+            Include="..\PetanquePlanning.Business.Identity.Application.DTO\PetanquePlanning.Business.Identity.Application.DTO.csproj" />
+        <ProjectReference
+            Include="..\PetanquePlanning.Business.Identity.Infrastructure.Abstractions\PetanquePlanning.Business.Identity.Infrastructure.Abstractions.csproj" />
     </ItemGroup>
 
 </Project>

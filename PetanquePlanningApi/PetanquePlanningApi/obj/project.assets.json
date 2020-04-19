@@ -10470,7 +10470,7 @@
   },
   "packageFolders": {
     "C:\\Users\\dimit\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Microsoft\\Xamarin\\NuGet": {}
   },
   "project": {
     "version": "1.0.0",
@@ -10482,7 +10482,7 @@
       "outputPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanningApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet"
       ],
       "configFilePaths": [
         "C:\\Users\\dimit\\AppData\\Roaming\\NuGet\\NuGet.Config",

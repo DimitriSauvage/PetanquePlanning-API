@@ -7,8 +7,10 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Mvc\Tools.Mvc.csproj" />
-        <ProjectReference Include="..\PetanquePlanning.Business.Core.Application.DTO\PetanquePlanning.Business.Core.Application.DTO.csproj" />
-        <ProjectReference Include="..\PetanquePlanning.Business.Core.Application\PetanquePlanning.Business.Core.Application.csproj" />
+        <ProjectReference
+            Include="..\PetanquePlanning.Business.Core.Application.DTO\PetanquePlanning.Business.Core.Application.DTO.csproj" />
+        <ProjectReference
+            Include="..\PetanquePlanning.Business.Core.Application\PetanquePlanning.Business.Core.Application.csproj" />
     </ItemGroup>
 
 </Project>

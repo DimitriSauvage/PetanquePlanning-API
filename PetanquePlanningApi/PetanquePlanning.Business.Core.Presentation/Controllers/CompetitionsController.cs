@@ -5,15 +5,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetanquePlanning.Business.Core.Application.DTO.DTO;
 using PetanquePlanning.Business.Core.Application.Services;
-using PetanquePlanning.Business.Core.Domain.Entities;
-using PetanquePlanning.Business.Core.Infrastructure.Abstractions.Abstractions;
 using Tools.Infrastructure.Exceptions;
 using Tools.Mvc.Abstractions;
 
 namespace PetanquePlanning.Business.Core.Presentation.Controllers
 {
     [Route("[controller]")]
-    public class CompetitionsController : ApiController<Competition, ICompetitionRepository, CompetitionService>
+    public class CompetitionsController : ApiController<CompetitionService>
     {
         #region Fields
 

@@ -4,15 +4,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using PetanquePlanning.Business.Identity.Application.DTO.DTO.Roles;
 using PetanquePlanning.Business.Identity.Application.Services;
-using PetanquePlanning.Business.Identity.Domain.Entities;
-using PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Abstractions;
 using Tools.Mvc.Abstractions;
 
 namespace PetanquePlanning.Business.Identity.Presentation.Controllers
 {
     [Route("[controller]")]
     public class
-        RolesController : ApiController<ApplicationRole, IApplicationRoleRepository, ApplicationRoleService>
+        RolesController : ApiController<ApplicationRoleService>
     {
         #region Private properties
 

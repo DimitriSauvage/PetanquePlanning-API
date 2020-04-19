@@ -1,9 +1,4 @@
-﻿using System;
-using Microsoft.AspNetCore.Identity;
-using PetanquePlanning.Business.Identity.Application.DTO.DTO.Roles;
-using Tools.Domain.Abstractions;
-using Tools.Domain.Extensions;
-using Tools.Domain.Helpers;
+﻿using PetanquePlanning.Business.Identity.Application.DTO.DTO.Roles;
 
 namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Users
 {
