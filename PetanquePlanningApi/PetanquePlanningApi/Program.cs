@@ -52,7 +52,9 @@ namespace PetanquePlanningApi
         private static void GenerateTypescript()
         {
             var assemblies =
-                Assembly.GetCallingAssembly().GetReferencedAssemblies()
+                Assembly
+                    .GetExecutingAssembly()
+                    .GetReferencedAssemblies()
                     .Where(x => x.FullName.Contains(nameof(PetanquePlanning)) || x.FullName.Contains(nameof(Tools)))
                     .Select(Assembly.Load)
                     .ToList();
