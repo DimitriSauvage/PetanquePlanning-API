@@ -36,7 +36,6 @@ namespace PetanquePlanningApi
                     .ToList(),
                 modelBuilder);
 
-
         }
 
         #endregion

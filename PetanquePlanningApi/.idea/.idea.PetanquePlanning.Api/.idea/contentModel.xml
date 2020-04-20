@@ -171,6 +171,20 @@
       </e>
       <e p="Tools.Application.csproj" t="IncludeRecursive" />
     </e>
+    <e p="C:\Users\dimit\Github\CSharp-Tools\Tools.DependencyInjection" t="IncludeRecursive">
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Helpers" t="Include">
+        <e p="DIHelper.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp3.1" t="Include">
+            <e p="Tools.DependencyInjection.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="Tools.DependencyInjection.csproj" t="IncludeRecursive" />
+    </e>
     <e p="C:\Users\dimit\Github\CSharp-Tools\Tools.Domain" t="IncludeRecursive">
       <e p="Abstractions" t="Include">
         <e p="Entity.cs" t="Include" />
@@ -785,6 +799,8 @@
         <e p="Migrations" t="Include">
           <e p="20200420071427_InitialMigrations.cs" t="Include" />
           <e p="20200420071427_InitialMigrations.Designer.cs" t="Include" />
+          <e p="20200420150808_test.cs" t="Include" />
+          <e p="20200420150808_test.Designer.cs" t="Include" />
           <e p="PetanquePlanningDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

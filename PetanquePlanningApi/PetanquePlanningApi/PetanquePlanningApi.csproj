@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\CSharp-Tools\Tools.DependencyInjection\Tools.DependencyInjection.csproj" />
     <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Infrastructure\Tools.Infrastructure.csproj" />
     <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Mapper\Tools.Mapper.csproj" />
     <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Typescript\Tools.Typescript.csproj" />

@@ -3610,6 +3610,21 @@
           "bin/placeholder/Tools.Application.dll": {}
         }
       },
+      "Tools.DependencyInjection/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.3",
+          "Tools": "1.0.0",
+          "Tools.Application": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Tools.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tools.DependencyInjection.dll": {}
+        }
+      },
       "Tools.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -10519,6 +10534,11 @@
       "path": "../../../CSharp-Tools/Tools.Application/Tools.Application.csproj",
       "msbuildProject": "../../../CSharp-Tools/Tools.Application/Tools.Application.csproj"
     },
+    "Tools.DependencyInjection/1.0.0": {
+      "type": "project",
+      "path": "../../../CSharp-Tools/Tools.DependencyInjection/Tools.DependencyInjection.csproj",
+      "msbuildProject": "../../../CSharp-Tools/Tools.DependencyInjection/Tools.DependencyInjection.csproj"
+    },
     "Tools.Domain/1.0.0": {
       "type": "project",
       "path": "../../../CSharp-Tools/Tools.Domain/Tools.Domain.csproj",
@@ -10576,6 +10596,7 @@
       "PetanquePlanning.Business.Location.Application.DTO >= 1.0.0",
       "PetanquePlanning.Business.Location.Domain >= 1.0.0",
       "PetanquePlanning.Business.Location.Infrastructure.EntityFramework >= 1.0.0",
+      "Tools.DependencyInjection >= 1.0.0",
       "Tools.Infrastructure >= 1.0.0",
       "Tools.Mapper >= 1.0.0",
       "Tools.Typescript >= 1.0.0"
@@ -10583,7 +10604,7 @@
   },
   "packageFolders": {
     "C:\\Users\\dimit\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Microsoft\\Xamarin\\NuGet": {}
   },
   "project": {
     "version": "1.0.0",
@@ -10595,7 +10616,7 @@
       "outputPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanningApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet"
       ],
       "configFilePaths": [
         "C:\\Users\\dimit\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10612,6 +10633,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+            "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.DependencyInjection\\Tools.DependencyInjection.csproj": {
+              "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.DependencyInjection\\Tools.DependencyInjection.csproj"
+            },
             "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Infrastructure\\Tools.Infrastructure.csproj": {
               "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Infrastructure\\Tools.Infrastructure.csproj"
             },

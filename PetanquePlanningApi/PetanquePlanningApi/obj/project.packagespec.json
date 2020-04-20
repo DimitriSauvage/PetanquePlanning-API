@@ -19,6 +19,9 @@
     "frameworks": {
       "netcoreapp3.1": {
         "projectReferences": {
+          "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.DependencyInjection\\Tools.DependencyInjection.csproj": {
+            "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.DependencyInjection\\Tools.DependencyInjection.csproj"
+          },
           "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Infrastructure\\Tools.Infrastructure.csproj": {
             "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Infrastructure\\Tools.Infrastructure.csproj"
           },

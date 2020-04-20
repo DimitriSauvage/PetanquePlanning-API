@@ -27,6 +27,7 @@ using PetanquePlanning.Business.Location.Application.Services;
 using PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions;
 using PetanquePlanning.Business.Location.Infrastructure.EntityFramework.Repositories;
 using Tools.Application.Abstractions;
+using Tools.DependencyInjection.Helpers;
 using Tools.Helpers;
 using Tools.Infrastructure.EntityFramework.Abstractions;
 using Tools.Infrastructure.Settings;
@@ -238,47 +239,19 @@ namespace PetanquePlanningApi
         }
 
         /// <summary>
-        /// Add the repositoties to the DI
+        /// Add the services to the DI
         /// </summary>
         /// <param name="services"></param>
         private static void AddBusinessServices(IServiceCollection services)
         {
-            #region Location
-
-            services.AddScoped<RegionService>();
-            services.AddScoped<DepartmentService>();
-
-            #endregion
-
-            #region dentity
-
-            services.AddScoped<ApplicationUserService>();
-            services.AddScoped<ApplicationRoleService>();
-
-            #endregion
-
-            #region Core
-
-            services.AddScoped<CompetitionService>();
-            services.AddScoped<ClubService>();
-
-            #endregion
+            //Add all services
+            services.AddAllServices(Assembly
+                .GetExecutingAssembly()
+                .GetReferencedAssemblies()
+                .Select(Assembly.Load)
+                .ToList());
         }
 
         #endregion
-
-        private static List<Assembly> GetAssemblies()
-        {
-            List<Assembly> listOfAssemblies = new List<Assembly>();
-            var mainAsm = Assembly.GetEntryAssembly();
-            listOfAssemblies.Add(mainAsm);
-
-            foreach (var refAsmName in mainAsm.GetReferencedAssemblies())
-            {
-                listOfAssemblies.Add(Assembly.Load(refAsmName));
-            }
-
-            return listOfAssemblies;
-        }
     }
 }
