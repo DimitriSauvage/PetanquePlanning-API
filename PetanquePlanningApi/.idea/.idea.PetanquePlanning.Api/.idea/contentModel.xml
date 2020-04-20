@@ -768,8 +768,8 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="MappingProfile.cs" t="Include" />
         <e p="Migrations" t="Include">
-          <e p="20200419163443_InitialMigration.cs" t="Include" />
-          <e p="20200419163443_InitialMigration.Designer.cs" t="Include" />
+          <e p="20200420071427_InitialMigrations.cs" t="Include" />
+          <e p="20200420071427_InitialMigrations.Designer.cs" t="Include" />
           <e p="PetanquePlanningDbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">

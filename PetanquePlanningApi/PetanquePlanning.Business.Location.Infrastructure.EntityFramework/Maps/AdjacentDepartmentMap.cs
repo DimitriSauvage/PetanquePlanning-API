@@ -23,7 +23,7 @@ namespace PetanquePlanning.Business.Location.Infrastructure.EntityFramework.Maps
                 .WithMany()
                 .HasForeignKey(x => x.SecondDepartmentId)
                 .IsRequired()
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder
                 .HasIndex(x => new {x.FirstDepartmentId, x.SecondDepartmentId})
@@ -219,7 +219,6 @@ namespace PetanquePlanning.Business.Location.Infrastructure.EntityFramework.Maps
                 new AdjacentDepartments() {FirstDepartmentId = 38, SecondDepartmentId = 87, Id = 186},
                 new AdjacentDepartments() {FirstDepartmentId = 39, SecondDepartmentId = 1, Id = 187},
                 new AdjacentDepartments() {FirstDepartmentId = 39, SecondDepartmentId = 5, Id = 188},
-                new AdjacentDepartments() {FirstDepartmentId = 39, SecondDepartmentId = 5, Id = 189},
                 new AdjacentDepartments() {FirstDepartmentId = 39, SecondDepartmentId = 7, Id = 190},
                 new AdjacentDepartments() {FirstDepartmentId = 39, SecondDepartmentId = 25, Id = 191},
                 new AdjacentDepartments() {FirstDepartmentId = 39, SecondDepartmentId = 70, Id = 192},

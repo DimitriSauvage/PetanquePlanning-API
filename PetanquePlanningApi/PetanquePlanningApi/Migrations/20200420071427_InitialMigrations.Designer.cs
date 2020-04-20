@@ -10,8 +10,8 @@ using PetanquePlanningApi;
 namespace PetanquePlanningApi.Migrations
 {
     [DbContext(typeof(PetanquePlanningDbContext))]
-    [Migration("20200419163443_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20200420071427_InitialMigrations")]
+    partial class InitialMigrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -1574,12 +1574,6 @@ namespace PetanquePlanningApi.Migrations
                         new
                         {
                             Id = 188L,
-                            FirstDepartmentId = 39L,
-                            SecondDepartmentId = 5L
-                        },
-                        new
-                        {
-                            Id = 189L,
                             FirstDepartmentId = 39L,
                             SecondDepartmentId = 5L
                         },
@@ -4370,7 +4364,7 @@ namespace PetanquePlanningApi.Migrations
                     b.HasOne("PetanquePlanning.Business.Location.Domain.Entities.Department", "SecondDepartment")
                         .WithMany()
                         .HasForeignKey("SecondDepartmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 

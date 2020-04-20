@@ -1577,12 +1577,6 @@ namespace PetanquePlanningApi.Migrations
                         },
                         new
                         {
-                            Id = 189L,
-                            FirstDepartmentId = 39L,
-                            SecondDepartmentId = 5L
-                        },
-                        new
-                        {
                             Id = 190L,
                             FirstDepartmentId = 39L,
                             SecondDepartmentId = 7L
@@ -4368,7 +4362,7 @@ namespace PetanquePlanningApi.Migrations
                     b.HasOne("PetanquePlanning.Business.Location.Domain.Entities.Department", "SecondDepartment")
                         .WithMany()
                         .HasForeignKey("SecondDepartmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
                 });
 
