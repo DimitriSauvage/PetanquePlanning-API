@@ -5,4 +5,8 @@
         <LangVersion>8</LangVersion>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Application\Tools.Application.csproj" />
+    </ItemGroup>
+
 </Project>

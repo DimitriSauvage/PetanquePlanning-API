@@ -145,3 +145,7 @@ C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningA
 C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\CsToTs.dll
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Handlebars.dll
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Tools.Typescript.dll
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Tools.Typescript.pdb

@@ -1,6 +1,9 @@
-﻿namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Roles
+﻿using Tools.Application.Abstractions;
+using Tools.Application.DTOs;
+
+namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Roles
 {
-    public class ApplicationRoleDTO
+    public class ApplicationRoleDTO : BaseDTO
     {
         #region Properties
 

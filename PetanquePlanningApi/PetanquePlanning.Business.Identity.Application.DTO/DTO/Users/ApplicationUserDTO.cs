@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using PetanquePlanning.Business.Identity.Domain.Enumerations;
+using Tools.Application.Abstractions;
 using Tools.Application.DTOs;
 using Tools.Helpers;
 
 namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Users
 {
-    public class ApplicationUserDTO
+    public class ApplicationUserDTO : BaseDTO
     {
         #region Properties
 

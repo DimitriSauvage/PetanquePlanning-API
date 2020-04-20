@@ -598,7 +598,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Application\\Tools.Application.csproj": {
+                "projectPath": "C:\\Users\\dimit\\Github\\CSharp-Tools\\Tools.Application\\Tools.Application.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

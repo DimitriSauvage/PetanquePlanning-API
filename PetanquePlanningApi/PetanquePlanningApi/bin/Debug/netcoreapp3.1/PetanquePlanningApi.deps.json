@@ -45,6 +45,7 @@
           "PetanquePlanning.Business.Location.Infrastructure.EntityFramework": "1.0.0",
           "Tools.Infrastructure": "1.0.0",
           "Tools.Mapper": "1.0.0",
+          "Tools.Typescript": "1.0.0",
           "Microsoft.AspNetCore.Antiforgery.Reference": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions.Reference": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies.Reference": "3.1.0.0",
@@ -344,6 +345,20 @@
           "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
+      "CsToTs/1.3.12": {
+        "dependencies": {
+          "Handlebars.Net": "1.10.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/CsToTs.dll": {
+            "assemblyVersion": "1.3.12.0",
+            "fileVersion": "1.3.12.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/CsToTs.dll": {}
+        }
+      },
       "EnterpriseLibrary.TransientFaultHandling.Data.NetCore/6.0.1312": {
         "dependencies": {
           "EnterpriseLibrary.TransientFaultHandling.NetCore": "6.0.1312",
@@ -368,6 +383,21 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.Practices.EnterpriseLibrary.TransientFaultHandling.dll": {}
+        }
+      },
+      "Handlebars.Net/1.10.1": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "System.Reflection.TypeExtensions": "4.4.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Handlebars.dll": {
+            "assemblyVersion": "1.10.1.0",
+            "fileVersion": "1.10.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Handlebars.dll": {}
         }
       },
       "MediatR/5.1.0": {
@@ -941,7 +971,7 @@
           "System.Collections": "4.3.0",
           "System.IO": "4.3.0",
           "System.IO.FileSystem": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.4.0",
           "System.Runtime.Extensions": "4.3.0",
           "System.Runtime.InteropServices": "4.3.0",
           "System.Runtime.InteropServices.RuntimeInformation": "4.3.0"
@@ -1720,7 +1750,7 @@
           "System.Reflection": "4.3.0",
           "System.Reflection.Extensions": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.4.0",
           "System.Resources.ResourceManager": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Runtime.Extensions": "4.3.0",
@@ -1840,7 +1870,7 @@
           "System.Reflection.Emit": "4.3.0",
           "System.Reflection.Emit.ILGeneration": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.4.0",
           "System.Resources.ResourceManager": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Runtime.Extensions": "4.3.0",
@@ -1969,7 +1999,7 @@
           "System.Reflection.Emit.Lightweight": "4.3.0",
           "System.Reflection.Extensions": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.4.0",
           "System.Resources.ResourceManager": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Runtime.Extensions": "4.3.0",
@@ -2064,7 +2094,7 @@
           "System.Reflection.Emit.Lightweight": "4.3.0",
           "System.Reflection.Extensions": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.4.0",
           "System.Resources.ResourceManager": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Runtime.Extensions": "4.3.0",
@@ -2129,12 +2159,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Reflection.TypeExtensions/4.3.0": {
-        "dependencies": {
-          "System.Reflection": "4.3.0",
-          "System.Runtime": "4.3.0"
-        }
-      },
+      "System.Reflection.TypeExtensions/4.4.0": {},
       "System.Resources.ResourceManager/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0",
@@ -2552,7 +2577,7 @@
           "System.Reflection.Emit.ILGeneration": "4.3.0",
           "System.Reflection.Extensions": "4.3.0",
           "System.Reflection.Primitives": "4.3.0",
-          "System.Reflection.TypeExtensions": "4.3.0",
+          "System.Reflection.TypeExtensions": "4.4.0",
           "System.Resources.ResourceManager": "4.3.0",
           "System.Runtime": "4.3.0",
           "System.Runtime.Extensions": "4.3.0",
@@ -2737,6 +2762,9 @@
         }
       },
       "PetanquePlanning.Business.Location.Application.DTO/1.0.0": {
+        "dependencies": {
+          "Tools.Application": "1.0.0"
+        },
         "runtime": {
           "PetanquePlanning.Business.Location.Application.DTO.dll": {}
         },
@@ -2921,6 +2949,17 @@
         },
         "compile": {
           "Tools.Mapper.dll": {}
+        }
+      },
+      "Tools.Typescript/1.0.0": {
+        "dependencies": {
+          "CsToTs": "1.3.12"
+        },
+        "runtime": {
+          "Tools.Typescript.dll": {}
+        },
+        "compile": {
+          "Tools.Typescript.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery.Reference/3.1.0.0": {
@@ -4511,6 +4550,13 @@
       "path": "automapper.extensions.microsoft.dependencyinjection/7.0.0",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512"
     },
+    "CsToTs/1.3.12": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-f2zIq6WJ0UaVPr2i+hHXrK5ImiPwuTV1aJaZp0rrUUVPqJ+DAoRa3OpnJx9wG3WJOAeUrNLjmb/ZzmKEk+o7nQ==",
+      "path": "cstots/1.3.12",
+      "hashPath": "cstots.1.3.12.nupkg.sha512"
+    },
     "EnterpriseLibrary.TransientFaultHandling.Data.NetCore/6.0.1312": {
       "type": "package",
       "serviceable": true,
@@ -4524,6 +4570,13 @@
       "sha512": "sha512-/zZLwcy9YU9LSjPH8qkDuzc0x3fYDuxPLNPQx6zjYdQi/zeRVf5XRQwWVqESGFhyr/AH5ft+HZQA2/pUbs/Yow==",
       "path": "enterpriselibrary.transientfaulthandling.netcore/6.0.1312",
       "hashPath": "enterpriselibrary.transientfaulthandling.netcore.6.0.1312.nupkg.sha512"
+    },
+    "Handlebars.Net/1.10.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-F/1eETC5AUfxaK+zG6EhUZa89TfxRtTMvTg9T6AsWzPkli/szv+OWEKpgQgXcONtM+nLkn7Q5Lfau0BA8eTxlQ==",
+      "path": "handlebars.net/1.10.1",
+      "hashPath": "handlebars.net.1.10.1.nupkg.sha512"
     },
     "MediatR/5.1.0": {
       "type": "package",
@@ -5729,12 +5782,12 @@
       "path": "system.reflection.primitives/4.3.0",
       "hashPath": "system.reflection.primitives.4.3.0.nupkg.sha512"
     },
-    "System.Reflection.TypeExtensions/4.3.0": {
+    "System.Reflection.TypeExtensions/4.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7u6ulLcZbyxB5Gq0nMkQttcdBTx57ibzw+4IOXEfR+sXYQoHvjW5LTLyNr8O22UIMrqYbchJQJnos4eooYzYJA==",
-      "path": "system.reflection.typeextensions/4.3.0",
-      "hashPath": "system.reflection.typeextensions.4.3.0.nupkg.sha512"
+      "sha512": "sha512-dkmh/ySlwnXJp/1qYP9uyKkCK1CXR/REFzl7abHcArxBcV91mY2CgrrzSRA5Z/X4MevJWwXsklGRdR3A7K9zbg==",
+      "path": "system.reflection.typeextensions/4.4.0",
+      "hashPath": "system.reflection.typeextensions.4.4.0.nupkg.sha512"
     },
     "System.Resources.ResourceManager/4.3.0": {
       "type": "package",
@@ -6160,6 +6213,11 @@
       "sha512": ""
     },
     "Tools.Mapper/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Tools.Typescript/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

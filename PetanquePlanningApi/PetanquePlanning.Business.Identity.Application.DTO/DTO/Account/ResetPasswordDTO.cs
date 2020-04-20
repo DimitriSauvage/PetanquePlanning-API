@@ -1,6 +1,9 @@
-﻿namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Account
+﻿using Tools.Application.Abstractions;
+using Tools.Application.DTOs;
+
+namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Account
 {
-    public class ResetPasswordDTO
+    public class ResetPasswordDTO : BaseDTO
     {
         #region Properties
 

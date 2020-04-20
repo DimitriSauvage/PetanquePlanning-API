@@ -1,8 +1,10 @@
 ﻿using PetanquePlanning.Business.Identity.Application.DTO.DTO.Users;
+using Tools.Application.Abstractions;
+using Tools.Application.DTOs;
 
 namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Account
 {
-    public class LoginResultDTO
+    public class LoginResultDTO : BaseDTO
     {
         #region Properties
 

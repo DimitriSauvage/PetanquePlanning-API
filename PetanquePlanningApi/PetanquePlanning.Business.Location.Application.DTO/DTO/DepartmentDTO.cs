@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
-using PetanquePlanning.Business.Location.Domain.Entities;
+using Tools.Application.Abstractions;
+using Tools.Application.DTOs;
 
 namespace PetanquePlanning.Business.Location.Application.DTO.DTO
 {
-    public class DepartmentDTO
+    public class DepartmentDTO : BaseDTO
     {
         /// <summary>
         /// Adjacent departments

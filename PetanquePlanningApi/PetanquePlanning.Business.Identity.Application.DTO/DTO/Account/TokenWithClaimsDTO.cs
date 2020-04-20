@@ -2,13 +2,15 @@
 using System.Linq;
 using System.Security.Claims;
 using Newtonsoft.Json;
+using Tools.Application.Abstractions;
+using Tools.Application.DTOs;
 
 namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Account
 {
     /// <summary>
     /// Une instance de cette classe sera retournée après une authentification réussie de la part d'un utilisateur
     /// </summary>
-    public class TokenWithClaimsDTO
+    public class TokenWithClaimsDTO : BaseDTO
     {
         #region Properties
 

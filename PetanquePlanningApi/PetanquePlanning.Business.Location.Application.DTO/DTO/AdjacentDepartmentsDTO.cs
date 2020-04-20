@@ -1,8 +1,9 @@
-﻿using PetanquePlanning.Business.Location.Application.DTO.DTO;
+﻿using Tools.Application.Abstractions;
+using Tools.Application.DTOs;
 
-namespace PetanquePlanning.Business.Location.Domain.Entities
+namespace PetanquePlanning.Business.Location.Application.DTO.DTO
 {
-    public class AdjacentDepartmentsDTO
+    public class AdjacentDepartmentsDTO : BaseDTO
     {
         /// <summary>
         /// First adjacent department

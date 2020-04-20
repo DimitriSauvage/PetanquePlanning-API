@@ -1,8 +1,10 @@
 ﻿using PetanquePlanning.Business.Core.Domain.Entities;
+using Tools.Application.Abstractions;
+using Tools.Application.DTOs;
 
 namespace PetanquePlanning.Business.Core.Application.DTO.DTO
 {
-    public class ClubDTO
+    public class ClubDTO : BaseDTO
     {
         /// <summary>
         /// Identifier

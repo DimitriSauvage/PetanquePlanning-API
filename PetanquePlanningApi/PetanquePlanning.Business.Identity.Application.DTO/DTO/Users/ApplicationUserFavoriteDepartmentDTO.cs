@@ -1,8 +1,10 @@
 ﻿using PetanquePlanning.Business.Location.Application.DTO.DTO;
+using Tools.Application.Abstractions;
+using Tools.Application.DTOs;
 
 namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Users
 {
-    public class ApplicationUserFavoriteDepartmentDTO
+    public class ApplicationUserFavoriteDepartmentDTO : BaseDTO
     {
         /// <summary>
         /// Identifier

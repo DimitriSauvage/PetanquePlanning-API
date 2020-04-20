@@ -73,6 +73,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.Infrastructure.Entity
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.Mvc", "..\..\CSharp-Tools\Tools.Mvc\Tools.Mvc.csproj", "{732B57E5-D908-4A22-BF4A-531347916302}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.Typescript", "..\..\CSharp-Tools\Tools.Typescript\Tools.Typescript.csproj", "{7C51BE38-BAD3-4776-A030-0D3DD6C3B73A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -195,6 +197,10 @@ Global
 		{732B57E5-D908-4A22-BF4A-531347916302}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{732B57E5-D908-4A22-BF4A-531347916302}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{732B57E5-D908-4A22-BF4A-531347916302}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C51BE38-BAD3-4776-A030-0D3DD6C3B73A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C51BE38-BAD3-4776-A030-0D3DD6C3B73A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C51BE38-BAD3-4776-A030-0D3DD6C3B73A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C51BE38-BAD3-4776-A030-0D3DD6C3B73A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -234,6 +240,7 @@ Global
 		{F13A861F-67AE-4259-8062-164F3487BCF2} = {B82BFC4D-8937-44D2-B6C2-6FA9740933EF}
 		{8D13F965-F13B-4D4F-A619-16941F8933F8} = {B82BFC4D-8937-44D2-B6C2-6FA9740933EF}
 		{732B57E5-D908-4A22-BF4A-531347916302} = {B82BFC4D-8937-44D2-B6C2-6FA9740933EF}
+		{7C51BE38-BAD3-4776-A030-0D3DD6C3B73A} = {B82BFC4D-8937-44D2-B6C2-6FA9740933EF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7838669D-C8FB-44B7-8CC5-990EA7C7A69B}

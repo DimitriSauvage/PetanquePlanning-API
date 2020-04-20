@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
+using Tools.Application.Abstractions;
+using Tools.Application.DTOs;
 
 namespace PetanquePlanning.Business.Location.Application.DTO.DTO
 {
-    public class RegionDTO
+    public class RegionDTO : BaseDTO
     {
         /// <summary>
         /// Code
