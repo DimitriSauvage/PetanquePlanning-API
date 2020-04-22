@@ -86,6 +86,9 @@ namespace PetanquePlanningApi
 
             //Identity config
             AddIdentity(services);
+
+            services.Configure<IISServerOptions>(options => { options.AutomaticAuthentication = false; });
+            services.Configure<IISOptions>(options => { options.ForwardClientCertificate = false; });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -95,6 +98,7 @@ namespace PetanquePlanningApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
 
             // Permet l'utilisation d'Apache ou de nginx comme serveur de reverse proxy
             app.UseForwardedHeaders(new ForwardedHeadersOptions()

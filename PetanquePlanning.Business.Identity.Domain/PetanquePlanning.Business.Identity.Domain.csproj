@@ -10,7 +10,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Domain\Tools.Domain.csproj" />
+        <ProjectReference Include="..\..\CSharp-Tools\Tools.Domain\Tools.Domain.csproj" />
         <ProjectReference Include="..\PetanquePlanning.Business.Location.Domain\PetanquePlanning.Business.Location.Domain.csproj" />
     </ItemGroup>
 

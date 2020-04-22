@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Application\Tools.Application.csproj" />
+      <ProjectReference Include="..\..\CSharp-Tools\Tools.Application\Tools.Application.csproj" />
     </ItemGroup>
 
 </Project>

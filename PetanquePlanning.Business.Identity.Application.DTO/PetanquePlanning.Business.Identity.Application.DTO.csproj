@@ -10,8 +10,8 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Application\Tools.Application.csproj" />
-        <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Http\Tools.Http.csproj" />
+        <ProjectReference Include="..\..\CSharp-Tools\Tools.Application\Tools.Application.csproj" />
+        <ProjectReference Include="..\..\CSharp-Tools\Tools.Http\Tools.Http.csproj" />
         <ProjectReference Include="..\PetanquePlanning.Business.Identity.Domain\PetanquePlanning.Business.Identity.Domain.csproj" />
         <ProjectReference Include="..\PetanquePlanning.Business.Location.Application.DTO\PetanquePlanning.Business.Location.Application.DTO.csproj" />
     </ItemGroup>

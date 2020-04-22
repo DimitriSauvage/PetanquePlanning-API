@@ -16,10 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\CSharp-Tools\Tools.DependencyInjection\Tools.DependencyInjection.csproj" />
-    <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Infrastructure\Tools.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Mapper\Tools.Mapper.csproj" />
-    <ProjectReference Include="..\..\..\CSharp-Tools\Tools.Typescript\Tools.Typescript.csproj" />
+    <ProjectReference Include="..\..\CSharp-Tools\Tools.DependencyInjection\Tools.DependencyInjection.csproj" />
+    <ProjectReference Include="..\..\CSharp-Tools\Tools.Infrastructure\Tools.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\CSharp-Tools\Tools.Mapper\Tools.Mapper.csproj" />
+    <ProjectReference Include="..\..\CSharp-Tools\Tools.Typescript\Tools.Typescript.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Core.Application.DTO\PetanquePlanning.Business.Core.Application.DTO.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Core.Application\PetanquePlanning.Business.Core.Application.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Core.Infrastructure.EntityFramework\PetanquePlanning.Business.Core.Infrastructure.EntityFramework.csproj" />
@@ -37,7 +37,7 @@
     <ProjectReference Include="..\PetanquePlanning.Business.Location.Presentation\PetanquePlanning.Business.Location.Presentation.csproj" />
   </ItemGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="launch" /></VisualStudio></ProjectExtensions>
 
 
 </Project>
