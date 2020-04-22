@@ -1,4 +1,5 @@
-﻿using Tools.Domain.Abstractions;
+﻿using System;
+using Tools.Domain.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Domain.Entities
 {
@@ -12,7 +13,7 @@ namespace PetanquePlanning.Business.Location.Domain.Entities
         /// <summary>
         /// First department id
         /// </summary>
-        public long FirstDepartmentId { get; set; }
+        public Guid FirstDepartmentId { get; set; }
 
         /// <summary>
         /// Second adjacent department
@@ -22,6 +23,6 @@ namespace PetanquePlanning.Business.Location.Domain.Entities
         /// <summary>
         /// Second department id
         /// </summary>
-        public long SecondDepartmentId { get; set; }
+        public Guid SecondDepartmentId { get; set; }
     }
 }

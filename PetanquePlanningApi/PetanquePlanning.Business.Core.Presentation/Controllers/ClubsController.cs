@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -68,7 +69,7 @@ namespace PetanquePlanning.Business.Core.Presentation.Controllers
         /// <returns></returns>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(ClubDTO), StatusCodes.Status200OK)]
-        public async Task<ActionResult<ClubDTO>> GetByIdAsync([FromRoute] long id)
+        public async Task<ActionResult<ClubDTO>> GetByIdAsync([FromRoute] Guid id)
         {
             var club = await this.Service.GetByIdAsync(id);
             return this.Ok(club);

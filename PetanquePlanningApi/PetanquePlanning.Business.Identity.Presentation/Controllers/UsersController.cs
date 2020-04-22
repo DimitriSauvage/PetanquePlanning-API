@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -55,9 +56,9 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("{id:long}")]
+        [HttpGet("{id}")]
         [ProducesResponseType(typeof(ApplicationUserDTO), StatusCodes.Status200OK)]
-        public async Task<IActionResult> Get(long id)
+        public async Task<IActionResult> Get(Guid id)
         {
             return Ok(await this.Service.GetByIdAsync(id));
         }
@@ -106,9 +107,9 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         /// </summary>
         /// <param name="id">Identifier of the user for which reset the password</param>
         /// <returns></returns>
-        [HttpPut("{id}/resetPassword")]
         [ProducesResponseType(typeof(void), StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> ReinitializePassword(long id)
+        [HttpPut("{id}/resetPassword")]
+        public async Task<IActionResult> ReinitializePassword(Guid id)
         {
             // var requestCultureFeature = this.HttpContext.Features.Get<IRequestCultureFeature>();
             // CultureInfo cultureInfo = requestCultureFeature.RequestCulture.Culture;
@@ -125,7 +126,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         /// <returns></returns>
         [HttpDelete("api/users/{userId}")]
         [ProducesResponseType(typeof(void), StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> DeleteAsync([FromRoute] long userId)
+        public async Task<IActionResult> DeleteAsync([FromRoute] Guid userId)
         {
             await this.Service.DeleteAsync(userId);
             return this.NoContent();

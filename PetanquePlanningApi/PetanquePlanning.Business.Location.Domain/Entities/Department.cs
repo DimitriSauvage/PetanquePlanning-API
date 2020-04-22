@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Tools.Domain.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Domain.Entities
@@ -28,6 +29,6 @@ namespace PetanquePlanning.Business.Location.Domain.Entities
         /// <summary>
         /// Region code
         /// </summary>
-        public long RegionId { get; set; }
+        public Guid RegionId { get; set; }
     }
 }

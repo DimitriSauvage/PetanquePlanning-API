@@ -6,7 +6,7 @@ using Tools.Domain.Helpers;
 
 namespace PetanquePlanning.Business.Identity.Domain.Entities
 {
-    public class ApplicationRoleClaim : IdentityRoleClaim<long>, IEntityWithId<int>, IComparable<ApplicationRoleClaim>,
+    public class ApplicationRoleClaim : IdentityRoleClaim<Guid>, IEntityWithId<int>, IComparable<ApplicationRoleClaim>,
         IEquatable<ApplicationRoleClaim>
     {
         #region Properties

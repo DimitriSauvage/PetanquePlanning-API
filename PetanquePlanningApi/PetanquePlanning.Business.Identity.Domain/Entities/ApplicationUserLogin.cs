@@ -1,18 +1,19 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using System;
+using Microsoft.AspNetCore.Identity;
 using Tools.Domain.Abstractions;
 using Tools.Domain.Extensions;
 using Tools.Domain.Helpers;
 
 namespace PetanquePlanning.Business.Identity.Domain.Entities
 {
-    public class ApplicationUserLogin : IdentityUserLogin<long>, IEntityWithId
+    public class ApplicationUserLogin : IdentityUserLogin<Guid>, IEntityWithId
     {
         #region Properties
 
         /// <summary>
         /// Affecte ou obtient l'identifiiant
         /// </summary>
-        public long Id { get; set; }
+        public Guid Id { get; set; }
 
         #endregion
 

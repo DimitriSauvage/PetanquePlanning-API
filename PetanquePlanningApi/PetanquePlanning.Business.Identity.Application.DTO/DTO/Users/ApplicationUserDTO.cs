@@ -24,17 +24,10 @@ namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Users
         {
             get
             {
-                string result = string.Empty;
+                var result = string.Empty;
                 if (this.Avatar.IsNotEmpty())
                 {
-                    if (this.Id > 0)
-                    {
-                        result = Path.Combine("data", "users", this.NormalizedEmail, this.Avatar);
-                    }
-                    else
-                    {
-                        result = Path.Combine("data", "users", "temp", this.Avatar);
-                    }
+                    result = Path.Combine("data", "users", this.Id.ToString().Trim().IsNotEmpty() ? this.NormalizedEmail : "temp", this.Avatar);
                 }
 
                 return result;
@@ -89,7 +82,7 @@ namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Users
         /// <summary>
         /// Affecte ou obtient l'id de l'utilisateur
         /// </summary>
-        public long Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Affecte ou obtient le hash du mot de passe

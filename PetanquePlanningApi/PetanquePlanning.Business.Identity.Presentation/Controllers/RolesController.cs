@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -54,7 +55,7 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
         /// <returns></returns>
         [HttpDelete("{roleId}")]
         [ProducesResponseType(typeof(void), StatusCodes.Status204NoContent)]
-        public async Task<IActionResult> DeleteAsync([FromRoute] long roleId,
+        public async Task<IActionResult> DeleteAsync([FromRoute] Guid roleId,
             [FromBody] ApplicationRoleDTO newRoleForUsers)
         {
             await this.Service.DeleteAsync(roleId, newRoleForUsers);

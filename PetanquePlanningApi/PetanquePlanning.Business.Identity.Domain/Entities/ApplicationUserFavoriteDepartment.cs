@@ -1,4 +1,5 @@
-﻿using PetanquePlanning.Business.Location.Domain.Entities;
+﻿using System;
+using PetanquePlanning.Business.Location.Domain.Entities;
 using Tools.Domain.Abstractions;
 
 namespace PetanquePlanning.Business.Identity.Domain.Entities
@@ -13,7 +14,7 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         /// <summary>
         /// Associated department id
         /// </summary>
-        public long DepartmentId { get; set; }
+        public Guid DepartmentId { get; set; }
 
         /// <summary>
         /// Associated user
@@ -23,6 +24,6 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         /// <summary>
         /// Associated user id
         /// </summary>
-        public long UserId { get; set; }
+        public Guid UserId { get; set; }
     }
 }

@@ -9,7 +9,7 @@ using Tools.Domain.Helpers;
 
 namespace PetanquePlanning.Business.Identity.Domain.Entities
 {
-    public class ApplicationUser : IdentityUser<long>, IEntityWithId, IComparable<ApplicationUser>,
+    public class ApplicationUser : IdentityUser<Guid>, IEntityWithId, IComparable<ApplicationUser>,
         IEquatable<ApplicationUser>
     {
         #region Fields

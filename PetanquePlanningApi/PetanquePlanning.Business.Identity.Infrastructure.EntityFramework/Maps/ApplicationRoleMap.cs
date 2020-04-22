@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using Tools.Infrastructure.EntityFramework.Abstractions;
@@ -28,12 +29,14 @@ namespace PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.Maps
             builder.HasData(
                 new ApplicationRole()
                 {
-                    Id = (long) 1, ConcurrencyStamp = "0469fddd-36a7-4601-a255-a07c1727e51b", Name = "Administrateur",
+                    Id = Guid.NewGuid(), ConcurrencyStamp = "0469fddd-36a7-4601-a255-a07c1727e51b",
+                    Name = "Administrateur",
                     NormalizedName = "Administrateur"
                 },
                 new ApplicationRole()
                 {
-                    Id = (long) 2, ConcurrencyStamp = "1469fddd-36a7-4601-a255-a07c1727e51b", Name = "Utilisateur",
+                    Id = Guid.NewGuid(), ConcurrencyStamp = "1469fddd-36a7-4601-a255-a07c1727e51b",
+                    Name = "Utilisateur",
                     NormalizedName = "Utilisateur"
                 }
             );

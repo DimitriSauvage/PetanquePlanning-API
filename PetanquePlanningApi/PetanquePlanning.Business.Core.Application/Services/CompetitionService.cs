@@ -53,7 +53,7 @@ namespace PetanquePlanning.Business.Core.Application.Services
         /// <param name="id">Id to found</param>
         /// <returns></returns>
         /// <exception cref="EntityNotFoundException{TEntity}<Competition>"></exception>
-        public async Task<CompetitionDTO> GetByIdAsync(long id)
+        public async Task<CompetitionDTO> GetByIdAsync(Guid id)
         {
             var competition = await this.Repository.GetByIdAsync(id);
             if (competition == null) throw new EntityNotFoundException<Competition>();

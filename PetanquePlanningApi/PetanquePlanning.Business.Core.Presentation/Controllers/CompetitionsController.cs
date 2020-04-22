@@ -59,7 +59,7 @@ namespace PetanquePlanning.Business.Core.Presentation.Controllers
         /// <exception cref="EntityNotFoundException{TEntity}<Competition>"></exception>
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(CompetitionDTO), StatusCodes.Status200OK)]
-        public async Task<ActionResult<CompetitionDTO>> GetByIdAsync([FromRoute] long id)
+        public async Task<ActionResult<CompetitionDTO>> GetByIdAsync([FromRoute] Guid id)
         {
             var competition = await this.Service.GetByIdAsync(id);
             return this.Ok(competition);

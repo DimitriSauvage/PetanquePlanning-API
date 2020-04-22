@@ -7,7 +7,7 @@ using Tools.Domain.Helpers;
 
 namespace PetanquePlanning.Business.Identity.Domain.Entities
 {
-    public class ApplicationRole : IdentityRole<long>, IEntityWithId, IEquatable<ApplicationRole>,
+    public class ApplicationRole : IdentityRole<Guid>, IEntityWithId, IEquatable<ApplicationRole>,
         IComparable<ApplicationRole>
     {
         #region Properties

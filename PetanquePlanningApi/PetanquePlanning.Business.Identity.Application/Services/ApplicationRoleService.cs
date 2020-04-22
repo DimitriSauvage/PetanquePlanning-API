@@ -77,7 +77,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         }
 
         /// <inheritdoc />
-        public async Task DeleteAsync(long roleId, ApplicationRoleDTO newRoleForUsers)
+        public async Task DeleteAsync(Guid roleId, ApplicationRoleDTO newRoleForUsers)
         {
             //On vérifie que le nouveau rôle n'est pas nul et qu'il existe
             if (newRoleForUsers == null) throw new ArgumentNullException(nameof(newRoleForUsers));
@@ -102,7 +102,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         }
 
         /// <inheritdoc />
-        public async Task<long> GetRoleIdAsync(string role)
+        public async Task<Guid> GetRoleIdAsync(string role)
         {
             return (await this.Repository.GetByName(role)).Id;
         }

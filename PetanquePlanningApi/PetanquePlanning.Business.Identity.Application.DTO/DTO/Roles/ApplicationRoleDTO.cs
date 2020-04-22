@@ -1,4 +1,5 @@
-﻿using Tools.Application.Abstractions;
+﻿using System;
+using Tools.Application.Abstractions;
 using Tools.Application.DTOs;
 
 namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Roles
@@ -15,7 +16,7 @@ namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Roles
         /// <summary>
         /// Identifier
         /// </summary>
-        public long Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Name

@@ -96,7 +96,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         /// </summary>
         /// <param name="userId">Identifiant de l'utilisateur à récupérer</param>
         /// <returns>Utilisateur trouvé</returns>
-        public async Task<ApplicationUserDTO> GetByIdAsync(long userId)
+        public async Task<ApplicationUserDTO> GetByIdAsync(Guid userId)
         {
             var user = await this.Repository.GetByIdAsync(userId);
             return this.Mapper.Map<ApplicationUserDTO>(user);
@@ -169,7 +169,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         {
             //Vérifications de cohérence
             if (userDto == null) throw new ArgumentNullException(nameof(userDto));
-            if (userDto.Id > 0) throw new EntityAlreadyExistsException<ApplicationUser>();
+            if (userDto.Id.ToString().IsNotEmpty()) throw new EntityAlreadyExistsException<ApplicationUser>();
 
             return await this.Repository.TransactionalExecutionAsync(
                 action: async (newUser, transaction) =>
@@ -226,7 +226,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         /// </summary>
         /// <param name="id">Identifiant de l'utilisateur</param>
         /// <returns>Aucun retour</returns>
-        public async Task ReinitializePasswordAsync(long id)
+        public async Task ReinitializePasswordAsync(Guid id)
         {
             //Get the user
             var user = await this.UserManager.FindByIdAsync(id.ToString());
@@ -252,7 +252,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         /// </summary>
         /// <param name="userId">Identifiant de l'utilisateur à supprimer</param>
         /// <returns></returns>
-        public async Task DeleteAsync(long userId)
+        public async Task DeleteAsync(Guid userId)
         {
             var user = await this.UserManager.FindByIdAsync(userId.ToString());
             if (user == null) throw new EntityNotFoundException<ApplicationUser>(userId);
@@ -324,7 +324,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         {
             DirectoryInfo directoryInfo;
 
-            if (applicationUserDto != null && applicationUserDto.Id > 0)
+            if (applicationUserDto != null && applicationUserDto.Id.ToString().IsNotEmpty())
             {
                 //On renvoi le lien du dossier de l'utilisateur
                 directoryInfo = this.GetUserImageDirectoryPath(baseStoragePath, applicationUserDto);

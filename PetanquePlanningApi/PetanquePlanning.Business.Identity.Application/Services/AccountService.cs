@@ -102,7 +102,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         /// <param name="userId">User identifier</param>
         /// <param name="code">Checking code</param>
         /// <param name="password">New password</param>
-        public async Task ResetPasswordAsync(long userId, string code, string password)
+        public async Task ResetPasswordAsync(Guid userId, string code, string password)
         {
             //Get the user
             var user = await this.UserManager.FindByIdAsync(userId.ToString());
@@ -117,7 +117,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         /// </summary>
         /// <param name="userId">User identifier</param>
         /// <returns>Is the email is confirmed</returns>
-        public async Task<bool> IsEmailConfirmedAsync(long userId)
+        public async Task<bool> IsEmailConfirmedAsync(Guid userId)
         {
             var user = await this.UserManager.FindByIdAsync(userId.ToString());
             if (user == null) throw new EntityNotFoundException<ApplicationUser>();
@@ -193,7 +193,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         /// <param name="httpContext">HTTP context</param>
         /// <param name="source">JWT source</param>
         /// <returns>Role id</returns>
-        public async Task<long> GetRoleIdFromRequestAsync(HttpContext httpContext,
+        public async Task<Guid> GetRoleIdFromRequestAsync(HttpContext httpContext,
             JWTAuthorizeTokenSource source = JWTAuthorizeTokenSource.Header)
         {
             var token = httpContext.Request.GetJWTAuthorizeToken(source);
@@ -214,7 +214,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         /// <param name="httpContext">HTTP context</param>
         /// <param name="source">JWT source</param>
         /// <returns>User id</returns>
-        public async Task<long> GetUserIdFromRequestAsync(HttpContext httpContext,
+        public async Task<Guid> GetUserIdFromRequestAsync(HttpContext httpContext,
             JWTAuthorizeTokenSource source = JWTAuthorizeTokenSource.Header)
         {
             return await Task.Run(() =>
@@ -228,7 +228,8 @@ namespace PetanquePlanning.Business.Identity.Application.Services
 
                 var claims = GetPrincipal(token);
                 var userIdClaim = claims.FindFirst(claim => claim.Type == ClaimTypes.Sid);
-                return (long.TryParse(userIdClaim?.Value, out long x) ? x : 0);
+                if (userIdClaim is null) throw new EntityNotFoundException<ApplicationUser>();
+                return Guid.Parse(userIdClaim?.Value);
             });
         }
 

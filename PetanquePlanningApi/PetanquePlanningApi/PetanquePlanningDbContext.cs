@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using PetanquePlanning.Business.Core.Infrastructure.EntityFramework.Maps;
@@ -10,7 +11,7 @@ using Tools.Infrastructure.EntityFramework.Helpers;
 
 namespace PetanquePlanningApi
 {
-    public class PetanquePlanningDbContext : AppIdentityDbContext<ApplicationUser, ApplicationRole, long,
+    public class PetanquePlanningDbContext : AppIdentityDbContext<ApplicationUser, ApplicationRole, Guid,
         ApplicationUserClaim, ApplicationUserRole, ApplicationUserLogin, ApplicationRoleClaim, ApplicationUserToken>
     {
         public PetanquePlanningDbContext()

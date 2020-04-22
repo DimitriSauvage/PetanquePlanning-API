@@ -149,3 +149,5 @@ C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningA
 C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Handlebars.dll
 C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Tools.Typescript.dll
 C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Tools.Typescript.pdb
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Tools.DependencyInjection.dll
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Tools.DependencyInjection.pdb

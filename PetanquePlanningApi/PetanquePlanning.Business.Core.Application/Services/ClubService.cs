@@ -19,8 +19,7 @@ namespace PetanquePlanning.Business.Core.Application.Services
         #region Constructor
 
         #endregion
-
-
+        
         #region Methods
 
         /// <summary>
@@ -38,7 +37,7 @@ namespace PetanquePlanning.Business.Core.Application.Services
         /// </summary>
         /// <param name="id">Club id</param>
         /// <returns></returns>
-        public async Task<ClubDTO> GetByIdAsync(long id)
+        public async Task<ClubDTO> GetByIdAsync(Guid id)
         {
             var club = await this.Repository.GetByIdAsync(id);
             if (club == null) throw new EntityNotFoundException<Club>();
