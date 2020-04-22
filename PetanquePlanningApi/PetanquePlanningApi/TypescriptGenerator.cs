@@ -34,7 +34,7 @@ namespace PetanquePlanningApi
 
             var types = TypeHelper.GetImplementations(searchedTypes, assemblies);
             new TypeScriptGenerator().GenerateTypeScriptModels(types,
-                @"C:\Users\dimit\Downloads\generated.ts");
+                @"C:\Users\dimit\Github\PetanquePlanning\Models\generated.ts");
         }
     }
 }

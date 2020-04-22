@@ -61,6 +61,6 @@ namespace PetanquePlanning.Business.Core.Application.DTO.DTO
         /// <summary>
         /// Competition organizer identifier
         /// </summary>
-        public string OrganizerId { get; set; }
+        public Guid OrganizerId { get; set; }
     }
 }
