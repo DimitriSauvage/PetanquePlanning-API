@@ -40,6 +40,9 @@
           "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Infrastructure.EntityFramework\\PetanquePlanning.Business.Core.Infrastructure.EntityFramework.csproj": {
             "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Infrastructure.EntityFramework\\PetanquePlanning.Business.Core.Infrastructure.EntityFramework.csproj"
           },
+          "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Presentation\\PetanquePlanning.Business.Core.Presentation.csproj": {
+            "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Presentation\\PetanquePlanning.Business.Core.Presentation.csproj"
+          },
           "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Identity.Application.DTO\\PetanquePlanning.Business.Identity.Application.DTO.csproj": {
             "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Identity.Application.DTO\\PetanquePlanning.Business.Identity.Application.DTO.csproj"
           },
@@ -55,6 +58,9 @@
           "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Identity.Infrastructure.EntityFramework\\PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.csproj": {
             "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Identity.Infrastructure.EntityFramework\\PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.csproj"
           },
+          "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Identity.Presentation\\PetanquePlanning.Business.Identity.Presentation.csproj": {
+            "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Identity.Presentation\\PetanquePlanning.Business.Identity.Presentation.csproj"
+          },
           "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.DTO\\PetanquePlanning.Business.Location.Application.DTO.csproj": {
             "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.DTO\\PetanquePlanning.Business.Location.Application.DTO.csproj"
           },
@@ -66,6 +72,9 @@
           },
           "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Infrastructure.EntityFramework\\PetanquePlanning.Business.Location.Infrastructure.EntityFramework.csproj": {
             "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Infrastructure.EntityFramework\\PetanquePlanning.Business.Location.Infrastructure.EntityFramework.csproj"
+          },
+          "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Presentation\\PetanquePlanning.Business.Location.Presentation.csproj": {
+            "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Presentation\\PetanquePlanning.Business.Location.Presentation.csproj"
           }
         }
       }

@@ -186,17 +186,18 @@
           "Microsoft.AspNetCore.App"
         ]
       },
-      "Microsoft.AspNetCore.Authorization/2.2.0": {
+      "Microsoft.AspNetCore.Authorization/3.1.3": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Logging.Abstractions": "2.2.0",
-          "Microsoft.Extensions.Options": "2.2.0"
+          "Microsoft.AspNetCore.Metadata": "3.1.3",
+          "Microsoft.Extensions.Logging.Abstractions": "3.1.3",
+          "Microsoft.Extensions.Options": "3.1.3"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.dll": {}
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authorization.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.dll": {}
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Authorization.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authorization.Policy/2.2.0": {
@@ -460,6 +461,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Localization.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Metadata/3.1.3": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Metadata.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.AspNetCore.Metadata.dll": {}
         }
       },
       "Microsoft.AspNetCore.Mvc/2.2.0": {
@@ -3414,6 +3424,21 @@
           "bin/placeholder/PetanquePlanning.Business.Core.Infrastructure.EntityFramework.dll": {}
         }
       },
+      "PetanquePlanning.Business.Core.Presentation/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "PetanquePlanning.Business.Core.Application": "1.0.0",
+          "PetanquePlanning.Business.Core.Application.DTO": "1.0.0",
+          "Tools.Mvc": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PetanquePlanning.Business.Core.Presentation.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PetanquePlanning.Business.Core.Presentation.dll": {}
+        }
+      },
       "PetanquePlanning.Business.Identity.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -3493,6 +3518,27 @@
           "bin/placeholder/PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.dll": {}
         }
       },
+      "PetanquePlanning.Business.Identity.Presentation/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "AutoMapper": "9.0.0",
+          "Microsoft.AspNetCore.Authorization": "3.1.3",
+          "Microsoft.AspNetCore.Identity": "2.2.0",
+          "Microsoft.IdentityModel.JsonWebTokens": "5.5.0",
+          "PetanquePlanning.Business.Identity.Application": "1.0.0",
+          "PetanquePlanning.Business.Identity.Application.DTO": "1.0.0",
+          "PetanquePlanning.Business.Identity.Domain": "1.0.0",
+          "System.IdentityModel.Tokens.Jwt": "5.5.0",
+          "Tools.Mvc": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PetanquePlanning.Business.Identity.Presentation.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PetanquePlanning.Business.Identity.Presentation.dll": {}
+        }
+      },
       "PetanquePlanning.Business.Location.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -3563,6 +3609,21 @@
         },
         "runtime": {
           "bin/placeholder/PetanquePlanning.Business.Location.Infrastructure.EntityFramework.dll": {}
+        }
+      },
+      "PetanquePlanning.Business.Location.Presentation/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "PetanquePlanning.Business.Location.Application": "1.0.0",
+          "PetanquePlanning.Business.Location.Application.DTO": "1.0.0",
+          "Tools.Mvc": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/PetanquePlanning.Business.Location.Presentation.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/PetanquePlanning.Business.Location.Presentation.dll": {}
         }
       },
       "Tools/1.0.0": {
@@ -3733,6 +3794,23 @@
         },
         "runtime": {
           "bin/placeholder/Tools.Mapper.dll": {}
+        }
+      },
+      "Tools.Mvc/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Localization": "2.2.0",
+          "Tools.Application": "1.0.0",
+          "Tools.Domain": "1.0.0",
+          "Tools.Http": "1.0.0",
+          "Tools.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Tools.Mvc.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Tools.Mvc.dll": {}
         }
       },
       "Tools.Typescript/1.0.0": {
@@ -3936,16 +4014,19 @@
         "microsoft.aspnetcore.authentication.jwtbearer.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Authorization/2.2.0": {
-      "sha512": "/L0W8H3jMYWyaeA9gBJqS/tSWBegP9aaTM0mjRhxTttBY9z4RVDRYJ2CwPAmAXIuPr3r1sOw+CS8jFVRGHRezQ==",
+    "Microsoft.AspNetCore.Authorization/3.1.3": {
+      "sha512": "ujHcZtQJcloThrt7NFQtUU9wqM1RsiItSQTz+W9yKyGrsWQyNnQY+lJvpUCVHzOqaQrxKRV4AHdUxtGquQPTcg==",
       "type": "package",
-      "path": "microsoft.aspnetcore.authorization/2.2.0",
+      "path": "microsoft.aspnetcore.authorization/3.1.3",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authorization.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Authorization.xml",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Authorization.xml",
-        "microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.authorization.3.1.3.nupkg.sha512",
         "microsoft.aspnetcore.authorization.nuspec"
       ]
     },
@@ -4205,6 +4286,22 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Localization.xml",
         "microsoft.aspnetcore.localization.2.2.0.nupkg.sha512",
         "microsoft.aspnetcore.localization.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Metadata/3.1.3": {
+      "sha512": "m1UZ8bG3afONRjbiWxHXq3ILcaKV/SPWHJdDQh+fKTTAXuyjE7bQ4K13hhMSHTUlxqMHr0VqeDlo9I7nqgSEqw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.metadata/3.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Metadata.dll",
+        "lib/netcoreapp3.1/Microsoft.AspNetCore.Metadata.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Metadata.xml",
+        "microsoft.aspnetcore.metadata.3.1.3.nupkg.sha512",
+        "microsoft.aspnetcore.metadata.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Mvc/2.2.0": {
@@ -10469,6 +10566,11 @@
       "path": "../PetanquePlanning.Business.Core.Infrastructure.EntityFramework/PetanquePlanning.Business.Core.Infrastructure.EntityFramework.csproj",
       "msbuildProject": "../PetanquePlanning.Business.Core.Infrastructure.EntityFramework/PetanquePlanning.Business.Core.Infrastructure.EntityFramework.csproj"
     },
+    "PetanquePlanning.Business.Core.Presentation/1.0.0": {
+      "type": "project",
+      "path": "../PetanquePlanning.Business.Core.Presentation/PetanquePlanning.Business.Core.Presentation.csproj",
+      "msbuildProject": "../PetanquePlanning.Business.Core.Presentation/PetanquePlanning.Business.Core.Presentation.csproj"
+    },
     "PetanquePlanning.Business.Identity.Application/1.0.0": {
       "type": "project",
       "path": "../PetanquePlanning.Business.Identity.Application/PetanquePlanning.Business.Identity.Application.csproj",
@@ -10494,6 +10596,11 @@
       "path": "../PetanquePlanning.Business.Identity.Infrastructure.EntityFramework/PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.csproj",
       "msbuildProject": "../PetanquePlanning.Business.Identity.Infrastructure.EntityFramework/PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.csproj"
     },
+    "PetanquePlanning.Business.Identity.Presentation/1.0.0": {
+      "type": "project",
+      "path": "../PetanquePlanning.Business.Identity.Presentation/PetanquePlanning.Business.Identity.Presentation.csproj",
+      "msbuildProject": "../PetanquePlanning.Business.Identity.Presentation/PetanquePlanning.Business.Identity.Presentation.csproj"
+    },
     "PetanquePlanning.Business.Location.Application/1.0.0": {
       "type": "project",
       "path": "../PetanquePlanning.Business.Location.Application/PetanquePlanning.Business.Location.Application.csproj",
@@ -10518,6 +10625,11 @@
       "type": "project",
       "path": "../PetanquePlanning.Business.Location.Infrastructure.EntityFramework/PetanquePlanning.Business.Location.Infrastructure.EntityFramework.csproj",
       "msbuildProject": "../PetanquePlanning.Business.Location.Infrastructure.EntityFramework/PetanquePlanning.Business.Location.Infrastructure.EntityFramework.csproj"
+    },
+    "PetanquePlanning.Business.Location.Presentation/1.0.0": {
+      "type": "project",
+      "path": "../PetanquePlanning.Business.Location.Presentation/PetanquePlanning.Business.Location.Presentation.csproj",
+      "msbuildProject": "../PetanquePlanning.Business.Location.Presentation/PetanquePlanning.Business.Location.Presentation.csproj"
     },
     "Tools/1.0.0": {
       "type": "project",
@@ -10569,6 +10681,11 @@
       "path": "../../../CSharp-Tools/Tools.Mapper/Tools.Mapper.csproj",
       "msbuildProject": "../../../CSharp-Tools/Tools.Mapper/Tools.Mapper.csproj"
     },
+    "Tools.Mvc/1.0.0": {
+      "type": "project",
+      "path": "../../../CSharp-Tools/Tools.Mvc/Tools.Mvc.csproj",
+      "msbuildProject": "../../../CSharp-Tools/Tools.Mvc/Tools.Mvc.csproj"
+    },
     "Tools.Typescript/1.0.0": {
       "type": "project",
       "path": "../../../CSharp-Tools/Tools.Typescript/Tools.Typescript.csproj",
@@ -10587,15 +10704,18 @@
       "PetanquePlanning.Business.Core.Application >= 1.0.0",
       "PetanquePlanning.Business.Core.Application.DTO >= 1.0.0",
       "PetanquePlanning.Business.Core.Infrastructure.EntityFramework >= 1.0.0",
+      "PetanquePlanning.Business.Core.Presentation >= 1.0.0",
       "PetanquePlanning.Business.Identity.Application >= 1.0.0",
       "PetanquePlanning.Business.Identity.Application.DTO >= 1.0.0",
       "PetanquePlanning.Business.Identity.Domain >= 1.0.0",
       "PetanquePlanning.Business.Identity.Infrastructure.Abstractions >= 1.0.0",
       "PetanquePlanning.Business.Identity.Infrastructure.EntityFramework >= 1.0.0",
+      "PetanquePlanning.Business.Identity.Presentation >= 1.0.0",
       "PetanquePlanning.Business.Location.Application >= 1.0.0",
       "PetanquePlanning.Business.Location.Application.DTO >= 1.0.0",
       "PetanquePlanning.Business.Location.Domain >= 1.0.0",
       "PetanquePlanning.Business.Location.Infrastructure.EntityFramework >= 1.0.0",
+      "PetanquePlanning.Business.Location.Presentation >= 1.0.0",
       "Tools.DependencyInjection >= 1.0.0",
       "Tools.Infrastructure >= 1.0.0",
       "Tools.Mapper >= 1.0.0",
@@ -10654,6 +10774,9 @@
             "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Infrastructure.EntityFramework\\PetanquePlanning.Business.Core.Infrastructure.EntityFramework.csproj": {
               "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Infrastructure.EntityFramework\\PetanquePlanning.Business.Core.Infrastructure.EntityFramework.csproj"
             },
+            "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Presentation\\PetanquePlanning.Business.Core.Presentation.csproj": {
+              "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Core.Presentation\\PetanquePlanning.Business.Core.Presentation.csproj"
+            },
             "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Identity.Application.DTO\\PetanquePlanning.Business.Identity.Application.DTO.csproj": {
               "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Identity.Application.DTO\\PetanquePlanning.Business.Identity.Application.DTO.csproj"
             },
@@ -10669,6 +10792,9 @@
             "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Identity.Infrastructure.EntityFramework\\PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.csproj": {
               "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Identity.Infrastructure.EntityFramework\\PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.csproj"
             },
+            "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Identity.Presentation\\PetanquePlanning.Business.Identity.Presentation.csproj": {
+              "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Identity.Presentation\\PetanquePlanning.Business.Identity.Presentation.csproj"
+            },
             "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.DTO\\PetanquePlanning.Business.Location.Application.DTO.csproj": {
               "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Application.DTO\\PetanquePlanning.Business.Location.Application.DTO.csproj"
             },
@@ -10680,6 +10806,9 @@
             },
             "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Infrastructure.EntityFramework\\PetanquePlanning.Business.Location.Infrastructure.EntityFramework.csproj": {
               "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Infrastructure.EntityFramework\\PetanquePlanning.Business.Location.Infrastructure.EntityFramework.csproj"
+            },
+            "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Presentation\\PetanquePlanning.Business.Location.Presentation.csproj": {
+              "projectPath": "C:\\Users\\dimit\\Github\\PetanquePlanning-API\\PetanquePlanningApi\\PetanquePlanning.Business.Location.Presentation\\PetanquePlanning.Business.Location.Presentation.csproj"
             }
           }
         }

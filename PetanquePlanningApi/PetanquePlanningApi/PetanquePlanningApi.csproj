@@ -23,15 +23,18 @@
     <ProjectReference Include="..\PetanquePlanning.Business.Core.Application.DTO\PetanquePlanning.Business.Core.Application.DTO.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Core.Application\PetanquePlanning.Business.Core.Application.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Core.Infrastructure.EntityFramework\PetanquePlanning.Business.Core.Infrastructure.EntityFramework.csproj" />
+    <ProjectReference Include="..\PetanquePlanning.Business.Core.Presentation\PetanquePlanning.Business.Core.Presentation.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Identity.Application.DTO\PetanquePlanning.Business.Identity.Application.DTO.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Identity.Application\PetanquePlanning.Business.Identity.Application.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Identity.Domain\PetanquePlanning.Business.Identity.Domain.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Identity.Infrastructure.Abstractions\PetanquePlanning.Business.Identity.Infrastructure.Abstractions.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Identity.Infrastructure.EntityFramework\PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.csproj" />
+    <ProjectReference Include="..\PetanquePlanning.Business.Identity.Presentation\PetanquePlanning.Business.Identity.Presentation.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Location.Application.DTO\PetanquePlanning.Business.Location.Application.DTO.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Location.Application\PetanquePlanning.Business.Location.Application.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Location.Domain\PetanquePlanning.Business.Location.Domain.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Location.Infrastructure.EntityFramework\PetanquePlanning.Business.Location.Infrastructure.EntityFramework.csproj" />
+    <ProjectReference Include="..\PetanquePlanning.Business.Location.Presentation\PetanquePlanning.Business.Location.Presentation.csproj" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
