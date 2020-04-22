@@ -16,9 +16,6 @@ namespace PetanquePlanningApi
     {
         public static void Main(string[] args)
         {
-#if DEBUG
-            GenerateTypescript();
-#endif
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -46,30 +43,6 @@ namespace PetanquePlanningApi
             configBuilder.Build();
         }
 
-        /// <summary>
-        /// Generate typescript files
-        /// </summary>
-        private static void GenerateTypescript()
-        {
-            var assemblies =
-                Assembly
-                    .GetExecutingAssembly()
-                    .GetReferencedAssemblies()
-                    .Where(x => x.FullName.Contains(nameof(PetanquePlanning)) || x.FullName.Contains(nameof(Tools)))
-                    .Select(Assembly.Load)
-                    .ToList();
-            
-            //Types to get
-            IEnumerable<Type> searchedTypes = new List<Type>()
-            {
-                typeof(BaseDTO),
-                typeof(EnumDTO<>),
-                typeof(Enum),
-            };
-
-            var types = TypeHelper.GetImplementations(searchedTypes, assemblies);
-            new TypeScriptGenerator().GenerateTypeScriptModels(types,
-                @"C:\Users\dimit\Downloads\generated.ts");
-        }
+        
     }
 }
