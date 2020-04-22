@@ -266,7 +266,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         /// </summary>
         /// <param name="roleId">Identifiant du rôle</param>
         /// <returns></returns>
-        public async Task<IEnumerable<ApplicationUserDTO>> GetByRoleAsync(long roleId)
+        public async Task<IEnumerable<ApplicationUserDTO>> GetByRoleAsync(Guid roleId)
         {
             var users = await this.Repository.GetByRoleAsync(roleId);
             return users.Select(x => this.Mapper.Map<ApplicationUserDTO>(x));

@@ -11,7 +11,7 @@ namespace PetanquePlanning.Business.Core.Application.DTO.DTO
         /// <summary>
         /// Identifier
         /// </summary>
-        public long Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Address of the competition

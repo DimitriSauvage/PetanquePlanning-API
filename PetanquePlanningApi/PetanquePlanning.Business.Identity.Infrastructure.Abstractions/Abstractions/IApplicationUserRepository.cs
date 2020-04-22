@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using Tools.Infrastructure.Abstraction;
@@ -12,6 +13,6 @@ namespace PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Abstrac
         /// </summary>
         /// <param name="roleId">Role identifier</param>
         /// <returns></returns>
-        Task<IEnumerable<ApplicationUser>> GetByRoleAsync(long roleId);
+        Task<IEnumerable<ApplicationUser>> GetByRoleAsync(Guid roleId);
     }
 }

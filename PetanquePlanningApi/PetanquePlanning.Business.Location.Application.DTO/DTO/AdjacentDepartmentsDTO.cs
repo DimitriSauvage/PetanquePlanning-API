@@ -1,4 +1,5 @@
-﻿using Tools.Application.Abstractions;
+﻿using System;
+using Tools.Application.Abstractions;
 using Tools.Application.DTOs;
 
 namespace PetanquePlanning.Business.Location.Application.DTO.DTO
@@ -9,12 +10,11 @@ namespace PetanquePlanning.Business.Location.Application.DTO.DTO
         /// First adjacent department
         /// </summary>
         public DepartmentDTO FirstDepartment { get; set; }
-
-
+        
         /// <summary>
         /// First department id
         /// </summary>
-        public long FirstDepartmentId { get; set; }
+        public Guid FirstDepartmentId { get; set; }
 
         /// <summary>
         /// Second adjacent department
@@ -24,6 +24,6 @@ namespace PetanquePlanning.Business.Location.Application.DTO.DTO
         /// <summary>
         /// Second department id
         /// </summary>
-        public long SecondDepartmentId { get; set; }
+        public Guid SecondDepartmentId { get; set; }
     }
 }

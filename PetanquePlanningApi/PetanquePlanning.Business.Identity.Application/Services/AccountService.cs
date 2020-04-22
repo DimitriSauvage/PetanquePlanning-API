@@ -129,7 +129,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
         /// </summary>
         /// <param name="userId">User identifier</param>
         /// <returns></returns>
-        public async Task<string> GeneratePasswordResetTokenAsync(long userId)
+        public async Task<string> GeneratePasswordResetTokenAsync(Guid userId)
         {
             var user = await this.UserManager.FindByIdAsync(userId.ToString());
             if (user == null) throw new EntityNotFoundException<ApplicationUser>();

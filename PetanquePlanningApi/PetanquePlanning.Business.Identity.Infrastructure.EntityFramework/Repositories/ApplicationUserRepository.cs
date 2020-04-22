@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -25,7 +26,7 @@ namespace PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.Repo
         /// </summary>
         /// <param name="roleId">Identifiant du rôle</param>
         /// <returns></returns>
-        public async Task<IEnumerable<ApplicationUser>> GetByRoleAsync(long roleId)
+        public async Task<IEnumerable<ApplicationUser>> GetByRoleAsync(Guid roleId)
         {
             return await Query()
                 .Where(x => x.Roles.Any(ur => ur.RoleId.Equals(roleId)))

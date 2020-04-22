@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Tools.Application.Abstractions;
 using Tools.Application.DTOs;
 
@@ -29,6 +30,6 @@ namespace PetanquePlanning.Business.Location.Application.DTO.DTO
         /// <summary>
         /// Region code
         /// </summary>
-        public long RegionId { get; set; }
+        public Guid RegionId { get; set; }
     }
 }

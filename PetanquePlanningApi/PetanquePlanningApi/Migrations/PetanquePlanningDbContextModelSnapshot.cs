@@ -124,14 +124,14 @@ namespace PetanquePlanningApi.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("904e4952-8e71-4a28-a0d0-c654d4fca401"),
+                            Id = new Guid("7c40912e-1f5d-43d5-8ff7-77bb0be94b0d"),
                             ConcurrencyStamp = "0469fddd-36a7-4601-a255-a07c1727e51b",
                             Name = "Administrateur",
                             NormalizedName = "Administrateur"
                         },
                         new
                         {
-                            Id = new Guid("56a837eb-187c-449c-8ffc-008b018dc3fa"),
+                            Id = new Guid("f2138dc1-eb75-4057-8f6b-80e3baa02ddf"),
                             ConcurrencyStamp = "1469fddd-36a7-4601-a255-a07c1727e51b",
                             Name = "Utilisateur",
                             NormalizedName = "Utilisateur"
@@ -198,8 +198,8 @@ namespace PetanquePlanningApi.Migrations
                     b.Property<DateTimeOffset>("BirthDate")
                         .HasColumnType("datetimeoffset");
 
-                    b.Property<long>("ClubId")
-                        .HasColumnType("bigint");
+                    b.Property<Guid>("ClubId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()

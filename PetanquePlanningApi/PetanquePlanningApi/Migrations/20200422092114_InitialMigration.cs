@@ -46,7 +46,7 @@ namespace PetanquePlanningApi.Migrations
                     AccessFailedCount = table.Column<int>(nullable: false),
                     Avatar = table.Column<string>(nullable: true),
                     BirthDate = table.Column<DateTimeOffset>(nullable: false),
-                    ClubId = table.Column<long>(nullable: false),
+                    ClubId = table.Column<Guid>(nullable: false),
                     Gender = table.Column<int>(nullable: false),
                     FirstName = table.Column<string>(maxLength: 50, nullable: true),
                     LastName = table.Column<string>(maxLength: 50, nullable: true),
@@ -313,8 +313,8 @@ namespace PetanquePlanningApi.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { new Guid("904e4952-8e71-4a28-a0d0-c654d4fca401"), "0469fddd-36a7-4601-a255-a07c1727e51b", null, "Administrateur", "Administrateur" },
-                    { new Guid("56a837eb-187c-449c-8ffc-008b018dc3fa"), "1469fddd-36a7-4601-a255-a07c1727e51b", null, "Utilisateur", "Utilisateur" }
+                    { new Guid("7c40912e-1f5d-43d5-8ff7-77bb0be94b0d"), "0469fddd-36a7-4601-a255-a07c1727e51b", null, "Administrateur", "Administrateur" },
+                    { new Guid("f2138dc1-eb75-4057-8f6b-80e3baa02ddf"), "1469fddd-36a7-4601-a255-a07c1727e51b", null, "Utilisateur", "Utilisateur" }
                 });
 
             migrationBuilder.InsertData(

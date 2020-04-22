@@ -1,4 +1,5 @@
-﻿using PetanquePlanning.Business.Location.Application.DTO.DTO;
+﻿using System;
+using PetanquePlanning.Business.Location.Application.DTO.DTO;
 using Tools.Application.Abstractions;
 using Tools.Application.DTOs;
 
@@ -9,7 +10,7 @@ namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Users
         /// <summary>
         /// Identifier
         /// </summary>
-        public long Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Associated department
@@ -19,7 +20,7 @@ namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Users
         /// <summary>
         /// Associated department id
         /// </summary>
-        public long DepartmentId { get; set; }
+        public Guid DepartmentId { get; set; }
 
         /// <summary>
         /// Associated user
@@ -29,6 +30,6 @@ namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Users
         /// <summary>
         /// Associated user id
         /// </summary>
-        public long UserId { get; set; }
+        public Guid UserId { get; set; }
     }
 }

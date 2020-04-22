@@ -1,4 +1,5 @@
-﻿using PetanquePlanning.Business.Core.Domain.Entities;
+﻿using System;
+using PetanquePlanning.Business.Core.Domain.Entities;
 using Tools.Application.Abstractions;
 using Tools.Application.DTOs;
 
@@ -9,7 +10,7 @@ namespace PetanquePlanning.Business.Core.Application.DTO.DTO
         /// <summary>
         /// Identifier
         /// </summary>
-        public long Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Address

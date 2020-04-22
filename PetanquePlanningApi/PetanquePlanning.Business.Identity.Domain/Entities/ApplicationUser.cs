@@ -27,7 +27,7 @@ namespace PetanquePlanning.Business.Identity.Domain.Entities
         /// <summary>
         /// Club identifier
         /// </summary>
-        public long ClubId { get; set; }
+        public Guid ClubId { get; set; }
 
         /// <summary>
         /// Favorite department codes

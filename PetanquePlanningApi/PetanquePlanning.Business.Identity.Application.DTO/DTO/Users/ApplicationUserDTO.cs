@@ -47,7 +47,7 @@ namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Users
         /// <summary>
         /// Club identifier
         /// </summary>
-        public long ClubId { get; set; }
+        public Guid ClubId { get; set; }
 
         /// <summary>
         /// Favorite department codes

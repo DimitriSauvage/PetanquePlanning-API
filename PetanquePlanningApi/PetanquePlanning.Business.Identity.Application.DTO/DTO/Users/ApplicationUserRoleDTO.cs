@@ -1,4 +1,5 @@
-﻿using PetanquePlanning.Business.Identity.Application.DTO.DTO.Roles;
+﻿using System;
+using PetanquePlanning.Business.Identity.Application.DTO.DTO.Roles;
 using Tools.Application.Abstractions;
 using Tools.Application.DTOs;
 
@@ -9,12 +10,12 @@ namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Users
         #region Properties
 
         /// <inheritdoc />
-        public long Id { get; set; }
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Gets or sets the primary key of the user that is linked to a role.
         /// </summary>
-        public long UserId { get; set; }
+        public Guid UserId { get; set; }
 
         /// <summary>
         /// Gets or sets the user that is linked to a role.
@@ -24,7 +25,7 @@ namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Users
         /// <summary>
         /// Gets or sets the primary key of the role that is linked to the user.
         /// </summary>
-        public virtual long RoleId { get; set; }
+        public virtual Guid RoleId { get; set; }
 
         /// <summary>
         /// Gets or sets the role that is linked to the user.
