@@ -151,3 +151,14 @@ C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningA
 C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Tools.Typescript.pdb
 C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Tools.DependencyInjection.dll
 C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Tools.DependencyInjection.pdb
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authorization.dll
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Metadata.dll
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\PetanquePlanning.Business.Core.Presentation.dll
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\PetanquePlanning.Business.Identity.Presentation.dll
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\PetanquePlanning.Business.Location.Presentation.dll
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Tools.Mvc.dll
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\PetanquePlanning.Business.Core.Presentation.pdb
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\PetanquePlanning.Business.Identity.Presentation.pdb
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\PetanquePlanning.Business.Location.Presentation.pdb
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\bin\Debug\netcoreapp3.1\Tools.Mvc.pdb
+C:\Users\dimit\Github\PetanquePlanning-API\PetanquePlanningApi\PetanquePlanningApi\obj\Debug\netcoreapp3.1\PetanquePlanningApi.MvcApplicationPartsAssemblyInfo.cs

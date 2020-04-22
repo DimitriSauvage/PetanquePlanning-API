@@ -122,17 +122,11 @@ namespace PetanquePlanningApi
 
             #endregion
 
-            //app.UseHttpsRedirection();
+            app.UseHttpsRedirection();
             app.UseAuthentication();
-
-            //app.UseRouting();
+            app.UseRouting();
             app.UseAuthorization();
-
-
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllers();
-            //});
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
 
         #endregion
