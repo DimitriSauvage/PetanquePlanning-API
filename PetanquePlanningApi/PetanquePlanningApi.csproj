@@ -9,7 +9,7 @@
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="DimitriSauvageTools.Application" Version="1.0.0" />
-    <PackageReference Include="DimitriSauvageTools.DependencyInjection" Version="1.0.0" />
+    <PackageReference Include="DimitriSauvageTools.DependencyInjection" Version="1.0.1" />
     <PackageReference Include="DimitriSauvageTools.Infrastructure.EntityFramework" Version="1.0.0" />
     <PackageReference Include="DimitriSauvageTools.Mapper" Version="1.0.0" />
     <PackageReference Include="DimitriSauvageTools.Typescript" Version="1.0.0" />
