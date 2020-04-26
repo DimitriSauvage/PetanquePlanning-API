@@ -4,6 +4,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using AutoMapper;
+using DimitriSauvageTools.Application.Abstractions;
+using DimitriSauvageTools.DependencyInjection.Helpers;
+using DimitriSauvageTools.Infrastructure.Settings;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -16,21 +19,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.Net.Http.Headers;
-using PetanquePlanning.Business.Core.Application.Services;
 using PetanquePlanning.Business.Core.Infrastructure.Abstractions.Abstractions;
 using PetanquePlanning.Business.Core.Infrastructure.EntityFramework.Repositories;
-using PetanquePlanning.Business.Identity.Application.Services;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Abstractions;
 using PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.Repositories;
-using PetanquePlanning.Business.Location.Application.Services;
 using PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions;
 using PetanquePlanning.Business.Location.Infrastructure.EntityFramework.Repositories;
-using Tools.Application.Abstractions;
-using Tools.DependencyInjection.Helpers;
-using Tools.Helpers;
-using Tools.Infrastructure.EntityFramework.Abstractions;
-using Tools.Infrastructure.Settings;
 
 namespace PetanquePlanningApi
 {
@@ -243,11 +238,13 @@ namespace PetanquePlanningApi
         private static void AddBusinessServices(IServiceCollection services)
         {
             //Add all services
-            services.AddAllServices(Assembly
-                .GetExecutingAssembly()
-                .GetReferencedAssemblies()
-                .Select(Assembly.Load)
-                .ToList());
+            services.AddAllServices(
+                assemblies: Assembly
+                    .GetExecutingAssembly()
+                    .GetReferencedAssemblies()
+                    .Select(Assembly.Load)
+                    .ToList(),
+                baseServiceTypes: new List<Type>() {typeof(BaseService), typeof(BaseService<,>)});
         }
 
         #endregion

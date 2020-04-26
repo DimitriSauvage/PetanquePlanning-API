@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
-using Tools.Domain.Abstractions;
+using DimitriSauvageTools.Domain.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Domain.Entities
 {
-    public class Region : EntityWithId, IEntityWithId
+    public class Region : EntityWithId
     {
         /// <summary>
         /// Code

@@ -1,5 +1,4 @@
-﻿using Tools.Application.Abstractions;
-using Tools.Application.DTOs;
+﻿using DimitriSauvageTools.Application.Abstractions;
 
 namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Account
 {

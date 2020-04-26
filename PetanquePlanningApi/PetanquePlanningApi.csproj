@@ -8,6 +8,11 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="DimitriSauvageTools.Application" Version="1.0.0" />
+    <PackageReference Include="DimitriSauvageTools.DependencyInjection" Version="1.0.0" />
+    <PackageReference Include="DimitriSauvageTools.Infrastructure.EntityFramework" Version="1.0.0" />
+    <PackageReference Include="DimitriSauvageTools.Mapper" Version="1.0.0" />
+    <PackageReference Include="DimitriSauvageTools.Typescript" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.3" />
@@ -16,10 +21,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\CSharp-Tools\Tools.DependencyInjection\Tools.DependencyInjection.csproj" />
-    <ProjectReference Include="..\..\CSharp-Tools\Tools.Infrastructure\Tools.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\CSharp-Tools\Tools.Mapper\Tools.Mapper.csproj" />
-    <ProjectReference Include="..\..\CSharp-Tools\Tools.Typescript\Tools.Typescript.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Core.Application.DTO\PetanquePlanning.Business.Core.Application.DTO.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Core.Application\PetanquePlanning.Business.Core.Application.csproj" />
     <ProjectReference Include="..\PetanquePlanning.Business.Core.Infrastructure.EntityFramework\PetanquePlanning.Business.Core.Infrastructure.EntityFramework.csproj" />

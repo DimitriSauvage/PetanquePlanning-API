@@ -4,14 +4,14 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DimitriSauvageTools.Application.Abstractions;
+using DimitriSauvageTools.Helpers;
+using DimitriSauvageTools.Infrastructure.Exceptions;
 using Microsoft.AspNetCore.Identity;
 using PetanquePlanning.Business.Identity.Application.DTO.DTO.Users;
 using PetanquePlanning.Business.Identity.Application.Exceptions;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using PetanquePlanning.Business.Identity.Infrastructure.Abstractions.Abstractions;
-using Tools.Application.Abstractions;
-using Tools.Helpers;
-using Tools.Infrastructure.Exceptions;
 
 namespace PetanquePlanning.Business.Identity.Application.Services
 {

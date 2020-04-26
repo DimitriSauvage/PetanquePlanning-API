@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Tools.Application.Abstractions;
-using Tools.Application.DTOs;
-using Tools.Helpers;
-using Tools.Typescript.Generator;
+using DimitriSauvageTools.Application.Abstractions;
+using DimitriSauvageTools.Application.DTOs;
+using DimitriSauvageTools.Helpers;
+using DimitriSauvageTools.Typescript.Generator;
 
 namespace PetanquePlanningApi
 {
@@ -20,10 +20,11 @@ namespace PetanquePlanningApi
                 Assembly
                     .GetExecutingAssembly()
                     .GetReferencedAssemblies()
-                    .Where(x => x.FullName.Contains(nameof(PetanquePlanning)) || x.FullName.Contains(nameof(Tools)))
+                    .Where(x => x.FullName.Contains(nameof(PetanquePlanning)) ||
+                                x.FullName.Contains(nameof(DimitriSauvageTools)))
                     .Select(Assembly.Load)
                     .ToList();
-            
+
             //Types to get
             IEnumerable<Type> searchedTypes = new List<Type>()
             {

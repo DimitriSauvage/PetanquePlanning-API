@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DimitriSauvageTools.Infrastructure.EntityFramework.Abstractions;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using PetanquePlanning.Business.Identity.Domain.Entities;
-using Tools.Infrastructure.EntityFramework.Abstractions;
 
 namespace PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.Maps
 {

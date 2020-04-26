@@ -1,7 +1,6 @@
 ﻿using System;
+using DimitriSauvageTools.Application.Abstractions;
 using PetanquePlanning.Business.Identity.Application.DTO.DTO.Roles;
-using Tools.Application.Abstractions;
-using Tools.Application.DTOs;
 
 namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Users
 {

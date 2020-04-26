@@ -5,6 +5,10 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
+using DimitriSauvageTools.Application.Abstractions;
+using DimitriSauvageTools.Http.Enums;
+using DimitriSauvageTools.Http.Extensions;
+using DimitriSauvageTools.Infrastructure.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -13,10 +17,6 @@ using PetanquePlanning.Business.Identity.Application.DTO.DTO.Account;
 using PetanquePlanning.Business.Identity.Application.DTO.DTO.Users;
 using PetanquePlanning.Business.Identity.Domain.Entities;
 using PetanquePlanning.Business.Identity.Domain.Exceptions;
-using Tools.Application.Abstractions;
-using Tools.Http.Enums;
-using Tools.Http.Extensions;
-using Tools.Infrastructure.Exceptions;
 using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
 
 namespace PetanquePlanning.Business.Identity.Application.Services

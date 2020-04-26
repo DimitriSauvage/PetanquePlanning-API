@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
-using Tools.Application.Abstractions;
-using Tools.Application.DTOs;
+using DimitriSauvageTools.Application.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Application.DTO.DTO
 {

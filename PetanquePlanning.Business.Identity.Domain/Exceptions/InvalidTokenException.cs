@@ -1,4 +1,4 @@
-﻿using Tools.Exceptions;
+﻿using DimitriSauvageTools.Exceptions;
 
 namespace PetanquePlanning.Business.Identity.Domain.Exceptions
 {

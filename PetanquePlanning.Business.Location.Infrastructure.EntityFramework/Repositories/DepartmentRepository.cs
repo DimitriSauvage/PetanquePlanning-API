@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using DimitriSauvageTools.Infrastructure.EntityFramework.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using PetanquePlanning.Business.Location.Domain.Entities;
 using PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions;
-using Tools.Infrastructure.EntityFramework.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Infrastructure.EntityFramework.Repositories
 {

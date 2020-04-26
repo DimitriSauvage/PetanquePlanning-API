@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using DimitriSauvageTools.Infrastructure.EntityFramework.Abstractions;
+using DimitriSauvageTools.Infrastructure.EntityFramework.Helpers;
 using Microsoft.EntityFrameworkCore;
-using PetanquePlanning.Business.Core.Infrastructure.EntityFramework.Maps;
 using PetanquePlanning.Business.Identity.Domain.Entities;
-using PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.Maps;
-using PetanquePlanning.Business.Location.Infrastructure.EntityFramework.Maps;
-using Tools.Infrastructure.EntityFramework.Abstractions;
-using Tools.Infrastructure.EntityFramework.Helpers;
 
 namespace PetanquePlanningApi
 {
@@ -36,7 +33,6 @@ namespace PetanquePlanningApi
                     .Select(Assembly.Load)
                     .ToList(),
                 modelBuilder);
-
         }
 
         #endregion

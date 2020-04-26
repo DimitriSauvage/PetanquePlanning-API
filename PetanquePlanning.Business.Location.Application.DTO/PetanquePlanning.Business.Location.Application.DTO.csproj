@@ -6,7 +6,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\CSharp-Tools\Tools.Application\Tools.Application.csproj" />
+        <PackageReference Include="DimitriSauvageTools.Application" Version="1.0.0" />
     </ItemGroup>
+
 
 </Project>

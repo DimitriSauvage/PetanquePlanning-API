@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using Tools.Domain.Abstractions;
+using DimitriSauvageTools.Domain.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Domain.Entities
 {
-    public class Department : EntityWithId, IEntityWithId
+    public class Department : EntityWithId
     {
         /// <summary>
         /// Adjacent departments

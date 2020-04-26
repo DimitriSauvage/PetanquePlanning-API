@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using DimitriSauvageTools.Domain.Abstractions;
+using DimitriSauvageTools.Domain.Extensions;
+using DimitriSauvageTools.Domain.Helpers;
 using Microsoft.AspNetCore.Identity;
-using Tools.Domain.Abstractions;
-using Tools.Domain.Extensions;
-using Tools.Domain.Helpers;
 
 namespace PetanquePlanning.Business.Identity.Domain.Entities
 {

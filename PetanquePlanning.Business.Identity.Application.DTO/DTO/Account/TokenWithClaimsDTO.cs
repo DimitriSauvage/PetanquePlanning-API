@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
+using DimitriSauvageTools.Application.Abstractions;
 using Newtonsoft.Json;
-using Tools.Application.Abstractions;
-using Tools.Application.DTOs;
 
 namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Account
 {

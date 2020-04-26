@@ -1,5 +1,7 @@
 ﻿using System;
 using AutoMapper;
+using DimitriSauvageTools.Application.DTOs;
+using DimitriSauvageTools.Mapper;
 using PetanquePlanning.Business.Core.Application.DTO.DTO;
 using PetanquePlanning.Business.Core.Domain.Entities;
 using PetanquePlanning.Business.Core.Domain.Enumerations;
@@ -9,8 +11,6 @@ using PetanquePlanning.Business.Identity.Domain.Entities;
 using PetanquePlanning.Business.Identity.Domain.Enumerations;
 using PetanquePlanning.Business.Location.Application.DTO.DTO;
 using PetanquePlanning.Business.Location.Domain.Entities;
-using Tools.Application.DTOs;
-using Tools.Mapper;
 
 namespace PetanquePlanningApi
 {

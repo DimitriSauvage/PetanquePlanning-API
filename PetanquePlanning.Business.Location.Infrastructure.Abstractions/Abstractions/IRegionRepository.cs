@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using DimitriSauvageTools.Infrastructure.Abstraction;
 using PetanquePlanning.Business.Location.Domain.Entities;
-using Tools.Infrastructure.Abstraction;
 
 namespace PetanquePlanning.Business.Location.Infrastructure.Abstractions.Abstractions
 {

@@ -1,6 +1,5 @@
 ﻿using System;
-using Tools.Application.Abstractions;
-using Tools.Application.DTOs;
+using DimitriSauvageTools.Application.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Application.DTO.DTO
 {
@@ -10,7 +9,7 @@ namespace PetanquePlanning.Business.Location.Application.DTO.DTO
         /// First adjacent department
         /// </summary>
         public DepartmentDTO FirstDepartment { get; set; }
-        
+
         /// <summary>
         /// First department id
         /// </summary>

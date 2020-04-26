@@ -1,7 +1,7 @@
 ﻿using System;
+using DimitriSauvageTools.Domain.Abstractions;
+using DimitriSauvageTools.Domain.DataAnnotations;
 using PetanquePlanning.Business.Core.Domain.Enumerations;
-using Tools.Domain.Abstractions;
-using Tools.Domain.DataAnnotations;
 
 namespace PetanquePlanning.Business.Core.Domain.Entities
 {

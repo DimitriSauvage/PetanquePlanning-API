@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DimitriSauvageTools.Application.Abstractions;
+using DimitriSauvageTools.Infrastructure.Exceptions;
 using PetanquePlanning.Business.Core.Application.DTO.DTO;
 using PetanquePlanning.Business.Core.Domain.Entities;
 using PetanquePlanning.Business.Core.Infrastructure.Abstractions.Abstractions;
-using Tools.Application.Abstractions;
-using Tools.Infrastructure.Exceptions;
 
 namespace PetanquePlanning.Business.Core.Application.Services
 {

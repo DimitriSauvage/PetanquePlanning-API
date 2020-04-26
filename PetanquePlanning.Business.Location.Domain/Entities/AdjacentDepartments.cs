@@ -1,5 +1,5 @@
 ﻿using System;
-using Tools.Domain.Abstractions;
+using DimitriSauvageTools.Domain.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Domain.Entities
 {

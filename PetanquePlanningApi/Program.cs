@@ -1,14 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Tools.Application.Abstractions;
-using Tools.Application.DTOs;
-using Tools.Helpers;
-using Tools.Typescript.Generator;
 
 namespace PetanquePlanningApi
 {
@@ -42,7 +34,5 @@ namespace PetanquePlanningApi
                 .AddJsonFile("appsettings.connectionstrings.json", optional: false, reloadOnChange: true);
             configBuilder.Build();
         }
-
-        
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Text;
-using Tools.Domain.Abstractions;
-using Tools.GeoLocation.Domain.Entities;
+using DimitriSauvageTools.Domain.Abstractions;
+using DimitriSauvageTools.GeoLocation.Domain.Entities;
 
 namespace PetanquePlanning.Business.Core.Domain.Entities
 {

@@ -1,5 +1,5 @@
-﻿using Tools.Domain.Abstractions;
-using Tools.Domain.DataAnnotations;
+﻿using DimitriSauvageTools.Domain.Abstractions;
+using DimitriSauvageTools.Domain.DataAnnotations;
 
 namespace PetanquePlanning.Business.Core.Domain.Entities
 {

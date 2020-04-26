@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using DimitriSauvageTools.Application.Abstractions;
+using DimitriSauvageTools.Application.DTOs;
+using DimitriSauvageTools.Helpers;
 using PetanquePlanning.Business.Identity.Domain.Enumerations;
-using Tools.Application.Abstractions;
-using Tools.Application.DTOs;
-using Tools.Helpers;
 
 namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Users
 {
@@ -27,7 +27,8 @@ namespace PetanquePlanning.Business.Identity.Application.DTO.DTO.Users
                 var result = string.Empty;
                 if (this.Avatar.IsNotEmpty())
                 {
-                    result = Path.Combine("data", "users", this.Id.ToString().Trim().IsNotEmpty() ? this.NormalizedEmail : "temp", this.Avatar);
+                    result = Path.Combine("data", "users",
+                        this.Id.ToString().Trim().IsNotEmpty() ? this.NormalizedEmail : "temp", this.Avatar);
                 }
 
                 return result;

@@ -6,14 +6,15 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="DimitriSauvageTools.Application" Version="1.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\CSharp-Tools\Tools.Application\Tools.Application.csproj" />
-        <ProjectReference Include="..\..\CSharp-Tools\Tools.Http\Tools.Http.csproj" />
-        <ProjectReference Include="..\PetanquePlanning.Business.Identity.Domain\PetanquePlanning.Business.Identity.Domain.csproj" />
-        <ProjectReference Include="..\PetanquePlanning.Business.Location.Application.DTO\PetanquePlanning.Business.Location.Application.DTO.csproj" />
+        <ProjectReference
+            Include="..\PetanquePlanning.Business.Identity.Domain\PetanquePlanning.Business.Identity.Domain.csproj" />
+        <ProjectReference
+            Include="..\PetanquePlanning.Business.Location.Application.DTO\PetanquePlanning.Business.Location.Application.DTO.csproj" />
     </ItemGroup>
 
 </Project>

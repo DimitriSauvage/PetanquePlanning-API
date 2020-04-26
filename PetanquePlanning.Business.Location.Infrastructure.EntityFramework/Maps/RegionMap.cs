@@ -1,8 +1,8 @@
 ﻿using System;
+using DimitriSauvageTools.Infrastructure.EntityFramework.Abstractions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using PetanquePlanning.Business.Location.Domain.Entities;
-using Tools.Infrastructure.EntityFramework.Abstractions;
 
 namespace PetanquePlanning.Business.Location.Infrastructure.EntityFramework.Maps
 {

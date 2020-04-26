@@ -1,8 +1,8 @@
 ﻿using System;
+using DimitriSauvageTools.Application.Abstractions;
+using DimitriSauvageTools.Application.DTOs;
 using PetanquePlanning.Business.Core.Domain.Entities;
 using PetanquePlanning.Business.Core.Domain.Enumerations;
-using Tools.Application.Abstractions;
-using Tools.Application.DTOs;
 
 namespace PetanquePlanning.Business.Core.Application.DTO.DTO
 {

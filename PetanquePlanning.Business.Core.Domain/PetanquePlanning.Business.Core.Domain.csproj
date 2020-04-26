@@ -6,10 +6,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\CSharp-Tools\Tools.Domain\Tools.Domain.csproj" />
-        <ProjectReference Include="..\..\CSharp-Tools\Tools.GeoLocation.Domain\Tools.GeoLocation.Domain.csproj" />
         <ProjectReference
             Include="..\PetanquePlanning.Business.Identity.Domain\PetanquePlanning.Business.Identity.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="DimitriSauvageTools.Domain" Version="1.0.0" />
+        <PackageReference Include="DimitriSauvageTools.GeoLocation.Domain" Version="1.0.0" />
     </ItemGroup>
 
 </Project>
