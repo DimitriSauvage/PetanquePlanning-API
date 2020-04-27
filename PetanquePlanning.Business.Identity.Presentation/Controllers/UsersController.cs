@@ -10,7 +10,6 @@ using PetanquePlanning.Business.Identity.Application.Services;
 
 namespace PetanquePlanning.Business.Identity.Presentation.Controllers
 {
-    [Route("[controller]")]
     public class
         UsersController : ApiController<ApplicationUserService>
     {

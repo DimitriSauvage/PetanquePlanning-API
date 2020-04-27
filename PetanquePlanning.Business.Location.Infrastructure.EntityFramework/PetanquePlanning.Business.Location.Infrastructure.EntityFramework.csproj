@@ -6,14 +6,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference
-            Include="..\PetanquePlanning.Business.Location.Domain\PetanquePlanning.Business.Location.Domain.csproj" />
-        <ProjectReference
-            Include="..\PetanquePlanning.Business.Location.Infrastructure.Abstractions\PetanquePlanning.Business.Location.Infrastructure.Abstractions.csproj" />
+        <ProjectReference Include="..\PetanquePlanning.Business.Location.Domain\PetanquePlanning.Business.Location.Domain.csproj" />
+        <ProjectReference Include="..\PetanquePlanning.Business.Location.Infrastructure.Abstractions\PetanquePlanning.Business.Location.Infrastructure.Abstractions.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="DimitriSauvageTools.Infrastructure.EntityFramework" Version="1.0.0" />
+        <PackageReference Include="DimitriSauvageTools.Infrastructure.EntityFramework" Version="1.0.2" />
     </ItemGroup>
 
 </Project>

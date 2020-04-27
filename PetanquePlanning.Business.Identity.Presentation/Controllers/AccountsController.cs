@@ -24,7 +24,6 @@ namespace PetanquePlanning.Business.Identity.Presentation.Controllers
     /// <see>
     ///     <cref>https://digitalcontrol.me/blog/indentity-asp-net-core-2/</cref>
     /// </see>
-    [Route("accounts")]
     public class AccountsController : ApiController
     {
         #region Private properties

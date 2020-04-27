@@ -6,14 +6,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference
-            Include="..\PetanquePlanning.Business.Core.Application.DTO\PetanquePlanning.Business.Core.Application.DTO.csproj" />
-        <ProjectReference
-            Include="..\PetanquePlanning.Business.Core.Application\PetanquePlanning.Business.Core.Application.csproj" />
+        <ProjectReference Include="..\PetanquePlanning.Business.Core.Application.DTO\PetanquePlanning.Business.Core.Application.DTO.csproj" />
+        <ProjectReference Include="..\PetanquePlanning.Business.Core.Application\PetanquePlanning.Business.Core.Application.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="DimitriSauvageTools.Mvc" Version="1.0.0" />
+        <PackageReference Include="DimitriSauvageTools.Mvc" Version="1.0.3" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.0" />
     </ItemGroup>
 

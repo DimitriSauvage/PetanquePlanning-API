@@ -8,7 +8,6 @@ using PetanquePlanning.Business.Location.Application.Services;
 
 namespace PetanquePlanning.Business.Location.Presentation.Controllers
 {
-    [Route("[controller]")]
     public class RegionsController : ApiController<RegionService>
     {
         #region Fields

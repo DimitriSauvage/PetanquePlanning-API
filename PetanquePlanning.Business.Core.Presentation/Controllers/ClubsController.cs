@@ -10,7 +10,6 @@ using PetanquePlanning.Business.Core.Application.Services;
 
 namespace PetanquePlanning.Business.Core.Presentation.Controllers
 {
-    [Route("[controller]")]
     public class ClubsController : ApiController<ClubService>
     {
         #region Fields
