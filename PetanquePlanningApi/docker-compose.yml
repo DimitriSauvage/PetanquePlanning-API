@@ -1,0 +1,9 @@
+﻿version: "3.3"
+services:
+  api:
+    build:
+      context: ../
+      dockerfile: ./PetanquePlanningApi/Dockerfile
+    ports:
+    - 5000:80
+    - 5001:80

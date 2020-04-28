@@ -1,22 +1,15 @@
-﻿FROM mcr.microsoft.com/dotnet/core/sdk:3.1
+﻿FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build-env
 WORKDIR /app
 
-#Create folder for Tools
-RUN mkdir CSharp-Tools
-
-#Copy the tools
-COPY ../../CSharp-Tools ./CSharp-Tools
-
-#Copy Application files
-COPY ../../PetanquePlanning-API ./PetanquePlanning-API
-
-#Go to the application file 
-WORKDIR ./PetanquePlanning-API/PetanquePlanningApi
-
-#Restore packages
+# Copy all files
+COPY . ./
 RUN dotnet restore
 
-#Publish in Release config, in the "out" folder, and do not restore packages
+# Build
 RUN dotnet publish -c Release -o out --no-restore
 
-ENTRYPOINT ["dotnet",  "out/PetanquePlanningApi.dll"]
+# Build runtime image
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
+WORKDIR /app
+COPY --from=build-env /app/out /app
+ENTRYPOINT ["dotnet", "PetanquePlanningApi.dll"]

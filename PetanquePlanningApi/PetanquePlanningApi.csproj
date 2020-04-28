@@ -38,6 +38,10 @@
     <ProjectReference Include="..\PetanquePlanning.Business.Location.Presentation\PetanquePlanning.Business.Location.Presentation.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Docker" />
+  </ItemGroup>
+
   <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="launch" /></VisualStudio></ProjectExtensions>
 
 
