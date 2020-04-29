@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Threading.Tasks;
 using AutoMapper;
 using DimitriSauvageTools.Application.Abstractions;
 using DimitriSauvageTools.DependencyInjection.Helpers;
@@ -212,10 +213,15 @@ namespace PetanquePlanningApi
                 // Cookie settings
                 options.Cookie.HttpOnly = true;
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
-
+                
                 options.LoginPath = "/api/accounts/login";
                 options.AccessDeniedPath = options.LoginPath;
                 options.SlidingExpiration = true;
+                options.Events.OnRedirectToLogin = context =>
+                {
+                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                    return Task.CompletedTask;
+                };
             });
         }
 
