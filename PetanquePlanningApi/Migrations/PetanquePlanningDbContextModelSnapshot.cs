@@ -276,6 +276,32 @@ namespace PetanquePlanningApi.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("85ee2e86-6fea-46a6-a4a8-93dbf1a6d50a"),
+                            AccessFailedCount = 0,
+                            BirthDate = new DateTimeOffset(new DateTime(1993, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)),
+                            ClubId = new Guid("00000000-0000-0000-0000-000000000000"),
+                            ConcurrencyStamp = "ConcurrencyStamp",
+                            Email = "dimitri1993@live.fr",
+                            EmailConfirmed = true,
+                            FirstName = "Dimitri",
+                            Gender = 1,
+                            LastName = "SAUVAGE",
+                            LockoutEnabled = false,
+                            MustChangePassword = false,
+                            NormalizedEmail = "dimitri1993@live.fr",
+                            NormalizedUserName = "dimitri1993@live.fr",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAARECpmdb38j3y1Z6/Ae6+52gk3a4lsg3iF0hWZEoPIMiRLURj3A0ce2QRlVCXEfA==",
+                            PhoneNumber = "0645674984",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "SecurityStamp",
+                            SubscriptionDate = new DateTimeOffset(new DateTime(2020, 4, 29, 15, 19, 14, 223, DateTimeKind.Unspecified).AddTicks(408), new TimeSpan(0, 2, 0, 0, 0)),
+                            TwoFactorEnabled = false,
+                            UserName = "dimitri1993@live.fr"
+                        });
                 });
 
             modelBuilder.Entity("PetanquePlanning.Business.Identity.Domain.Entities.ApplicationUserClaim", b =>
@@ -387,6 +413,13 @@ namespace PetanquePlanningApi.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("ApplicationUserRole","identity");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = new Guid("85ee2e86-6fea-46a6-a4a8-93dbf1a6d50a"),
+                            RoleId = new Guid("7c40912e-1f5d-43d5-8ff7-77bb0be94b0d")
+                        });
                 });
 
             modelBuilder.Entity("PetanquePlanning.Business.Identity.Domain.Entities.ApplicationUserToken", b =>
@@ -4189,7 +4222,7 @@ namespace PetanquePlanningApi.Migrations
                             b1.WithOwner()
                                 .HasForeignKey("ClubId");
 
-                            b1.OwnsOne("Tools.GeoLocation.Domain.Entities.LatLng", "Coordinate", b2 =>
+                            b1.OwnsOne("DimitriSauvageTools.GeoLocation.Domain.Entities.LatLng", "Coordinate", b2 =>
                                 {
                                     b2.Property<Guid>("AddressClubId")
                                         .HasColumnType("uniqueidentifier");
@@ -4244,7 +4277,7 @@ namespace PetanquePlanningApi.Migrations
                             b1.WithOwner()
                                 .HasForeignKey("CompetitionId");
 
-                            b1.OwnsOne("Tools.GeoLocation.Domain.Entities.LatLng", "Coordinate", b2 =>
+                            b1.OwnsOne("DimitriSauvageTools.GeoLocation.Domain.Entities.LatLng", "Coordinate", b2 =>
                                 {
                                     b2.Property<Guid>("AddressCompetitionId")
                                         .HasColumnType("uniqueidentifier");

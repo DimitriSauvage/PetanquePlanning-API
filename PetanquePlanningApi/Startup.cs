@@ -1,12 +1,9 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
-using DimitriSauvageTools.Application.Abstractions;
-using DimitriSauvageTools.DependencyInjection.Helpers;
 using DimitriSauvageTools.Infrastructure.Settings;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -68,17 +65,19 @@ namespace PetanquePlanningApi
             //Auth config
             this.ConfigureAuthentication(services);
 
-            //Add the automapper
+            //Add the AutoMapper
             services.AddAutoMapper(typeof(Startup));
 
             //Session config
             services.AddSession(options =>
             {
                 options.Cookie.Expiration = TimeSpan.FromDays(30);
+                options.Cookie.HttpOnly = true;
                 options.Cookie.Name = ".PetanquePlanning.Session";
                 options.IdleTimeout = TimeSpan.FromHours(2);
             });
 
+            
             //Add repo and services to the DI
             AddBusinessRepositories(services);
             AddBusinessServices(services);
@@ -210,10 +209,8 @@ namespace PetanquePlanningApi
 
             services.ConfigureApplicationCookie(options =>
             {
-                // Cookie settings
-                options.Cookie.HttpOnly = true;
-                options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
-                
+                options.ExpireTimeSpan = TimeSpan.FromDays(1);
+
                 options.LoginPath = "/api/accounts/login";
                 options.AccessDeniedPath = options.LoginPath;
                 options.SlidingExpiration = true;

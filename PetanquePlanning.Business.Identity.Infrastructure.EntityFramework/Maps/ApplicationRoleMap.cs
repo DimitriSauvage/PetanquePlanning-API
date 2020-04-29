@@ -29,13 +29,15 @@ namespace PetanquePlanning.Business.Identity.Infrastructure.EntityFramework.Maps
             builder.HasData(
                 new ApplicationRole()
                 {
-                    Id = Guid.NewGuid(), ConcurrencyStamp = "0469fddd-36a7-4601-a255-a07c1727e51b",
+                    Id = Guid.Parse("7C40912E-1F5D-43D5-8FF7-77BB0BE94B0D"),
+                    ConcurrencyStamp = "0469fddd-36a7-4601-a255-a07c1727e51b",
                     Name = "Administrateur",
                     NormalizedName = "Administrateur"
                 },
                 new ApplicationRole()
                 {
-                    Id = Guid.NewGuid(), ConcurrencyStamp = "1469fddd-36a7-4601-a255-a07c1727e51b",
+                    Id = Guid.Parse("F2138DC1-EB75-4057-8F6B-80E3BAA02DDF"),
+                    ConcurrencyStamp = "1469fddd-36a7-4601-a255-a07c1727e51b",
                     Name = "Utilisateur",
                     NormalizedName = "Utilisateur"
                 }

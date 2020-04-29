@@ -77,6 +77,7 @@ namespace PetanquePlanning.Business.Identity.Application.Services
             var user = await this.UserManager.FindByEmailAsync(email);
             if (user == null) throw new EntityNotFoundException<ApplicationUser>();
 
+            
             return this.Mapper.Map<ApplicationUserDTO>(user);
         }
 

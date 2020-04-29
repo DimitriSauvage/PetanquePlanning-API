@@ -318,6 +318,11 @@ namespace PetanquePlanningApi.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "Avatar", "BirthDate", "ClubId", "ConcurrencyStamp", "Email", "EmailConfirmed", "FirstName", "Gender", "LastName", "LockoutEnabled", "LockoutEnd", "MustChangePassword", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "SubscriptionDate", "TwoFactorEnabled", "UserName" },
+                values: new object[] { new Guid("85ee2e86-6fea-46a6-a4a8-93dbf1a6d50a"), 0, null, new DateTimeOffset(new DateTime(1993, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 2, 0, 0, 0)), new Guid("00000000-0000-0000-0000-000000000000"), "ConcurrencyStamp", "dimitri1993@live.fr", true, "Dimitri", 1, "SAUVAGE", false, null, false, "dimitri1993@live.fr", "dimitri1993@live.fr", "AQAAAAEAACcQAAAAEAARECpmdb38j3y1Z6/Ae6+52gk3a4lsg3iF0hWZEoPIMiRLURj3A0ce2QRlVCXEfA==", "0645674984", true, "SecurityStamp", new DateTimeOffset(new DateTime(2020, 4, 29, 15, 19, 14, 223, DateTimeKind.Unspecified).AddTicks(408), new TimeSpan(0, 2, 0, 0, 0)), false, "dimitri1993@live.fr" });
+
+            migrationBuilder.InsertData(
                 table: "Region",
                 columns: new[] { "Id", "Code", "Name" },
                 values: new object[,]
@@ -347,7 +352,7 @@ namespace PetanquePlanningApi.Migrations
                 columns: new[] { "Id", "Code", "Name", "RegionId" },
                 values: new object[,]
                 {
-                    { new Guid("5c2f93c4-a0f6-407d-8aae-5fb2a4e3f35b"), "971", "Guadeloupe", new Guid("4357815c-da7e-4919-8f2e-6df3228cddbe") },
+                    { new Guid("f1cfaa9c-44cc-4685-af6f-45ae258efb07"), "53", "Mayenne", new Guid("e3a4faa4-4582-40d9-b5ac-154d66170041") },
                     { new Guid("d56fc07c-39f9-42c6-aaf5-640b2b5f6124"), "31", "Haute-Garonne", new Guid("0a887b0a-c29e-41b6-bf2d-5d14fa8c2a15") },
                     { new Guid("11d695a1-9893-4f18-a2ab-f61078233585"), "30", "Gard", new Guid("0a887b0a-c29e-41b6-bf2d-5d14fa8c2a15") },
                     { new Guid("32847c59-04b7-4a4c-aa67-faaf7d5ff8bd"), "12", "Aveyron", new Guid("0a887b0a-c29e-41b6-bf2d-5d14fa8c2a15") },
@@ -396,8 +401,8 @@ namespace PetanquePlanningApi.Migrations
                     { new Guid("caa74253-c115-4cb7-8b63-ee23545a62ff"), "66", "Pyrénées-Orientales", new Guid("0a887b0a-c29e-41b6-bf2d-5d14fa8c2a15") },
                     { new Guid("4c3a1f47-f735-4390-ae4d-f979e16c562c"), "65", "Hautes-Pyrénées", new Guid("0a887b0a-c29e-41b6-bf2d-5d14fa8c2a15") },
                     { new Guid("dd1e3ba1-385c-4941-8d5b-dfbfa1554154"), "42", "Loire", new Guid("bbfa939b-d5c7-4428-9537-dc063457270a") },
-                    { new Guid("8cf0438a-cb72-4ff1-9caa-7a40f4cc400a"), "2A", "Corse-du-Sud", new Guid("7ce01654-58a0-4c59-b5af-62351080e52f") },
                     { new Guid("fae0fcb0-f6df-4ece-ad3c-f5b7494e5f51"), "72", "Sarthe", new Guid("e3a4faa4-4582-40d9-b5ac-154d66170041") },
+                    { new Guid("2a24196d-0a4c-4928-9f79-bd498bcfc219"), "2B", "Haute-Corse", new Guid("7ce01654-58a0-4c59-b5af-62351080e52f") },
                     { new Guid("5f5ba403-ae25-440b-9f38-809881781211"), "49", "Maine-et-Loire", new Guid("e3a4faa4-4582-40d9-b5ac-154d66170041") },
                     { new Guid("4258f49d-10e3-4428-a398-66ffc5faa23f"), "39", "Jura", new Guid("c1524a03-e7c5-4959-ac10-4e569196e743") },
                     { new Guid("2acb1828-07a0-45fd-b52e-15b7eb6e02ce"), "25", "Doubs", new Guid("c1524a03-e7c5-4959-ac10-4e569196e743") },
@@ -409,8 +414,8 @@ namespace PetanquePlanningApi.Migrations
                     { new Guid("c8851fc2-7704-412d-b272-130cbed5f422"), "28", "Eure-et-Loir", new Guid("6651a27f-e548-4404-a7a5-c8b956d4906e") },
                     { new Guid("5cc49bd4-a1bf-4f4b-9744-13668eae12f0"), "18", "Cher", new Guid("6651a27f-e548-4404-a7a5-c8b956d4906e") },
                     { new Guid("24e44487-3f98-42b9-9b44-818e5d8d7bbd"), "95", "Val-d'Oise", new Guid("b6f686d0-13a7-47db-9e8e-d888e36cdce8") },
+                    { new Guid("52f1f21c-bea3-498b-bafa-26846d550230"), "58", "Nièvre", new Guid("c1524a03-e7c5-4959-ac10-4e569196e743") },
                     { new Guid("b10b8258-66e2-421a-bad5-cc76e1a3bb77"), "94", "Val-de-Marne", new Guid("b6f686d0-13a7-47db-9e8e-d888e36cdce8") },
-                    { new Guid("7c7b530a-ff06-4ee3-bcfd-8a79bf094a9b"), "93", "Seine-Saint-Denis", new Guid("b6f686d0-13a7-47db-9e8e-d888e36cdce8") },
                     { new Guid("a484a81b-fcf0-42ea-82c2-ef353da33667"), "92", "Hauts-de-Seine", new Guid("b6f686d0-13a7-47db-9e8e-d888e36cdce8") },
                     { new Guid("b508db1d-d8dc-4998-bbce-b110e00ac954"), "91", "Essonne", new Guid("b6f686d0-13a7-47db-9e8e-d888e36cdce8") },
                     { new Guid("55b6f5bd-de1f-435f-a30d-e212e2684eb6"), "78", "Yvelines", new Guid("b6f686d0-13a7-47db-9e8e-d888e36cdce8") },
@@ -420,9 +425,10 @@ namespace PetanquePlanningApi.Migrations
                     { new Guid("24c47aad-db8a-4631-b9a4-68a5245228be"), "974", "La Réunion", new Guid("966edde0-a3fa-4f4a-8a27-7231c2ebf181") },
                     { new Guid("8456ebcd-f507-4429-bdbc-376935ebd982"), "973", "Guyane", new Guid("6ac78d8f-1ec7-48fb-a9da-a41e6223fa9b") },
                     { new Guid("9a1cbd06-f1e9-4987-bef5-92987784887e"), "972", "Martinique", new Guid("a4798a24-c3d0-4311-8735-e93a30fdeec7") },
-                    { new Guid("52f1f21c-bea3-498b-bafa-26846d550230"), "58", "Nièvre", new Guid("c1524a03-e7c5-4959-ac10-4e569196e743") },
+                    { new Guid("5c2f93c4-a0f6-407d-8aae-5fb2a4e3f35b"), "971", "Guadeloupe", new Guid("4357815c-da7e-4919-8f2e-6df3228cddbe") },
+                    { new Guid("7c7b530a-ff06-4ee3-bcfd-8a79bf094a9b"), "93", "Seine-Saint-Denis", new Guid("b6f686d0-13a7-47db-9e8e-d888e36cdce8") },
+                    { new Guid("8cf0438a-cb72-4ff1-9caa-7a40f4cc400a"), "2A", "Corse-du-Sud", new Guid("7ce01654-58a0-4c59-b5af-62351080e52f") },
                     { new Guid("52ee48da-49f3-4701-93de-f113946380c9"), "70", "Haute-Saône", new Guid("c1524a03-e7c5-4959-ac10-4e569196e743") },
-                    { new Guid("63a854d0-a738-4684-9853-f83f051a88fc"), "71", "Saône-et-Loire", new Guid("c1524a03-e7c5-4959-ac10-4e569196e743") },
                     { new Guid("667fec95-c40d-4289-b5d9-4760525509f3"), "89", "Yonne", new Guid("c1524a03-e7c5-4959-ac10-4e569196e743") },
                     { new Guid("73d7b3b6-1018-4b19-a57b-d189d75c7c81"), "44", "Loire-Atlantique", new Guid("e3a4faa4-4582-40d9-b5ac-154d66170041") },
                     { new Guid("ff2b1187-63bf-46fa-a70c-4db6b323babb"), "88", "Vosges", new Guid("5823a48a-b05e-47cb-91eb-f1d0877a07b5") },
@@ -434,7 +440,7 @@ namespace PetanquePlanningApi.Migrations
                     { new Guid("3577171f-2b34-4d53-9aff-17885e7d4679"), "52", "Haute-Marne", new Guid("5823a48a-b05e-47cb-91eb-f1d0877a07b5") },
                     { new Guid("9498c4a1-398d-4c06-8b49-aa84290cf2ca"), "51", "Marne", new Guid("5823a48a-b05e-47cb-91eb-f1d0877a07b5") },
                     { new Guid("30ba0a20-3568-4484-9df1-151de6fd36c2"), "10", "Aube", new Guid("5823a48a-b05e-47cb-91eb-f1d0877a07b5") },
-                    { new Guid("f1cfaa9c-44cc-4685-af6f-45ae258efb07"), "53", "Mayenne", new Guid("e3a4faa4-4582-40d9-b5ac-154d66170041") },
+                    { new Guid("63a854d0-a738-4684-9853-f83f051a88fc"), "71", "Saône-et-Loire", new Guid("c1524a03-e7c5-4959-ac10-4e569196e743") },
                     { new Guid("16cd59b4-3971-45ec-bd68-d26ac70d2da0"), "08", "Ardennes", new Guid("5823a48a-b05e-47cb-91eb-f1d0877a07b5") },
                     { new Guid("7591742b-97d3-4b0a-81a6-20a4247d47ca"), "62", "Pas-de-Calais", new Guid("3a008295-2e8f-42e9-aa87-485d150d58db") },
                     { new Guid("78476d14-2f28-4e95-874e-09f1d4fd0171"), "60", "Oise", new Guid("3a008295-2e8f-42e9-aa87-485d150d58db") },
@@ -446,9 +452,14 @@ namespace PetanquePlanningApi.Migrations
                     { new Guid("a2ba1fd9-47c5-4938-b8b3-ab01bc245859"), "27", "Eure", new Guid("26a3ed8e-ef43-46df-8722-38d48170c391") },
                     { new Guid("785e7ff9-229a-426c-b664-479312d4cf8d"), "14", "Calvados", new Guid("26a3ed8e-ef43-46df-8722-38d48170c391") },
                     { new Guid("0bbca13e-e227-4aaa-a078-265c9133f278"), "90", "Territoire de Belfort", new Guid("c1524a03-e7c5-4959-ac10-4e569196e743") },
-                    { new Guid("343e77cb-a854-416b-aeac-86c9ffad82ce"), "80", "Somme", new Guid("3a008295-2e8f-42e9-aa87-485d150d58db") },
-                    { new Guid("2a24196d-0a4c-4928-9f79-bd498bcfc219"), "2B", "Haute-Corse", new Guid("7ce01654-58a0-4c59-b5af-62351080e52f") }
+                    { new Guid("343e77cb-a854-416b-aeac-86c9ffad82ce"), "80", "Somme", new Guid("3a008295-2e8f-42e9-aa87-485d150d58db") }
                 });
+
+            migrationBuilder.InsertData(
+                schema: "identity",
+                table: "ApplicationUserRole",
+                columns: new[] { "UserId", "RoleId" },
+                values: new object[] { new Guid("85ee2e86-6fea-46a6-a4a8-93dbf1a6d50a"), new Guid("7c40912e-1f5d-43d5-8ff7-77bb0be94b0d") });
 
             migrationBuilder.InsertData(
                 table: "AdjacentDepartments",
