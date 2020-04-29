@@ -135,21 +135,6 @@ namespace PetanquePlanningApi
 
         #region Private methods
 
-        private static void AddIdentity(IServiceCollection services)
-        {
-            services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
-                {
-                    options.Password.RequireDigit = false;
-                    options.Password.RequiredLength = 0;
-                    options.Password.RequireNonAlphanumeric = false;
-                    options.Password.RequireUppercase = false;
-                    options.Password.RequireLowercase = false;
-                    options.Password.RequiredUniqueChars = 0;
-                })
-                .AddEntityFrameworkStores<PetanquePlanningDbContext>()
-                .AddDefaultTokenProviders();
-        }
-
         /// <summary>
         /// Configure the application database
         /// </summary>
@@ -183,7 +168,6 @@ namespace PetanquePlanningApi
                     options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                     options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 })
-                .AddCookie(options => options.LoginPath = new PathString(authUrl))
                 .AddJwtBearer(options =>
                 {
                     options.RequireHttpsMetadata = false;
@@ -202,8 +186,37 @@ namespace PetanquePlanningApi
                                 Encoding.UTF8.GetBytes(this.Configuration["Security:Token:SecretKey"]))
                     };
                 });
+        }
 
-            services.ConfigureApplicationCookie(options => options.LoginPath = new PathString(authUrl));
+        /// <summary>
+        /// Add identity to the application
+        /// </summary>
+        /// <param name="services">Service collection</param>
+        private static void AddIdentity(IServiceCollection services)
+        {
+            services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
+                {
+                    //Password rules
+                    options.Password.RequireDigit = false;
+                    options.Password.RequiredLength = 0;
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireUppercase = false;
+                    options.Password.RequireLowercase = false;
+                    options.Password.RequiredUniqueChars = 0;
+                })
+                .AddEntityFrameworkStores<PetanquePlanningDbContext>()
+                .AddDefaultTokenProviders();
+
+            services.ConfigureApplicationCookie(options =>
+            {
+                // Cookie settings
+                options.Cookie.HttpOnly = true;
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+
+                options.LoginPath = "/api/accounts/login";
+                options.AccessDeniedPath = options.LoginPath;
+                options.SlidingExpiration = true;
+            });
         }
 
         /// <summary>
